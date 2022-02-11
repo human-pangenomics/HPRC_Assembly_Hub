@@ -18,7 +18,7 @@ aws --no-sign-request s3 cp --recursive s3://marina-misc/HPRC/AssemblyHub/ .
 
 
 ## Copy updated groups file (we have added additional groups)
-cp ${HUB_REPO}/backbone/additional_groups.txt groups.txt
+cp ${HUB_REPO}/backbone/groups.txt groups.txt
 
 
 ############################################################################### 
