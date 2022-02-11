@@ -32,7 +32,10 @@ source .bashrc
 ## Create The Hub
 
 ### Copy Over Marina's Hub
+```
 bash $HUB_REPO/backbone/setup_instance.sh
-
+```
 ## Add Repeat Masker Tracks
+```
 bash $HUB_REPO/repeat_masker/create_repeat_masker_track.sh
+```
