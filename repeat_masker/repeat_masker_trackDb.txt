@@ -1,0 +1,14 @@
+##
+# varRep
+##
+track rmsk
+shortLabel RepeatMasker
+longLabel Repeating Elements by RepeatMasker
+group varRep
+visibility hide
+itemRgb on
+maxItems 1000000
+maxWindowToDraw 100000000
+type bigBed 4 + 6
+bigDataUrl repeat_masker.bb
+priority 1
