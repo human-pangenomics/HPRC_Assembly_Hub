@@ -1,0 +1,35 @@
+
+name cat_tracks
+label Comparative Annotation Toolkit
+priority 1
+defaultIsClosed 0
+
+name gene_tracks
+label Gene Annotations
+priority 2
+defaultIsClosed 0
+
+name varRep
+label Variation
+priority 3
+
+name alignments
+label Alignments
+priority 4
+defaultIsClosed 0
+
+name compGeno
+label Comparative Genomics
+priority 5
+defaultIsClosed 0
+
+name snake
+label Cactus Snake Tracks
+priority 6
+defaultIsClosed 0
+
+name expression
+label Expression
+priority 7
+defaultIsClosed 0
+
