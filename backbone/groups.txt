@@ -12,7 +12,7 @@ defaultIsClosed 0
 name varRep
 label Variation
 priority 3
-defaultIsClosed
+defaultIsClosed 0
 
 name alignments
 label Alignments
