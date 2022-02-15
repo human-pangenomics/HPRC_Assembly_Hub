@@ -1,0 +1,14 @@
+##
+# alignments
+##
+track flagger
+shortLabel Flagger
+longLabel Flagger for coverage-based reliable/unreliable analysis
+group alignments
+visibility hide
+itemRgb on
+maxItems 1000000
+maxWindowToDraw 100000000
+type bigBed 9
+bigDataUrl flagger.bb
+priority 1
