@@ -22,6 +22,8 @@ readarray -t ASSEMBLIES <${HUB_REPO}/assembly_info/assembly_list.txt
 
 for ASSEMBLY in "${ASSEMBLIES[@]}"
 do 
+    echo $ASSEMBLY 
+    
     ## extract sample name and haplotype
     SAMPLE=`echo "$ASSEMBLY" | cut -d'.' -f1`
     HAPLOTYPE=`echo "$ASSEMBLY" | cut -d'.' -f2`
@@ -63,5 +65,5 @@ done
 
 
 cd ~
-sudo rm repeat_masker_tmp
+rm repeat_masker_tmp
 
