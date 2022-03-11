@@ -49,7 +49,7 @@ do
 
     ## Convber to bigbed
     bedToBigBed \
-        -type=bed6+4 \
+        -type=bed4+6 \
         -tab \
         ${SAMPLE}/${SAMPLE}.${HAP_STR}_sedef_tmp.bed \
         -as=${HUB_REPO}/sedef/sedef.as \

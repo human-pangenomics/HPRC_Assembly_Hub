@@ -5,7 +5,7 @@ table SegDups
     uint chromStart;     "Start in genomic sequence mate 1"
     uint chromEnd;       "End in genomic sequence mate 1"
     string name;     "SD name"
-    uint score;       "Total alignment error"
+    float score;       "Total alignment error"
     char[1] strand;     "1st SD mate strand"
     string chrom2;   "Genomic sequence name mate 2"
     uint chromStart2;     "Start in genomic sequence mate 2"

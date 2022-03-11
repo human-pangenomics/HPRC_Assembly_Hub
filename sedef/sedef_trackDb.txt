@@ -9,6 +9,6 @@ visibility hide
 itemRgb off
 maxItems 1000000
 maxWindowToDraw 100000000
-type bigBed 6 + 4
+type bigBed 4 + 6
 bigDataUrl sedef.bb
 priority 1
