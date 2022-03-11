@@ -1,0 +1,14 @@
+##
+# varRep
+##
+track dna_brnn
+shortLabel DNA BRNN
+longLabel DNA BRNN
+group varRep
+visibility hide
+itemRgb off
+maxItems 1000000
+maxWindowToDraw 100000000
+type bigBed 4
+bigDataUrl dna_brnn.bb
+priority 1
