@@ -1,0 +1,14 @@
+##
+# varRep
+##
+track SegDups
+shortLabel SegDups
+longLabel SEDEF Segmental Dups
+group varRep
+visibility hide
+itemRgb off
+maxItems 1000000
+maxWindowToDraw 100000000
+type bigBed 6 + 4
+bigDataUrl sedef.bb
+priority 1
