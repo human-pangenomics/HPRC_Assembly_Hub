@@ -17,7 +17,7 @@ aws --no-sign-request s3 cp \
     .
 
 
-readarray -t ASSEMBLIES <${HUB_REPO}/assembly_info/pangenome_assembly_list.txt
+readarray -t ASSEMBLIES <${HUB_REPO}/assembly_info/assembly_list.txt
 
 
 
