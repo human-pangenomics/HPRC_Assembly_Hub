@@ -1,0 +1,20 @@
+table TRF
+"Tandem Repeats Finder"
+    (
+    string chrom;    "Genomic sequence name"
+    uint chromStart;     "Start in genomic sequence"
+    uint chromEnd;       "End in genomic sequence"
+    uint PeriodSize;     "Period size of the repeat"
+    uint CopyNumber;       "Number of copies aligned with the consensus pattern"
+    uint ConsensusSize;     "Size of consensus pattern (may differ slightly from the period size)"
+    float PercentMatches;   "Percent of matches between adjacent copies overall"
+    uint PercentIndels;     "Percent of indels between adjacent copies overall"
+    uint Score;     "Alignment Score"
+    char[1] A;     "Percent composition of A nucleotide"
+    char[1] C;     "Percent composition of C nucleotide"
+    char[1] G;     "Percent composition of G nucleotide"
+    char[1] T;     "Percent composition of T nucleotide"
+    float Entropy;      "Entropy measure based on percent composition"
+    string Motif;      "Motif"
+    string Sequence;      "Sequence"    
+    )

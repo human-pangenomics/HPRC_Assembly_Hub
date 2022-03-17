@@ -1,0 +1,14 @@
+##
+# varRep
+##
+track TRF
+shortLabel TRF
+longLabel Tandem Repeats Finder
+group varRep
+visibility hide
+itemRgb off
+maxItems 1000000
+maxWindowToDraw 100000000
+type bigBed 4 + 12
+bigDataUrl trf.bb
+priority 1
