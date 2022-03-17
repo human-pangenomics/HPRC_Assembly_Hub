@@ -5,7 +5,7 @@ table TRF
     uint chromStart;     "Start in genomic sequence"
     uint chromEnd;       "End in genomic sequence"
     uint PeriodSize;     "Period size of the repeat"
-    flaot CopyNumber;       "Number of copies aligned with the consensus pattern"
+    float CopyNumber;       "Number of copies aligned with the consensus pattern"
     uint ConsensusSize;     "Size of consensus pattern (may differ slightly from the period size)"
     float PercentMatches;   "Percent of matches between adjacent copies overall"
     float PercentIndels;     "Percent of indels between adjacent copies overall"

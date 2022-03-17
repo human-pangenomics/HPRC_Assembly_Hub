@@ -36,7 +36,6 @@ do
 
     zcat ${SAMPLE}/${SAMPLE}.${HAP_STR}.trf.bed.gz \
         | sed 's/^.*#\(J.*\)/\1/' \
-        | awk -v 'FS=\t' -v 'OFS=\t' 'NF{NF-=1};1' \
         > ${SAMPLE}/${SAMPLE}.${HAPLOTYPE}.trf.bed
 
 
