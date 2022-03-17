@@ -30,7 +30,7 @@ sudo hostnamectl set-hostname browser-instance
 ## install fail2ban
 apt-get install fail2ban
 
-sed -i '1 a\
+sudo sed -i '1 a\
 35.80.111.76 hprc-browser.ucsc.edu' /etc/hosts
 
 ############################################################################### 
@@ -94,7 +94,7 @@ cd /opt/
 
 sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bedToBigBed
 sudo chmod a+x bedToBigBed
-export PATH=$PATH:/opt
+echo 'export PATH="$PATH:/opt"' >> ~/.bashrc 
 
 ############################################################################### 
 ##                        		  DONE 				                         ##
