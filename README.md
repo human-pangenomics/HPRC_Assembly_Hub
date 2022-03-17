@@ -25,7 +25,7 @@ git clone https://github.com/juklucas/HPRC_Assembly_Hub.git
 ```
 And set the alias HUB_REPO
 ```
-echo 'export HUB_REPO=/home/ubuntu/github/HPRC_Assembly_Hub' >> ~/.bashrc 
+echo 'export HUB_REPO=/home/ubuntu/HPRC_Assembly_Hub' >> ~/.bashrc 
 source .bashrc
 ```
 
