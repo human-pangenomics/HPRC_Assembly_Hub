@@ -1,3 +1,12 @@
 1. add color to repeat masker beds
 	--Then I can make the rmskBed.as file closer to Mark's @ https://github.com/diekhans/T2T-CHM13-hub/blob/master/etc/rmskBed.as
 	--Also check w/ Mark about what he is doing w/ the score field (which can be over 1000 which causes bedToBigBed to complain)
+
+2. Update sedef to include more fields from bedpe files
+
+3. Update DNA_BRNN
+	--include 6 assemblies not in pangenome
+	--make output (1/2) more easily recognizable
+
+4. Update TRF
+	--try to emulate hg38 behavior (where the display shows motif, not period size)

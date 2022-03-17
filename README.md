@@ -6,7 +6,7 @@ We are currently using an EC2 instance to serve the browser files:
 - ubuntu 18.04
 - t3.medium (may need to be adjusted later)
 - dont assign public IP (will use elastic IP)
-- storage = 256GB
+- storage = 800GB
 - create new security group "hprc-assembly-hub"
 
 Be sure to associate an elastic IP address to the instance as we use a DNS "A" record for hprc-browser.ucsc.edu pointing to the elastic IP.
@@ -35,7 +35,12 @@ source .bashrc
 ```
 bash $HUB_REPO/backbone/setup_instance.sh
 ```
-### Add Repeat Masker Tracks
+### Add Tracks
 ```
+
+bash $HUB_REPO/dna_brnn/create_dna_brnn_track.sh
+bash $HUB_REPO/flagger/create_flagger_track.sh
+bash $HUB_REPO/sedef/create_sedef_track.sh
+bash $HUB_REPO/trf/create_trf_track.sh
 bash $HUB_REPO/repeat_masker/create_repeat_masker_track.sh
 ```
