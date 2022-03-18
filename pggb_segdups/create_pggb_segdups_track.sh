@@ -8,16 +8,15 @@
 ## Get data from S3 submission
 cd ~
 
-mkdir flagger_tmp
-cd flagger_tmp
+mkdir pggb_segdups_tmp
+cd pggb_segdups_tmp
 
 aws --no-sign-request s3 cp \
-    --recursive \
-    s3://human-pangenomics/submissions/e9ad8022-1b30-11ec-ab04-0a13c5208311--COVERAGE_ANALYSIS_Y1_GENBANK/FLAGGER/JAN_09_2022/FINAL_HIFI_BASED/FLAGGER_HIFI_ASM_SIMPLIFIED_BEDS/UNRELIABLE_ONLY_NO_MT/ \
+    s3://human-pangenomics/pangenomes/scratch/2021_11_16_pggb_wgg.88/untangle/pggb_freeze1_untangle.vs.chm13.segdup_calls.bed.gz \
     .
 
 
-readarray -t ASSEMBLIES <${HUB_REPO}/assembly_info/assembly_list.txt
+readarray -t ASSEMBLIES <${HUB_REPO}/assembly_info/pangenome_assembly_list.txt
 
 
 for ASSEMBLY in "${ASSEMBLIES[@]}"
@@ -32,37 +31,31 @@ do
         HAP_STR=maternal
     fi
 
-    ## Bed has both haplotypes. We must split the haplotypes for the browser
-    grep "^${SAMPLE}#${HAPLOTYPE}#" ${SAMPLE}.hifi.flagger_final.bed > ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.bed
+    ## Bed all pangnome haplotypes. We must split the haplotypes for the browser
+    grep "^${SAMPLE}#${HAPLOTYPE}#" pggb_freeze1_untangle.vs.chm13.segdup_calls.bed.gz > ${SAMPLE}.${HAPLOTYPE}.pggb_segdups.bed
 
     ## Strip off sample name and haplotype int (to match chrom.sizes file)
     sed 's/^.*#\(J.*\)/\1/' \
-        ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.bed \
-        > ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.stripped.bed
+        ${SAMPLE}.${HAPLOTYPE}.pggb_segdups.bed \
+        > ${SAMPLE}.${HAPLOTYPE}.pggb_segdups.stripped.bed
 
     bedToBigBed \
-        -extraIndex=name \
-        -type=bed9 \
+        -type=bed3+6 \
         -tab \
-        ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.stripped.bed \
-        -as=${HUB_REPO}/flagger/flagger.as \
+        ${SAMPLE}.${HAPLOTYPE}.pggb_segdups.stripped.bed \
+        -as=${HUB_REPO}/pggb_segdups/pggb_segdups.as \
         /var/www/html/hub/$ASSEMBLY/chrom.sizes \
-        /var/www/html/hub/$ASSEMBLY/flagger.bb
+        /var/www/html/hub/$ASSEMBLY/pggb_segdups.bb
 
 
-    ## copy over flagger trackDb and add to main trackDb.txt file
-    cp ${HUB_REPO}/flagger/flagger_trackDb.txt /var/www/html/hub/$ASSEMBLY/flagger_trackDb.txt 
+    ## copy over pggb_segdups trackDb and add to main trackDb.txt file
+    cp ${HUB_REPO}/pggb_segdups/pggb_segdups_trackDb.txt /var/www/html/hub/$ASSEMBLY/pggb_segdups_trackDb.txt 
 
     ## Add import statement if it's not already there
-    if grep -q 'include flagger_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then
+    if grep -q 'include pggb_segdups_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then
         echo found
     else
-        sed -i '1 i\include flagger_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt
+        sed -i '1 i\include pggb_segdups_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt
     fi
 
 done
-
-
-cd ~
-rm flagger_tmp
-

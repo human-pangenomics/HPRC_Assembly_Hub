@@ -43,4 +43,5 @@ bash $HUB_REPO/flagger/create_flagger_track.sh
 bash $HUB_REPO/sedef/create_sedef_track.sh
 bash $HUB_REPO/trf/create_trf_track.sh
 bash $HUB_REPO/repeat_masker/create_repeat_masker_track.sh
+bash $HUB_REPO/pggb_segdups/create_pggb_segdups_track.sh
 ```
