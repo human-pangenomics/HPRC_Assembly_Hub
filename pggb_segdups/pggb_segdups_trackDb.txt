@@ -1,0 +1,14 @@
+##
+# varRep
+##
+track PGGB_SegDups
+shortLabel PGGB_SegDups
+longLabel Segmental Duplications Called In PGGB Pangenome
+group varRep
+visibility hide
+itemRgb off
+maxItems 1000000
+maxWindowToDraw 100000000
+type bigBed 3 + 6
+bigDataUrl pggb_segdups.bb
+priority 1
