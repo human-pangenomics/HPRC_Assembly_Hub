@@ -11,33 +11,29 @@ We are currently using an EC2 instance to serve the browser files:
 
 Be sure to associate an elastic IP address to the instance as we use a DNS "A" record for hprc-browser.ucsc.edu pointing to the elastic IP.
 
-## Prepare For Run
+## Preparation
 1. Install the AWS CLI:
 ```
 sudo apt install awscli -y
 ```
 There is no need to setup permissions, we are pulling files w/out egress fees
 
-2. Get the files from this repo
-```
-cd ~
-git clone https://github.com/juklucas/HPRC_Assembly_Hub.git
-```
-And set the alias HUB_REPO
-```
-echo 'export HUB_REPO=/home/ubuntu/HPRC_Assembly_Hub' >> ~/.bashrc 
-source .bashrc
-```
-
 ## Create The Hub
 
-### Copy Over Marina's Hub
+Run shell commands in:
 ```
-bash $HUB_REPO/backbone/setup_instance.sh
+$HUB_REPO/backbone/setup_instance.sh
 ```
+(Can't be executed as a script)
+
+**These commands:**
+* Download this repo
+* Prepares instance (minimal server setup, install Apache, redirect traffic)
+* Copy Over Marina's Hub
+* Install bedToBigBed
+
 ### Add Tracks
 ```
-
 bash $HUB_REPO/dna_brnn/create_dna_brnn_track.sh
 bash $HUB_REPO/flagger/create_flagger_track.sh
 bash $HUB_REPO/sedef/create_sedef_track.sh
