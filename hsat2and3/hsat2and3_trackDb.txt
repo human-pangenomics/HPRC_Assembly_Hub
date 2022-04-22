@@ -1,0 +1,14 @@
+##
+# variation
+##
+track HSat2_HSat3
+shortLabel HSat2_HSat3
+longLabel HSat2 and HSat3 arrays
+group varRep
+visibility hide
+itemRgb on
+maxItems 1000000
+maxWindowToDraw 100000000
+type bigBed 9
+bigDataUrl hsat.bb
+priority 1
