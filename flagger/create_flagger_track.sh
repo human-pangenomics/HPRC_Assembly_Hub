@@ -13,7 +13,7 @@ cd flagger_tmp
 
 aws --no-sign-request s3 cp \
     --recursive \
-    s3://human-pangenomics/submissions/e9ad8022-1b30-11ec-ab04-0a13c5208311--COVERAGE_ANALYSIS_Y1_GENBANK/FLAGGER/JAN_09_2022/FINAL_HIFI_BASED/FLAGGER_HIFI_ASM_SIMPLIFIED_BEDS/UNRELIABLE_ONLY_NO_MT/ \
+    s3://human-pangenomics/submissions/e9ad8022-1b30-11ec-ab04-0a13c5208311--COVERAGE_ANALYSIS_Y1_GENBANK/FLAGGER/APR_08_2022/FINAL_HIFI_BASED/FLAGGER_HIFI_ASM_SIMPLIFIED_BEDS/ \
     .
 
 
@@ -33,7 +33,7 @@ do
     fi
 
     ## Bed has both haplotypes. We must split the haplotypes for the browser
-    grep "^${SAMPLE}#${HAPLOTYPE}#" ${SAMPLE}.hifi.flagger_final.bed > ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.bed
+    grep "^${SAMPLE}#${HAPLOTYPE}#" ${SAMPLE}/${SAMPLE}.hifi.flagger_final.simplified.unreliable_only.no_MT.bed > ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.bed
 
     ## Strip off sample name and haplotype int (to match chrom.sizes file)
     sed 's/^.*#\(J.*\)/\1/' \
