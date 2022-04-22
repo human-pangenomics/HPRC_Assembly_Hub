@@ -44,7 +44,7 @@ do
         ${SAMPLE}.${HAPLOTYPE}.hsat2and3.stripped.bed \
         -as=${HUB_REPO}/hsat2and3/hsat2and3.as \
         /var/www/html/hub/$ASSEMBLY/chrom.sizes \
-        /var/www/html/hub/$ASSEMBLY/hsat.bb
+        /var/www/html/hub/$ASSEMBLY/hsat2and3.bb
 
 
     ## copy over hsat2and3 trackDb and add to main trackDb.txt file
@@ -58,8 +58,4 @@ do
     fi
 
 done
-
-
-cd ~
-rm flagger_tmp
 
