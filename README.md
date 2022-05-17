@@ -11,13 +11,6 @@ We are currently using an EC2 instance to serve the browser files:
 
 Be sure to associate an elastic IP address to the instance as we use a DNS "A" record for hprc-browser.ucsc.edu pointing to the elastic IP.
 
-## Preparation
-1. Install the AWS CLI:
-```
-sudo apt install awscli -y
-```
-There is no need to setup permissions, we are pulling files w/out egress fees
-
 ## Create The Hub
 
 Run shell commands in:
@@ -40,4 +33,6 @@ bash $HUB_REPO/sedef/create_sedef_track.sh
 bash $HUB_REPO/trf/create_trf_track.sh
 bash $HUB_REPO/repeat_masker/create_repeat_masker_track.sh
 bash $HUB_REPO/pggb_segdups/create_pggb_segdups_track.sh
+bash $HUB_REPO/alpha_sat/create_alpha_sat_track.sh
+bash $HUB_REPO/hsat2and3/create_hsat2and3_track.sh
 ```

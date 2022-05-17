@@ -13,7 +13,7 @@ git clone https://github.com/juklucas/HPRC_Assembly_Hub.git
 cd HPRC_Assembly_Hub
 
 ## set variable to hold assembly hub git
-HUB_REPO=$(pwd)
+echo 'export HUB_REPO=/home/ubuntu/HPRC_Assembly_Hub/' >> ~/.bashrc
 
 
 ############################################################################### 
@@ -32,6 +32,10 @@ apt-get install fail2ban
 
 sudo sed -i '1 a\
 35.80.111.76 hprc-browser.ucsc.edu' /etc/hosts
+
+## Install the AWS CLI (no need to setup permissions, we are pulling files w/out egress fees)
+sudo apt install awscli -y
+
 
 ############################################################################### 
 ##                              Install Apache                               ##
