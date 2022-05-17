@@ -1,7 +1,7 @@
 ##
 # variation
 ##
-track ASat HOR SF
+track ASat_HOR_SF
 shortLabel ASat HOR SF
 longLabel ASat HOR+SF classification: monomer-by-monomer annotation of human alpha satellite higher-order repeats
 group varRep

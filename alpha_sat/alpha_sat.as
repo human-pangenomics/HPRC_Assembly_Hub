@@ -1,4 +1,4 @@
-table ASat HOR SF
+table ASat_HOR_SF
 "ASat HOR+SF classification: monomer-by-monomer annotation of human alpha satellite higher-order repeats"
     (
     string chrom;    "Genomic sequence name"
