@@ -1,0 +1,1151 @@
+genome GRCh38
+twoBitPath GRCh38/GRCh38.2bit
+trackDb GRCh38/trackDb.txt
+organism GRCh38
+description GRCh38
+scientificName GRCh38
+defaultPos chr1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic GRCh38
+transBlat 52.32.252.169 4040 dynamic GRCh38
+isPcr 52.32.252.169 4040 dynamic GRCh38
+
+genome CHM13
+twoBitPath CHM13/CHM13.2bit
+trackDb CHM13/trackDb.txt
+organism CHM13
+description CHM13
+scientificName CHM13
+defaultPos chr1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic CHM13
+transBlat 52.32.252.169 4040 dynamic CHM13
+isPcr 52.32.252.169 4040 dynamic CHM13
+
+genome HG00438.1
+twoBitPath HG00438.1/HG00438.1.2bit
+trackDb HG00438.1/trackDb.txt
+organism HG00438.1
+description HG00438.1
+scientificName HG00438.1
+defaultPos JAHBCB010000018.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG00438.1
+transBlat 52.32.252.169 4040 dynamic HG00438.1
+isPcr 52.32.252.169 4040 dynamic HG00438.1
+
+genome HG00438.2
+twoBitPath HG00438.2/HG00438.2.2bit
+trackDb HG00438.2/trackDb.txt
+organism HG00438.2
+description HG00438.2
+scientificName HG00438.2
+defaultPos JAHBCA010000002.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG00438.2
+transBlat 52.32.252.169 4040 dynamic HG00438.2
+isPcr 52.32.252.169 4040 dynamic HG00438.2
+
+genome HG00621.1
+twoBitPath HG00621.1/HG00621.1.2bit
+trackDb HG00621.1/trackDb.txt
+organism HG00621.1
+description HG00621.1
+scientificName HG00621.1
+defaultPos JAHBCD010000010.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG00621.1
+transBlat 52.32.252.169 4040 dynamic HG00621.1
+isPcr 52.32.252.169 4040 dynamic HG00621.1
+
+genome HG00621.2
+twoBitPath HG00621.2/HG00621.2.2bit
+trackDb HG00621.2/trackDb.txt
+organism HG00621.2
+description HG00621.2
+scientificName HG00621.2
+defaultPos JAHBCC010000006.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG00621.2
+transBlat 52.32.252.169 4040 dynamic HG00621.2
+isPcr 52.32.252.169 4040 dynamic HG00621.2
+
+genome HG00673.1
+twoBitPath HG00673.1/HG00673.1.2bit
+trackDb HG00673.1/trackDb.txt
+organism HG00673.1
+description HG00673.1
+scientificName HG00673.1
+defaultPos JAHBBZ010000005.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG00673.1
+transBlat 52.32.252.169 4040 dynamic HG00673.1
+isPcr 52.32.252.169 4040 dynamic HG00673.1
+
+genome HG00673.2
+twoBitPath HG00673.2/HG00673.2.2bit
+trackDb HG00673.2/trackDb.txt
+organism HG00673.2
+description HG00673.2
+scientificName HG00673.2
+defaultPos JAHBBY010000004.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG00673.2
+transBlat 52.32.252.169 4040 dynamic HG00673.2
+isPcr 52.32.252.169 4040 dynamic HG00673.2
+
+genome HG00733.1
+twoBitPath HG00733.1/HG00733.1.2bit
+trackDb HG00733.1/trackDb.txt
+organism HG00733.1
+description HG00733.1
+scientificName HG00733.1
+defaultPos JAHEPQ010000017.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG00733.1
+transBlat 52.32.252.169 4040 dynamic HG00733.1
+isPcr 52.32.252.169 4040 dynamic HG00733.1
+
+genome HG00733.2
+twoBitPath HG00733.2/HG00733.2.2bit
+trackDb HG00733.2/trackDb.txt
+organism HG00733.2
+description HG00733.2
+scientificName HG00733.2
+defaultPos JAHEPP010000014.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG00733.2
+transBlat 52.32.252.169 4040 dynamic HG00733.2
+isPcr 52.32.252.169 4040 dynamic HG00733.2
+
+genome HG00735.1
+twoBitPath HG00735.1/HG00735.1.2bit
+trackDb HG00735.1/trackDb.txt
+organism HG00735.1
+description HG00735.1
+scientificName HG00735.1
+defaultPos JAHBCH010000004.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG00735.1
+transBlat 52.32.252.169 4040 dynamic HG00735.1
+isPcr 52.32.252.169 4040 dynamic HG00735.1
+
+genome HG00735.2
+twoBitPath HG00735.2/HG00735.2.2bit
+trackDb HG00735.2/trackDb.txt
+organism HG00735.2
+description HG00735.2
+scientificName HG00735.2
+defaultPos JAHBCG010000001.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG00735.2
+transBlat 52.32.252.169 4040 dynamic HG00735.2
+isPcr 52.32.252.169 4040 dynamic HG00735.2
+
+genome HG00741.1
+twoBitPath HG00741.1/HG00741.1.2bit
+trackDb HG00741.1/trackDb.txt
+organism HG00741.1
+description HG00741.1
+scientificName HG00741.1
+defaultPos JAHALY010000019.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG00741.1
+transBlat 52.32.252.169 4040 dynamic HG00741.1
+isPcr 52.32.252.169 4040 dynamic HG00741.1
+
+genome HG00741.2
+twoBitPath HG00741.2/HG00741.2.2bit
+trackDb HG00741.2/trackDb.txt
+organism HG00741.2
+description HG00741.2
+scientificName HG00741.2
+defaultPos JAHALX010000012.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG00741.2
+transBlat 52.32.252.169 4040 dynamic HG00741.2
+isPcr 52.32.252.169 4040 dynamic HG00741.2
+
+genome HG01071.1
+twoBitPath HG01071.1/HG01071.1.2bit
+trackDb HG01071.1/trackDb.txt
+organism HG01071.1
+description HG01071.1
+scientificName HG01071.1
+defaultPos JAHBCF010000029.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01071.1
+transBlat 52.32.252.169 4040 dynamic HG01071.1
+isPcr 52.32.252.169 4040 dynamic HG01071.1
+
+genome HG01071.2
+twoBitPath HG01071.2/HG01071.2.2bit
+trackDb HG01071.2/trackDb.txt
+organism HG01071.2
+description HG01071.2
+scientificName HG01071.2
+defaultPos JAHBCE010000044.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01071.2
+transBlat 52.32.252.169 4040 dynamic HG01071.2
+isPcr 52.32.252.169 4040 dynamic HG01071.2
+
+genome HG01106.1
+twoBitPath HG01106.1/HG01106.1.2bit
+trackDb HG01106.1/trackDb.txt
+organism HG01106.1
+description HG01106.1
+scientificName HG01106.1
+defaultPos JAHAMC010000017.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01106.1
+transBlat 52.32.252.169 4040 dynamic HG01106.1
+isPcr 52.32.252.169 4040 dynamic HG01106.1
+
+genome HG01106.2
+twoBitPath HG01106.2/HG01106.2.2bit
+trackDb HG01106.2/trackDb.txt
+organism HG01106.2
+description HG01106.2
+scientificName HG01106.2
+defaultPos JAHAMB010000007.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01106.2
+transBlat 52.32.252.169 4040 dynamic HG01106.2
+isPcr 52.32.252.169 4040 dynamic HG01106.2
+
+genome HG01109.1
+twoBitPath HG01109.1/HG01109.1.2bit
+trackDb HG01109.1/trackDb.txt
+organism HG01109.1
+description HG01109.1
+scientificName HG01109.1
+defaultPos JAHEPA010000005.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01109.1
+transBlat 52.32.252.169 4040 dynamic HG01109.1
+isPcr 52.32.252.169 4040 dynamic HG01109.1
+
+genome HG01109.2
+twoBitPath HG01109.2/HG01109.2.2bit
+trackDb HG01109.2/trackDb.txt
+organism HG01109.2
+description HG01109.2
+scientificName HG01109.2
+defaultPos JAHEOZ010000076.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01109.2
+transBlat 52.32.252.169 4040 dynamic HG01109.2
+isPcr 52.32.252.169 4040 dynamic HG01109.2
+
+genome HG01123.1
+twoBitPath HG01123.1/HG01123.1.2bit
+trackDb HG01123.1/trackDb.txt
+organism HG01123.1
+description HG01123.1
+scientificName HG01123.1
+defaultPos JAGYYZ010000011.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01123.1
+transBlat 52.32.252.169 4040 dynamic HG01123.1
+isPcr 52.32.252.169 4040 dynamic HG01123.1
+
+genome HG01123.2
+twoBitPath HG01123.2/HG01123.2.2bit
+trackDb HG01123.2/trackDb.txt
+organism HG01123.2
+description HG01123.2
+scientificName HG01123.2
+defaultPos JAGYYY010000013.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01123.2
+transBlat 52.32.252.169 4040 dynamic HG01123.2
+isPcr 52.32.252.169 4040 dynamic HG01123.2
+
+genome HG01175.1
+twoBitPath HG01175.1/HG01175.1.2bit
+trackDb HG01175.1/trackDb.txt
+organism HG01175.1
+description HG01175.1
+scientificName HG01175.1
+defaultPos JAHAMA010000010.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01175.1
+transBlat 52.32.252.169 4040 dynamic HG01175.1
+isPcr 52.32.252.169 4040 dynamic HG01175.1
+
+genome HG01175.2
+twoBitPath HG01175.2/HG01175.2.2bit
+trackDb HG01175.2/trackDb.txt
+organism HG01175.2
+description HG01175.2
+scientificName HG01175.2
+defaultPos JAHALZ010000025.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01175.2
+transBlat 52.32.252.169 4040 dynamic HG01175.2
+isPcr 52.32.252.169 4040 dynamic HG01175.2
+
+genome HG01243.1
+twoBitPath HG01243.1/HG01243.1.2bit
+trackDb HG01243.1/trackDb.txt
+organism HG01243.1
+description HG01243.1
+scientificName HG01243.1
+defaultPos JAHEOY010000008.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01243.1
+transBlat 52.32.252.169 4040 dynamic HG01243.1
+isPcr 52.32.252.169 4040 dynamic HG01243.1
+
+genome HG01243.2
+twoBitPath HG01243.2/HG01243.2.2bit
+trackDb HG01243.2/trackDb.txt
+organism HG01243.2
+description HG01243.2
+scientificName HG01243.2
+defaultPos JAHEOX010000003.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01243.2
+transBlat 52.32.252.169 4040 dynamic HG01243.2
+isPcr 52.32.252.169 4040 dynamic HG01243.2
+
+genome HG01258.1
+twoBitPath HG01258.1/HG01258.1.2bit
+trackDb HG01258.1/trackDb.txt
+organism HG01258.1
+description HG01258.1
+scientificName HG01258.1
+defaultPos JAGYYV010000025.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01258.1
+transBlat 52.32.252.169 4040 dynamic HG01258.1
+isPcr 52.32.252.169 4040 dynamic HG01258.1
+
+genome HG01258.2
+twoBitPath HG01258.2/HG01258.2.2bit
+trackDb HG01258.2/trackDb.txt
+organism HG01258.2
+description HG01258.2
+scientificName HG01258.2
+defaultPos JAGYYU010000009.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01258.2
+transBlat 52.32.252.169 4040 dynamic HG01258.2
+isPcr 52.32.252.169 4040 dynamic HG01258.2
+
+genome HG01358.1
+twoBitPath HG01358.1/HG01358.1.2bit
+trackDb HG01358.1/trackDb.txt
+organism HG01358.1
+description HG01358.1
+scientificName HG01358.1
+defaultPos JAGYZB010000003.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01358.1
+transBlat 52.32.252.169 4040 dynamic HG01358.1
+isPcr 52.32.252.169 4040 dynamic HG01358.1
+
+genome HG01358.2
+twoBitPath HG01358.2/HG01358.2.2bit
+trackDb HG01358.2/trackDb.txt
+organism HG01358.2
+description HG01358.2
+scientificName HG01358.2
+defaultPos JAGYZA010000022.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01358.2
+transBlat 52.32.252.169 4040 dynamic HG01358.2
+isPcr 52.32.252.169 4040 dynamic HG01358.2
+
+genome HG01361.1
+twoBitPath HG01361.1/HG01361.1.2bit
+trackDb HG01361.1/trackDb.txt
+organism HG01361.1
+description HG01361.1
+scientificName HG01361.1
+defaultPos JAGYYX010000012.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01361.1
+transBlat 52.32.252.169 4040 dynamic HG01361.1
+isPcr 52.32.252.169 4040 dynamic HG01361.1
+
+genome HG01361.2
+twoBitPath HG01361.2/HG01361.2.2bit
+trackDb HG01361.2/trackDb.txt
+organism HG01361.2
+description HG01361.2
+scientificName HG01361.2
+defaultPos JAGYYW010000035.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01361.2
+transBlat 52.32.252.169 4040 dynamic HG01361.2
+isPcr 52.32.252.169 4040 dynamic HG01361.2
+
+genome HG01891.1
+twoBitPath HG01891.1/HG01891.1.2bit
+trackDb HG01891.1/trackDb.txt
+organism HG01891.1
+description HG01891.1
+scientificName HG01891.1
+defaultPos JAGYVO010000001.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01891.1
+transBlat 52.32.252.169 4040 dynamic HG01891.1
+isPcr 52.32.252.169 4040 dynamic HG01891.1
+
+genome HG01891.2
+twoBitPath HG01891.2/HG01891.2.2bit
+trackDb HG01891.2/trackDb.txt
+organism HG01891.2
+description HG01891.2
+scientificName HG01891.2
+defaultPos JAGYVN010000003.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01891.2
+transBlat 52.32.252.169 4040 dynamic HG01891.2
+isPcr 52.32.252.169 4040 dynamic HG01891.2
+
+genome HG01928.1
+twoBitPath HG01928.1/HG01928.1.2bit
+trackDb HG01928.1/trackDb.txt
+organism HG01928.1
+description HG01928.1
+scientificName HG01928.1
+defaultPos JAGYVQ010000005.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01928.1
+transBlat 52.32.252.169 4040 dynamic HG01928.1
+isPcr 52.32.252.169 4040 dynamic HG01928.1
+
+genome HG01928.2
+twoBitPath HG01928.2/HG01928.2.2bit
+trackDb HG01928.2/trackDb.txt
+organism HG01928.2
+description HG01928.2
+scientificName HG01928.2
+defaultPos JAGYVP010000010.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01928.2
+transBlat 52.32.252.169 4040 dynamic HG01928.2
+isPcr 52.32.252.169 4040 dynamic HG01928.2
+
+genome HG01952.1
+twoBitPath HG01952.1/HG01952.1.2bit
+trackDb HG01952.1/trackDb.txt
+organism HG01952.1
+description HG01952.1
+scientificName HG01952.1
+defaultPos JAHAME010000022.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01952.1
+transBlat 52.32.252.169 4040 dynamic HG01952.1
+isPcr 52.32.252.169 4040 dynamic HG01952.1
+
+genome HG01952.2
+twoBitPath HG01952.2/HG01952.2.2bit
+trackDb HG01952.2/trackDb.txt
+organism HG01952.2
+description HG01952.2
+scientificName HG01952.2
+defaultPos JAHAMD010000002.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01952.2
+transBlat 52.32.252.169 4040 dynamic HG01952.2
+isPcr 52.32.252.169 4040 dynamic HG01952.2
+
+genome HG01978.1
+twoBitPath HG01978.1/HG01978.1.2bit
+trackDb HG01978.1/trackDb.txt
+organism HG01978.1
+description HG01978.1
+scientificName HG01978.1
+defaultPos JAGYVS010000001.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01978.1
+transBlat 52.32.252.169 4040 dynamic HG01978.1
+isPcr 52.32.252.169 4040 dynamic HG01978.1
+
+genome HG01978.2
+twoBitPath HG01978.2/HG01978.2.2bit
+trackDb HG01978.2/trackDb.txt
+organism HG01978.2
+description HG01978.2
+scientificName HG01978.2
+defaultPos JAGYVR010000003.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG01978.2
+transBlat 52.32.252.169 4040 dynamic HG01978.2
+isPcr 52.32.252.169 4040 dynamic HG01978.2
+
+genome HG02055.1
+twoBitPath HG02055.1/HG02055.1.2bit
+trackDb HG02055.1/trackDb.txt
+organism HG02055.1
+description HG02055.1
+scientificName HG02055.1
+defaultPos JAHEPK010000017.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02055.1
+transBlat 52.32.252.169 4040 dynamic HG02055.1
+isPcr 52.32.252.169 4040 dynamic HG02055.1
+
+genome HG02055.2
+twoBitPath HG02055.2/HG02055.2.2bit
+trackDb HG02055.2/trackDb.txt
+organism HG02055.2
+description HG02055.2
+scientificName HG02055.2
+defaultPos JAHEPJ010000007.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02055.2
+transBlat 52.32.252.169 4040 dynamic HG02055.2
+isPcr 52.32.252.169 4040 dynamic HG02055.2
+
+genome HG02080.1
+twoBitPath HG02080.1/HG02080.1.2bit
+trackDb HG02080.1/trackDb.txt
+organism HG02080.1
+description HG02080.1
+scientificName HG02080.1
+defaultPos JAHEOW010000001.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02080.1
+transBlat 52.32.252.169 4040 dynamic HG02080.1
+isPcr 52.32.252.169 4040 dynamic HG02080.1
+
+genome HG02080.2
+twoBitPath HG02080.2/HG02080.2.2bit
+trackDb HG02080.2/trackDb.txt
+organism HG02080.2
+description HG02080.2
+scientificName HG02080.2
+defaultPos JAHEOV010000024.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02080.2
+transBlat 52.32.252.169 4040 dynamic HG02080.2
+isPcr 52.32.252.169 4040 dynamic HG02080.2
+
+genome HG02109.1
+twoBitPath HG02109.1/HG02109.1.2bit
+trackDb HG02109.1/trackDb.txt
+organism HG02109.1
+description HG02109.1
+scientificName HG02109.1
+defaultPos JAHEPG010000017.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02109.1
+transBlat 52.32.252.169 4040 dynamic HG02109.1
+isPcr 52.32.252.169 4040 dynamic HG02109.1
+
+genome HG02109.2
+twoBitPath HG02109.2/HG02109.2.2bit
+trackDb HG02109.2/trackDb.txt
+organism HG02109.2
+description HG02109.2
+scientificName HG02109.2
+defaultPos JAHEPF010000012.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02109.2
+transBlat 52.32.252.169 4040 dynamic HG02109.2
+isPcr 52.32.252.169 4040 dynamic HG02109.2
+
+genome HG02145.1
+twoBitPath HG02145.1/HG02145.1.2bit
+trackDb HG02145.1/trackDb.txt
+organism HG02145.1
+description HG02145.1
+scientificName HG02145.1
+defaultPos JAHKSG010000007.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02145.1
+transBlat 52.32.252.169 4040 dynamic HG02145.1
+isPcr 52.32.252.169 4040 dynamic HG02145.1
+
+genome HG02145.2
+twoBitPath HG02145.2/HG02145.2.2bit
+trackDb HG02145.2/trackDb.txt
+organism HG02145.2
+description HG02145.2
+scientificName HG02145.2
+defaultPos JAHKSF010000043.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02145.2
+transBlat 52.32.252.169 4040 dynamic HG02145.2
+isPcr 52.32.252.169 4040 dynamic HG02145.2
+
+genome HG02148.1
+twoBitPath HG02148.1/HG02148.1.2bit
+trackDb HG02148.1/trackDb.txt
+organism HG02148.1
+description HG02148.1
+scientificName HG02148.1
+defaultPos JAHAMG010000054.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02148.1
+transBlat 52.32.252.169 4040 dynamic HG02148.1
+isPcr 52.32.252.169 4040 dynamic HG02148.1
+
+genome HG02148.2
+twoBitPath HG02148.2/HG02148.2.2bit
+trackDb HG02148.2/trackDb.txt
+organism HG02148.2
+description HG02148.2
+scientificName HG02148.2
+defaultPos JAHAMF010000003.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02148.2
+transBlat 52.32.252.169 4040 dynamic HG02148.2
+isPcr 52.32.252.169 4040 dynamic HG02148.2
+
+genome HG02257.1
+twoBitPath HG02257.1/HG02257.1.2bit
+trackDb HG02257.1/trackDb.txt
+organism HG02257.1
+description HG02257.1
+scientificName HG02257.1
+defaultPos JAGYVI010000020.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02257.1
+transBlat 52.32.252.169 4040 dynamic HG02257.1
+isPcr 52.32.252.169 4040 dynamic HG02257.1
+
+genome HG02257.2
+twoBitPath HG02257.2/HG02257.2.2bit
+trackDb HG02257.2/trackDb.txt
+organism HG02257.2
+description HG02257.2
+scientificName HG02257.2
+defaultPos JAGYVH010000034.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02257.2
+transBlat 52.32.252.169 4040 dynamic HG02257.2
+isPcr 52.32.252.169 4040 dynamic HG02257.2
+
+genome HG02486.1
+twoBitPath HG02486.1/HG02486.1.2bit
+trackDb HG02486.1/trackDb.txt
+organism HG02486.1
+description HG02486.1
+scientificName HG02486.1
+defaultPos JAGYVM010000018.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02486.1
+transBlat 52.32.252.169 4040 dynamic HG02486.1
+isPcr 52.32.252.169 4040 dynamic HG02486.1
+
+genome HG02486.2
+twoBitPath HG02486.2/HG02486.2.2bit
+trackDb HG02486.2/trackDb.txt
+organism HG02486.2
+description HG02486.2
+scientificName HG02486.2
+defaultPos JAGYVL010000002.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02486.2
+transBlat 52.32.252.169 4040 dynamic HG02486.2
+isPcr 52.32.252.169 4040 dynamic HG02486.2
+
+genome HG02559.1
+twoBitPath HG02559.1/HG02559.1.2bit
+trackDb HG02559.1/trackDb.txt
+organism HG02559.1
+description HG02559.1
+scientificName HG02559.1
+defaultPos JAGYVK010000015.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02559.1
+transBlat 52.32.252.169 4040 dynamic HG02559.1
+isPcr 52.32.252.169 4040 dynamic HG02559.1
+
+genome HG02559.2
+twoBitPath HG02559.2/HG02559.2.2bit
+trackDb HG02559.2/trackDb.txt
+organism HG02559.2
+description HG02559.2
+scientificName HG02559.2
+defaultPos JAGYVJ010000005.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02559.2
+transBlat 52.32.252.169 4040 dynamic HG02559.2
+isPcr 52.32.252.169 4040 dynamic HG02559.2
+
+genome HG02572.1
+twoBitPath HG02572.1/HG02572.1.2bit
+trackDb HG02572.1/trackDb.txt
+organism HG02572.1
+description HG02572.1
+scientificName HG02572.1
+defaultPos JAHAOW010000049.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02572.1
+transBlat 52.32.252.169 4040 dynamic HG02572.1
+isPcr 52.32.252.169 4040 dynamic HG02572.1
+
+genome HG02572.2
+twoBitPath HG02572.2/HG02572.2.2bit
+trackDb HG02572.2/trackDb.txt
+organism HG02572.2
+description HG02572.2
+scientificName HG02572.2
+defaultPos JAHAOV010000015.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02572.2
+transBlat 52.32.252.169 4040 dynamic HG02572.2
+isPcr 52.32.252.169 4040 dynamic HG02572.2
+
+genome HG02622.1
+twoBitPath HG02622.1/HG02622.1.2bit
+trackDb HG02622.1/trackDb.txt
+organism HG02622.1
+description HG02622.1
+scientificName HG02622.1
+defaultPos JAHAOO010000014.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02622.1
+transBlat 52.32.252.169 4040 dynamic HG02622.1
+isPcr 52.32.252.169 4040 dynamic HG02622.1
+
+genome HG02622.2
+twoBitPath HG02622.2/HG02622.2.2bit
+trackDb HG02622.2/trackDb.txt
+organism HG02622.2
+description HG02622.2
+scientificName HG02622.2
+defaultPos JAHAON010000010.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02622.2
+transBlat 52.32.252.169 4040 dynamic HG02622.2
+isPcr 52.32.252.169 4040 dynamic HG02622.2
+
+genome HG02630.1
+twoBitPath HG02630.1/HG02630.1.2bit
+trackDb HG02630.1/trackDb.txt
+organism HG02630.1
+description HG02630.1
+scientificName HG02630.1
+defaultPos JAHAOQ010000027.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02630.1
+transBlat 52.32.252.169 4040 dynamic HG02630.1
+isPcr 52.32.252.169 4040 dynamic HG02630.1
+
+genome HG02630.2
+twoBitPath HG02630.2/HG02630.2.2bit
+trackDb HG02630.2/trackDb.txt
+organism HG02630.2
+description HG02630.2
+scientificName HG02630.2
+defaultPos JAHAOP010000012.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02630.2
+transBlat 52.32.252.169 4040 dynamic HG02630.2
+isPcr 52.32.252.169 4040 dynamic HG02630.2
+
+genome HG02717.1
+twoBitPath HG02717.1/HG02717.1.2bit
+trackDb HG02717.1/trackDb.txt
+organism HG02717.1
+description HG02717.1
+scientificName HG02717.1
+defaultPos JAHAOS010000030.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02717.1
+transBlat 52.32.252.169 4040 dynamic HG02717.1
+isPcr 52.32.252.169 4040 dynamic HG02717.1
+
+genome HG02717.2
+twoBitPath HG02717.2/HG02717.2.2bit
+trackDb HG02717.2/trackDb.txt
+organism HG02717.2
+description HG02717.2
+scientificName HG02717.2
+defaultPos JAHAOR010000058.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02717.2
+transBlat 52.32.252.169 4040 dynamic HG02717.2
+isPcr 52.32.252.169 4040 dynamic HG02717.2
+
+genome HG02723.1
+twoBitPath HG02723.1/HG02723.1.2bit
+trackDb HG02723.1/trackDb.txt
+organism HG02723.1
+description HG02723.1
+scientificName HG02723.1
+defaultPos JAHEOU010000008.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02723.1
+transBlat 52.32.252.169 4040 dynamic HG02723.1
+isPcr 52.32.252.169 4040 dynamic HG02723.1
+
+genome HG02723.2
+twoBitPath HG02723.2/HG02723.2.2bit
+trackDb HG02723.2/trackDb.txt
+organism HG02723.2
+description HG02723.2
+scientificName HG02723.2
+defaultPos JAHEOT010000009.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02723.2
+transBlat 52.32.252.169 4040 dynamic HG02723.2
+isPcr 52.32.252.169 4040 dynamic HG02723.2
+
+genome HG02818.1
+twoBitPath HG02818.1/HG02818.1.2bit
+trackDb HG02818.1/trackDb.txt
+organism HG02818.1
+description HG02818.1
+scientificName HG02818.1
+defaultPos JAHEOS010000052.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02818.1
+transBlat 52.32.252.169 4040 dynamic HG02818.1
+isPcr 52.32.252.169 4040 dynamic HG02818.1
+
+genome HG02818.2
+twoBitPath HG02818.2/HG02818.2.2bit
+trackDb HG02818.2/trackDb.txt
+organism HG02818.2
+description HG02818.2
+scientificName HG02818.2
+defaultPos JAHEOR010000003.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02818.2
+transBlat 52.32.252.169 4040 dynamic HG02818.2
+isPcr 52.32.252.169 4040 dynamic HG02818.2
+
+genome HG02886.1
+twoBitPath HG02886.1/HG02886.1.2bit
+trackDb HG02886.1/trackDb.txt
+organism HG02886.1
+description HG02886.1
+scientificName HG02886.1
+defaultPos JAHAOU010000073.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02886.1
+transBlat 52.32.252.169 4040 dynamic HG02886.1
+isPcr 52.32.252.169 4040 dynamic HG02886.1
+
+genome HG02886.2
+twoBitPath HG02886.2/HG02886.2.2bit
+trackDb HG02886.2/trackDb.txt
+organism HG02886.2
+description HG02886.2
+scientificName HG02886.2
+defaultPos JAHAOT010000013.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG02886.2
+transBlat 52.32.252.169 4040 dynamic HG02886.2
+isPcr 52.32.252.169 4040 dynamic HG02886.2
+
+genome HG03098.1
+twoBitPath HG03098.1/HG03098.1.2bit
+trackDb HG03098.1/trackDb.txt
+organism HG03098.1
+description HG03098.1
+scientificName HG03098.1
+defaultPos JAHEPM010000021.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG03098.1
+transBlat 52.32.252.169 4040 dynamic HG03098.1
+isPcr 52.32.252.169 4040 dynamic HG03098.1
+
+genome HG03098.2
+twoBitPath HG03098.2/HG03098.2.2bit
+trackDb HG03098.2/trackDb.txt
+organism HG03098.2
+description HG03098.2
+scientificName HG03098.2
+defaultPos JAHEPL010000028.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG03098.2
+transBlat 52.32.252.169 4040 dynamic HG03098.2
+isPcr 52.32.252.169 4040 dynamic HG03098.2
+
+genome HG03453.1
+twoBitPath HG03453.1/HG03453.1.2bit
+trackDb HG03453.1/trackDb.txt
+organism HG03453.1
+description HG03453.1
+scientificName HG03453.1
+defaultPos JAGYVW010000085.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG03453.1
+transBlat 52.32.252.169 4040 dynamic HG03453.1
+isPcr 52.32.252.169 4040 dynamic HG03453.1
+
+genome HG03453.2
+twoBitPath HG03453.2/HG03453.2.2bit
+trackDb HG03453.2/trackDb.txt
+organism HG03453.2
+description HG03453.2
+scientificName HG03453.2
+defaultPos JAGYVV010000009.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG03453.2
+transBlat 52.32.252.169 4040 dynamic HG03453.2
+isPcr 52.32.252.169 4040 dynamic HG03453.2
+
+genome HG03486.1
+twoBitPath HG03486.1/HG03486.1.2bit
+trackDb HG03486.1/trackDb.txt
+organism HG03486.1
+description HG03486.1
+scientificName HG03486.1
+defaultPos JAHEOQ010000009.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG03486.1
+transBlat 52.32.252.169 4040 dynamic HG03486.1
+isPcr 52.32.252.169 4040 dynamic HG03486.1
+
+genome HG03486.2
+twoBitPath HG03486.2/HG03486.2.2bit
+trackDb HG03486.2/trackDb.txt
+organism HG03486.2
+description HG03486.2
+scientificName HG03486.2
+defaultPos JAHEOP010000012.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG03486.2
+transBlat 52.32.252.169 4040 dynamic HG03486.2
+isPcr 52.32.252.169 4040 dynamic HG03486.2
+
+genome HG03492.1
+twoBitPath HG03492.1/HG03492.1.2bit
+trackDb HG03492.1/trackDb.txt
+organism HG03492.1
+description HG03492.1
+scientificName HG03492.1
+defaultPos JAHEPI010000006.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG03492.1
+transBlat 52.32.252.169 4040 dynamic HG03492.1
+isPcr 52.32.252.169 4040 dynamic HG03492.1
+
+genome HG03492.2
+twoBitPath HG03492.2/HG03492.2.2bit
+trackDb HG03492.2/trackDb.txt
+organism HG03492.2
+description HG03492.2
+scientificName HG03492.2
+defaultPos JAHEPH010000012.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG03492.2
+transBlat 52.32.252.169 4040 dynamic HG03492.2
+isPcr 52.32.252.169 4040 dynamic HG03492.2
+
+genome HG03516.1
+twoBitPath HG03516.1/HG03516.1.2bit
+trackDb HG03516.1/trackDb.txt
+organism HG03516.1
+description HG03516.1
+scientificName HG03516.1
+defaultPos JAGYYT010000006.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG03516.1
+transBlat 52.32.252.169 4040 dynamic HG03516.1
+isPcr 52.32.252.169 4040 dynamic HG03516.1
+
+genome HG03516.2
+twoBitPath HG03516.2/HG03516.2.2bit
+trackDb HG03516.2/trackDb.txt
+organism HG03516.2
+description HG03516.2
+scientificName HG03516.2
+defaultPos JAGYYS010000029.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG03516.2
+transBlat 52.32.252.169 4040 dynamic HG03516.2
+isPcr 52.32.252.169 4040 dynamic HG03516.2
+
+genome HG03540.1
+twoBitPath HG03540.1/HG03540.1.2bit
+trackDb HG03540.1/trackDb.txt
+organism HG03540.1
+description HG03540.1
+scientificName HG03540.1
+defaultPos JAGYVY010000031.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG03540.1
+transBlat 52.32.252.169 4040 dynamic HG03540.1
+isPcr 52.32.252.169 4040 dynamic HG03540.1
+
+genome HG03540.2
+twoBitPath HG03540.2/HG03540.2.2bit
+trackDb HG03540.2/trackDb.txt
+organism HG03540.2
+description HG03540.2
+scientificName HG03540.2
+defaultPos JAGYVX010000006.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG03540.2
+transBlat 52.32.252.169 4040 dynamic HG03540.2
+isPcr 52.32.252.169 4040 dynamic HG03540.2
+
+genome HG03579.1
+twoBitPath HG03579.1/HG03579.1.2bit
+trackDb HG03579.1/trackDb.txt
+organism HG03579.1
+description HG03579.1
+scientificName HG03579.1
+defaultPos JAGYVU010000066.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG03579.1
+transBlat 52.32.252.169 4040 dynamic HG03579.1
+isPcr 52.32.252.169 4040 dynamic HG03579.1
+
+genome HG03579.2
+twoBitPath HG03579.2/HG03579.2.2bit
+trackDb HG03579.2/trackDb.txt
+organism HG03579.2
+description HG03579.2
+scientificName HG03579.2
+defaultPos JAGYVT010000037.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG03579.2
+transBlat 52.32.252.169 4040 dynamic HG03579.2
+isPcr 52.32.252.169 4040 dynamic HG03579.2
+
+genome NA18906.1
+twoBitPath NA18906.1/NA18906.1.2bit
+trackDb NA18906.1/trackDb.txt
+organism NA18906.1
+description NA18906.1
+scientificName NA18906.1
+defaultPos JAHEOO010000056.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic NA18906.1
+transBlat 52.32.252.169 4040 dynamic NA18906.1
+isPcr 52.32.252.169 4040 dynamic NA18906.1
+
+genome NA18906.2
+twoBitPath NA18906.2/NA18906.2.2bit
+trackDb NA18906.2/trackDb.txt
+organism NA18906.2
+description NA18906.2
+scientificName NA18906.2
+defaultPos JAHEON010000009.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic NA18906.2
+transBlat 52.32.252.169 4040 dynamic NA18906.2
+isPcr 52.32.252.169 4040 dynamic NA18906.2
+
+genome NA20129.1
+twoBitPath NA20129.1/NA20129.1.2bit
+trackDb NA20129.1/trackDb.txt
+organism NA20129.1
+description NA20129.1
+scientificName NA20129.1
+defaultPos JAHEPE010000021.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic NA20129.1
+transBlat 52.32.252.169 4040 dynamic NA20129.1
+isPcr 52.32.252.169 4040 dynamic NA20129.1
+
+genome NA20129.2
+twoBitPath NA20129.2/NA20129.2.2bit
+trackDb NA20129.2/trackDb.txt
+organism NA20129.2
+description NA20129.2
+scientificName NA20129.2
+defaultPos JAHEPD010000012.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic NA20129.2
+transBlat 52.32.252.169 4040 dynamic NA20129.2
+isPcr 52.32.252.169 4040 dynamic NA20129.2
+
+genome NA21309.1
+twoBitPath NA21309.1/NA21309.1.2bit
+trackDb NA21309.1/trackDb.txt
+organism NA21309.1
+description NA21309.1
+scientificName NA21309.1
+defaultPos JAHEPC010000095.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic NA21309.1
+transBlat 52.32.252.169 4040 dynamic NA21309.1
+isPcr 52.32.252.169 4040 dynamic NA21309.1
+
+genome NA21309.2
+twoBitPath NA21309.2/NA21309.2.2bit
+trackDb NA21309.2/trackDb.txt
+organism NA21309.2
+description NA21309.2
+scientificName NA21309.2
+defaultPos JAHEPB010000048.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic NA21309.2
+transBlat 52.32.252.169 4040 dynamic NA21309.2
+isPcr 52.32.252.169 4040 dynamic NA21309.2
+
+genome HG002.1
+twoBitPath HG002.1/HG002.1.2bit
+trackDb HG002.1/trackDb.txt
+organism HG002.1
+description HG002.1
+scientificName HG002.1
+defaultPos JAHKSE010000001.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG002.1
+transBlat 52.32.252.169 4040 dynamic HG002.1
+isPcr 52.32.252.169 4040 dynamic HG002.1
+
+genome HG002.2
+twoBitPath HG002.2/HG002.2.2bit
+trackDb HG002.2/trackDb.txt
+organism HG002.2
+description HG002.2
+scientificName HG002.2
+defaultPos JAHKSD010000001.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG002.2
+transBlat 52.32.252.169 4040 dynamic HG002.2
+isPcr 52.32.252.169 4040 dynamic HG002.2
+
+genome HG005.1
+twoBitPath HG005.1/HG005.1.2bit
+trackDb HG005.1/trackDb.txt
+organism HG005.1
+description HG005.1
+scientificName HG005.1
+defaultPos JAHEPO010000001.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG005.1
+transBlat 52.32.252.169 4040 dynamic HG005.1
+isPcr 52.32.252.169 4040 dynamic HG005.1
+
+genome HG005.2
+twoBitPath HG005.2/HG005.2.2bit
+trackDb HG005.2/trackDb.txt
+organism HG005.2
+description HG005.2
+scientificName HG005.2
+defaultPos JAHEPN010000001.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic HG005.2
+transBlat 52.32.252.169 4040 dynamic HG005.2
+isPcr 52.32.252.169 4040 dynamic HG005.2
+
+genome NA19240.1
+twoBitPath NA19240.1/NA19240.1.2bit
+trackDb NA19240.1/trackDb.txt
+organism NA19240.1
+description NA19240.1
+scientificName NA19240.1
+defaultPos JAHEOM010000001.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic NA19240.1
+transBlat 52.32.252.169 4040 dynamic NA19240.1
+isPcr 52.32.252.169 4040 dynamic NA19240.1
+
+genome NA19240.2
+twoBitPath NA19240.2/NA19240.2.2bit
+trackDb NA19240.2/trackDb.txt
+organism NA19240.2
+description NA19240.2
+scientificName NA19240.2
+defaultPos JAHEOL010000001.1:1-200000
+groups groups.txt
+blat 52.32.252.169 4040 dynamic NA19240.2
+transBlat 52.32.252.169 4040 dynamic NA19240.2
+isPcr 52.32.252.169 4040 dynamic NA19240.2
