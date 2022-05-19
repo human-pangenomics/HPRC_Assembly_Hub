@@ -80,7 +80,7 @@ sudo systemctl reload apache2
 
 cd /var/www/html/
 
-sudo mkdir hub 
+mkdir hub 
 cd hub   
 
 
@@ -98,6 +98,7 @@ cd /opt/
 
 sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bedToBigBed
 sudo chmod a+x bedToBigBed
+
 echo 'export PATH="$PATH:/opt"' >> ~/.bashrc 
 
 ############################################################################### 
