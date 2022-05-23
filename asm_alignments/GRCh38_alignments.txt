@@ -1,0 +1,18 @@
+track hubCentral
+compositeTrack on
+shortLabel Asm to GRCh38
+longLabel Assembly to GRCh38 alignments generated with minimap2
+group alignments
+subGroup1 view Track_Type bam=Alignments                                    
+dragAndDrop subTracks
+noInherit on
+priority 0
+visibility full
+type bam
+
+    track asmToGRCh38
+    shortLabel asmToGRCh38
+    view Alignments
+    visibility full
+    subTrack hubCentral
+    
