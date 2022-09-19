@@ -1,0 +1,24 @@
+FROM quay.io/comparative-genomics-toolkit/cactus:v2.2.1
+MAINTAINER Julian Lucas, juklucas@ucsc.edu
+
+RUN apt-get update && apt-get install -y wget
+
+### install 
+WORKDIR /opt/
+
+RUN wget https://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/pslPosTarget && \
+    wget https://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/axtChain && \
+    wget https://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bedToBigBed && \
+    wget https://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/hgLoadChain && \
+    wget https://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/twoBitInfo && \
+    wget https://genome.ucsc.edu/goldenPath/help/examples/bigChain.as && \
+    wget https://genome.ucsc.edu/goldenPath/help/examples/bigLink.as && \
+    chmod +x pslPosTarget && \
+    chmod +x axtChain && \
+    chmod +x bedToBigBed && \
+    chmod +x hgLoadChain && \
+    chmod +x twoBitInfo
+
+ENV PATH=/opt:$PATH
+
+WORKDIR /data
