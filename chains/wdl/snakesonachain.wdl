@@ -117,7 +117,7 @@ task create_bigchain {
 
 
         ## update autosql file
-        sed 's///' /opt/bigChain.as > bigChain.as
+        sed 's/uint chainScore/bigint chainScore/' /opt/bigChain.as > bigChain.as
 
 
         ## Create final bigChain file
