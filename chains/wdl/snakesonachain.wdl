@@ -12,8 +12,8 @@ workflow create_browser_chains {
         call create_bigchain {
             input:
                 hal = hal,
-                src_hap = pair[1],
-                dst_hap = pair[2]
+                src_hap = pair[0],
+                dst_hap = pair[1]
         }
     }
 
