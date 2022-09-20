@@ -17,9 +17,14 @@ workflow create_browser_chains {
         }
     }
 
+    call collect_bigchains {
+        input:
+            bigchains = create_bigchain.bigchain,
+            biglinks  = create_bigchain.biglink
+    }
+
    output {
-        Array[File] browser_bigchains  = create_bigchain.bigchain
-        Array[File] browser_biglinks   = create_bigchain.biglink
+        File browser_bigchains_tar  = collect_bigchains.bigchains_tar
     }
 
     meta {
@@ -152,6 +157,70 @@ task create_bigchain {
         memory: memSizeGB + " GB"
         cpu: threadCount
         disks: "local-disk " + final_disk_dize + " SSD"
+        docker: "juklucas/snakesonachain:latest"
+        preemptible: preempts
+    }
+}
+
+
+task collect_bigchains {
+    input {
+        Array[File] bigchains
+        Array[File] biglinks
+
+        Int memSizeGB   = 8
+        Int threadCount = 1
+        Int diskSize    = 50
+        Int preempts    = 2
+    }
+
+    command <<<
+        set -eux -o pipefail
+
+        mkdir aggr_bigchains
+
+        bigchain_arr=(~{sep=" " bigchains})
+
+        for bigchain in ${bigchain_arr};
+        do
+            ## get filename
+            filenm=$(basename "$bigchain" .bigChain.bb)
+
+            ## get dst assembly name
+            dst_asm=$(echo  $filenm | sed -E 's/(.*)-to-(.*)/\2/')
+
+            ## create directory
+            mkdir aggr_bigchains/$dst_asm
+
+            cp ${bigchain} aggr_bigchains/$dst_asm/
+        done
+
+
+        biglink_arr=(~{sep=" " biglinks})
+
+        for biglink in ${biglink_arr};
+        do
+            ## get filename
+            filenm=$(basename "$biglink" .bigLink.bb)
+
+            ## get dst assembly name
+            dst_asm=$(echo  $filenm | sed -E 's/(.*)-to-(.*)/\2/')
+            
+            cp ${biglink} aggr_bigchains/$dst_asm/
+        done
+
+        tar -cvf bigchains.tar aggr_bigchains/
+
+    >>>
+
+    output {
+        File bigchains_tar = "bigchains.tar"
+    }
+
+    runtime {
+        memory: memSizeGB + " GB"
+        cpu: threadCount
+        disks: "local-disk " + diskSize + " SSD"
         docker: "juklucas/snakesonachain:latest"
         preemptible: preempts
     }
