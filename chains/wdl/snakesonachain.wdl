@@ -189,8 +189,8 @@ task collect_bigchains {
             ## get dst assembly name
             dst_asm=$(echo  $filenm | sed -E 's/(.*)-to-(.*)/\2/')
 
-            ## create directory
-            mkdir aggr_bigchains/$dst_asm
+            ## create directory (if it doesn't exist)
+            mkdir -p aggr_bigchains/$dst_asm
 
             cp ${bigchain} aggr_bigchains/$dst_asm/
         done
