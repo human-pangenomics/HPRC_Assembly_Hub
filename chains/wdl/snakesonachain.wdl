@@ -170,7 +170,7 @@ task collect_bigchains {
 
         Int memSizeGB   = 8
         Int threadCount = 1
-        Int diskSize    = 50
+        Int diskSize    = 500
         Int preempts    = 2
     }
 
