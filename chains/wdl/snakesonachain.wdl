@@ -181,7 +181,7 @@ task collect_bigchains {
 
         bigchain_arr=(~{sep=" " bigchains})
 
-        for bigchain in ${bigchain_arr};
+        for bigchain in ${bigchain_arr[@]};
         do
             ## get filename
             filenm=$(basename "$bigchain" .bigChain.bb)
@@ -198,7 +198,7 @@ task collect_bigchains {
 
         biglink_arr=(~{sep=" " biglinks})
 
-        for biglink in ${biglink_arr};
+        for biglink in ${biglink_arr[@]};
         do
             ## get filename
             filenm=$(basename "$biglink" .bigLink.bb)
