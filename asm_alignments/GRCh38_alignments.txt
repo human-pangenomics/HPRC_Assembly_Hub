@@ -2,7 +2,7 @@ track hubCentral
 compositeTrack on
 shortLabel Asm to GRCh38
 longLabel Assembly to GRCh38 alignments generated with minimap2
-group alignments
+group compGeno
 subGroup1 view Track_Type bam=Alignments                                    
 dragAndDrop subTracks
 noInherit on

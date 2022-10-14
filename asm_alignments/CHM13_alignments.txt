@@ -2,7 +2,7 @@ track hubCentral2
 compositeTrack on
 shortLabel Asm to CHM13
 longLabel Assembly to CHM13 alignments generated with minimap2
-group alignments
+group compGeno
 subGroup1 view Track_Type bam=Alignments                                    
 dragAndDrop subTracks
 noInherit on

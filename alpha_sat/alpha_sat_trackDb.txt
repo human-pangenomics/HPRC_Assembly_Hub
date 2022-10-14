@@ -1,5 +1,5 @@
 ##
-# variation
+# varRep
 ##
 track ASat_HOR_SF
 shortLabel ASat HOR SF

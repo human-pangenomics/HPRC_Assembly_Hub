@@ -36,7 +36,7 @@ do
 	    priority 3
 	    bigDataUrl https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/b56f2db9-e93f-4e1a-99fe-cb66962dd564--Yale_HPP_Year1_Alignments/${SAMPLE}/assembly-to-reference/${SAMPLE}.${HAP_STR}.GRCh38_no_alt.bam
 	    type bam
-	    group alignments" >> GRCh38_alignments.txt
+	    group compGeno" >> GRCh38_alignments.txt
 
 done
 
@@ -81,7 +81,7 @@ do
 	    priority 3
 	    bigDataUrl https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/b56f2db9-e93f-4e1a-99fe-cb66962dd564--Yale_HPP_Year1_Alignments/${SAMPLE}/assembly-to-reference/${SAMPLE}.${HAP_STR}.CHM13Y_EBV.bam
 	    type bam
-	    group alignments" >> CHM13_alignments.txt
+	    group compGeno" >> CHM13_alignments.txt
 
 done
 

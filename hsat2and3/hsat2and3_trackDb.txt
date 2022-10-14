@@ -1,5 +1,5 @@
 ##
-# variation
+# varRep
 ##
 track HSat2_HSat3
 shortLabel HSat2_HSat3
