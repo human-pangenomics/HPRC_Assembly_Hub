@@ -23,15 +23,15 @@ echo 'export HUB_REPO=/home/ubuntu/HPRC_Assembly_Hub/' >> ~/.bashrc
 
 sudo apt update && apt upgrade  -y
 
-sudo timedatectl set-timezone 'America/Los_Angeles'
+# sudo timedatectl set-timezone 'America/Los_Angeles'
 
-sudo hostnamectl set-hostname browser-instance
+# sudo hostnamectl set-hostname browser-instance
 
 ## install fail2ban
-apt-get install fail2ban
+# apt-get install fail2ban
 
 sudo sed -i '1 a\
-35.80.111.76 hprc-browser.ucsc.edu' /etc/hosts
+52.32.252.169 hprc-browser.ucsc.edu' /etc/hosts
 
 ## Install the AWS CLI (no need to setup permissions, we are pulling files w/out egress fees)
 sudo apt install awscli -y
@@ -41,7 +41,7 @@ sudo apt install awscli -y
 ##                              Install Apache                               ##
 ###############################################################################
 
-sudo apt install apache2 -y
+# sudo apt install apache2 -y
 
 ## create apache group
 sudo groupadd apache
@@ -49,13 +49,13 @@ sudo groupadd apache
 ## Add the ubuntu user to the apache group
 sudo usermod -a -G apache ubuntu
 
-## Change the group ownership of the /var/www directory and its contents to the apache group
-sudo chown -R ubuntu:apache /var/www
+## Change the group ownership of the hub directory and its contents to the apache group
+sudo chown -R ubuntu:apache /mnt/disks/data/www
 
 # Change the directory permissions of /var/www and its subdirectories to add group write 
 ## permissions and set the group ID on subdirectories created in the future
-sudo chmod 2775 /var/www
-find /var/www -type d -exec sudo chmod 2775 {} \;
+sudo chmod 2775 /mnt/disks/data/www
+find /mnt/disks/data/www -type d -exec sudo chmod 2775 {} \;
 
 
 ############################################################################### 
@@ -68,8 +68,8 @@ sudo nano /etc/apache2/apache2.conf
 
 ## Put in redirect
 sudo echo \
-	"Redirect /index.html http://genome.ucsc.edu/cgi-bin/hgGateway?genome=HG00621.1&hubUrl=http://35.80.111.76/hub/hub.txt" \
-	> /var/www/html/.htaccess
+	"Redirect /index.html http://genome.ucsc.edu/cgi-bin/hgGateway?genome=HG00621.1&db=HG00621.1&hubUrl=http://35.80.111.76/hub/hub.txt" \
+	> /mnt/disks/data/www/html/.htaccess
 
 ## reload for changes to take effect
 sudo systemctl reload apache2
@@ -78,10 +78,7 @@ sudo systemctl reload apache2
 ##                        Copy Over Marina's Current Hub                     ##
 ###############################################################################
 
-cd /var/www/html/
-
-mkdir hub 
-cd hub   
+cd /mnt/disks/data/www/html/
 
 
 ## Copy over Marina's hub files (~1 hour)
@@ -89,6 +86,43 @@ aws --no-sign-request s3 cp --recursive s3://marina-misc/HPRC/AssemblyHub/ .
 
 ## Copy updated groups file (we have added additional groups)
 cp ${HUB_REPO}/backbone/groups.txt groups.txt
+
+
+############################################################################### 
+##                                Setup BLAT Server                          ##
+###############################################################################
+
+
+sudo adduser blatuser
+sudo usermod -a -G apache blatuser
+
+
+sudo apt update
+sudo apt install xinetd
+
+sudo nano /etc/xinetd.d/blat-xinetd
+
+service blat
+{
+          port            = 4040
+          socket_type     = stream
+          wait            = no
+          user            = blatuser
+          group           = apache
+          server          = /opt/gfServer
+          server_args     = -syslog -logFacility=local0 dynserver/scratch/hubs
+          type            = UNLISTED
+          log_on_success  += USERID PID HOST DURATION EXIT
+          log_on_failure  += USERID HOST ATTEMPT
+          log_type       = SYSLOG local0
+          per_source      = 50
+          disable         = no
+}
+
+
+sudo systemctl enable xinetd
+sudo systemctl start xinetd
+
 
 ############################################################################### 
 ##                             Install Tools                                 ##
@@ -98,6 +132,16 @@ cd /opt/
 
 sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bedToBigBed
 sudo chmod a+x bedToBigBed
+
+sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/blat/gfServer
+sudo chmod a+x gfServer
+
+sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/blat/isPcr
+sudo chmod a+x isPcr
+
+sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/blat/blat
+sudo chmod a+x blat
+
 
 echo 'export PATH="$PATH:/opt"' >> ~/.bashrc 
 

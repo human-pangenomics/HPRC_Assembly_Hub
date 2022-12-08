@@ -1,0 +1,6 @@
+hub HPRC Assembly Hub
+shortLabel HPRC Assembly Hub
+longLabel HPRC Assembly Hub
+genomesFile genomes.txt
+email juklucas@ucsc.edu
+

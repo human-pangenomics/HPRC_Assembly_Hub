@@ -15,13 +15,13 @@ do
 
     gfServer index \
         -stepSize=5 \
-        /var/www/html/hub/${ASSEMBLY}/${ASSEMBLY}.untrans.gfidx \
-        /var/www/html/hub/${ASSEMBLY}/${ASSEMBLY}.2bit
+        /mnt/disks/data/www/html/${ASSEMBLY}/${ASSEMBLY}.untrans.gfidx \
+        /mnt/disks/data/www/html/${ASSEMBLY}/${ASSEMBLY}.2bit
 
     gfServer index \
         -trans \
-        /var/www/html/hub/${ASSEMBLY}/${ASSEMBLY}.trans.gfidx \
-        /var/www/html/hub/${ASSEMBLY}/${ASSEMBLY}.2bit
+        /mnt/disks/data/www/html$/{ASSEMBLY}/${ASSEMBLY}.trans.gfidx \
+        /mnt/disks/data/www/html$/{ASSEMBLY}/${ASSEMBLY}.2bit
 
 done
 
