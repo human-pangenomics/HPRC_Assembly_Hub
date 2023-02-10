@@ -1,0 +1,186 @@
+#!/usr/bin/env python3
+import os
+import sys
+import re
+import argparse
+import tempfile
+import textwrap
+from collections import defaultdict
+import pipettor
+
+# setting this saves temporary files
+DEBUG = False
+
+# bigEnsembl.as field indexes of interest
+BGP_CHROM_COL = 0
+BGP_NAME_COL = 3
+BGP_NAME2_COL = 12
+BGP_CDSSTARTSTAT_COL = 13
+BGP_CDSENDSTAT_COL = 14
+BGP_TYPE_COL = 16
+BGP_GENENAME_COL = 17
+BGP_GENENAME2_COL = 18
+BGP_GENETYPE_COL = 19
+BGP_GENEDESCRIPTION_COL = 20
+BGP_PARENTGENE_COL = 21
+BGP_MAPPINGTYPE_COL = 22
+BGP_PARENTGENEDISPLAYXREF_COL = 23
+BGP_NUM_COLUMNS = 24
+
+def parseArgs():
+    desc = """Convert an HPRC Ensembl GFF3 to a bigBed file for the hub."""
+    epilog = """
+    The following UCSC Browser utility programs are required:
+       gff3ToGenePred - version AFTER the 2023-02-07 release
+       genePredToBigGenePred
+
+    Results will be sorted for bigBed convert. Convert with:
+
+       bedToBigBed -tab -type=bed12+ -as=etc/bigEnsembl.as -sizesIs2Bit in.gp in.2bit out.bb
+
+    WARNING: this currently only works with Ensembl pre-release GFF3 at
+
+        http://ftp.ebi.ac.uk/pub/databases/ensembl/hprc/y1_freeze_v3.0/
+
+    This is due to the official release encoding some attribtues
+    in the description.  A request to change this has been made.
+    """
+    parser = argparse.ArgumentParser(description=desc, epilog=textwrap.dedent(epilog),
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--ucsc-names", dest="ucsc_names", action="store_true", default=False,
+                        help="""Naively convert Ensembl chromsome names to UCSC-style names""")
+    parser.add_argument("ensembl_gff3",
+                        help="""Ensembl GFF3 file""")
+    parser.add_argument("ensembl_gp",
+                        help="""output genePred file, with extra columns for conversion bigGenePred using bigEnsembl.as""")
+    return parser.parse_args()
+
+def _attributeError(name):
+    raise AttributeError("No such attribute: " + name)
+
+class ObjDict(dict):
+    """Dict object where keys are field names.
+    This is useful for JSON by doing:
+       json.load(fh, object_pairs_hook=ObjDict)
+
+    When inserting a dict, it must be explicitly converted to an ObjDict if
+    desired.
+    """
+    __slots__ = ()
+
+    def __getattr__(self, name):
+        if name not in self:
+            _attributeError(name)
+        return self[name]
+
+    def __setattr__(self, name, value):
+        self[name] = value
+
+    def __delattr__(self, name):
+        if name not in self:
+            _attributeError(name)
+        del self[name]
+
+def tab_file_reader(tab_file):
+    "generator over split tab file rows"
+    with open(tab_file) as fh:
+        for line in fh:
+            yield line[0:-1].split('\t')
+
+def convert_gff3(ensembl_gff3, gp_file, attrs_tab):
+    """convert an Ensembl HPRC GFF3 to bigGnePred and tab file of attributes"""
+    os.environ["LC_COLLATE"] = "C"  # for sort
+    pipettor.run([["gff3ToGenePred", "-attrsOut=" + attrs_tab, ensembl_gff3, "/dev/stdout"],
+                  ["genePredToBigGenePred", "/dev/stdin", "/dev/stdout"],
+                  ["sort", "-k1,1", "-k2,2n"]], stdout=gp_file)
+
+def load_attrs(attrs_tab):
+    """load attributes into dictionaries keyed by gene or transcript ids"""
+    # columns are (id, key value)
+    # gene:ENSMMUG00000002912	Name	TLE6
+    # ENSMMUT00000004131	Parent	gene:ENSMMUG00000002912
+
+    gene_metas = defaultdict(ObjDict)
+    trans_metas = defaultdict(ObjDict)
+    for row in tab_file_reader(attrs_tab):
+        if row[0].startswith("gene:"):
+            gene_metas[row[0]][row[1]] = row[2]
+        else:
+            trans_metas[row[0]][row[1]] = row[2]
+    gene_metas.default_factory = None
+    trans_metas.default_factory = None
+    return gene_metas, trans_metas
+
+def get_name_or_id(meta, field):
+    "Ensembl downloads have a field for gene/transcript id"
+    v = meta.get(field)
+    if v is None:
+        v = meta.get("ID")
+    if v is None:
+        raise Exception(f"GFF attribute not found as '{field}' or 'ID'")
+
+def get_gene_name(gene_meta):
+    geneName = gene_meta.get("Name")
+    if geneName is None:
+        geneName = gene_meta.get("gene_id")
+    return geneName
+
+def convert_to_ucsc_chrom(ens_chrom):
+    "22 -> chr22 and MT -> chrM conversion"
+    if not re.match("^([0-9XY]+)|(MT)$", ens_chrom):
+        raise Exception(f"can't convert '{ens_chrom}' to UCSC-style chromosome name")
+    if ens_chrom == "MT":
+        return "chrmM"
+    else:
+        return "chr" + ens_chrom
+
+def create_transcript(gp_row, gene_metas, trans_metas, ucsc_names, ensembl_gp_fh):
+    """create a transcript record, adding metadata to match bigEnsembl.as"""
+
+    # create more space for non-standard attrs
+    gp_row = gp_row + (BGP_NUM_COLUMNS - len(gp_row)) * [""]
+
+    trans_meta = trans_metas[gp_row[BGP_NAME_COL]]
+    gene_meta = gene_metas[trans_meta.Parent]
+    gene_name = get_gene_name(gene_meta)
+    if ucsc_names:
+        gp_row[BGP_CHROM_COL] = convert_to_ucsc_chrom(gp_row[BGP_CHROM_COL])
+    gp_row[BGP_NAME_COL] = trans_meta.transcript_id + "." + trans_meta.version
+    gp_row[BGP_NAME2_COL] = gene_name
+    gp_row[BGP_CDSSTARTSTAT_COL] = "none"
+    gp_row[BGP_CDSENDSTAT_COL] = "none"
+    gp_row[BGP_TYPE_COL] = trans_meta.biotype
+    gp_row[BGP_GENENAME_COL] = gene_meta.gene_id + "." + gene_meta.version
+    gp_row[BGP_GENENAME2_COL] = gene_name
+    gp_row[BGP_GENETYPE_COL] = gene_meta.biotype
+    gp_row[BGP_GENEDESCRIPTION_COL] = gene_meta.get("description", "")
+    gp_row[BGP_PARENTGENE_COL] = gene_meta.get("parent_gene", "")
+    gp_row[BGP_MAPPINGTYPE_COL] = gene_meta.get("mapping_type", "")
+    gp_row[BGP_PARENTGENEDISPLAYXREF_COL] = gene_meta.get("parent_gene_display_xref", "")
+
+    print(*gp_row, sep='\t', file=ensembl_gp_fh)
+
+def create_genepred(gp_file, gene_metas, trans_metas, ucsc_names, ensembl_gp):
+    with open(ensembl_gp, "w") as ensembl_gp_fh:
+        for gp_row in tab_file_reader(gp_file):
+            try:
+                create_transcript(gp_row, gene_metas, trans_metas, ucsc_names, ensembl_gp_fh)
+            except Exception as ex:
+                raise Exception(f"creation of '{gp_row[BGP_NAME_COL]}' failed") from ex
+
+def ensembl_to_bigbed(ensembl_gff3, ucsc_names, ensembl_gp):
+    gp_file_fh = tempfile.NamedTemporaryFile('w', prefix="ensembl.", suffix=".gp", delete=not DEBUG)
+    attrs_tab_fh = tempfile.NamedTemporaryFile('w', prefix="ensembl.", suffix=".attrs", delete=not DEBUG)
+    if DEBUG:
+        print("DEBUG: keeping temporary files", file=sys.stderr)
+        print("      ", gp_file_fh.name, file=sys.stderr)
+        print("      ", attrs_tab_fh.name, file=sys.stderr)
+
+    convert_gff3(ensembl_gff3, gp_file_fh.name, attrs_tab_fh.name)
+    gene_metas, trans_metas = load_attrs(attrs_tab_fh.name)
+    create_genepred(gp_file_fh.name, gene_metas, trans_metas, ucsc_names, ensembl_gp)
+
+def main(opts):
+    ensembl_to_bigbed(opts.ensembl_gff3, opts.ucsc_names, opts.ensembl_gp)
+
+main(parseArgs())
