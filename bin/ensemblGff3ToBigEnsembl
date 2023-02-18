@@ -38,13 +38,9 @@ def parseArgs():
 
        bedToBigBed -tab -type=bed12+ -as=etc/bigEnsembl.as -sizesIs2Bit in.gp in.2bit out.bb
 
-    WARNING: this currently only works with Ensembl pre-release GFF3 at
-
-        http://ftp.ebi.ac.uk/pub/databases/ensembl/hprc/y1_freeze_v3.0/
-
-    This is due to the official release encoding some attribtues
-    in the description.  A request to change this has been made.
-    """
+    This handles both the HPRC-specific gene attributes being encoded as
+    normal GFF3 attributes and URL encoded into the description due to some errant
+    piece of Ensembl software."""
     parser = argparse.ArgumentParser(description=desc, epilog=textwrap.dedent(epilog),
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--ucsc-names", dest="ucsc_names", action="store_true", default=False,
@@ -94,6 +90,26 @@ def convert_gff3(ensembl_gff3, gp_file, attrs_tab):
                   ["genePredToBigGenePred", "/dev/stdin", "/dev/stdout"],
                   ["sort", "-k1,1", "-k2,2n"]], stdout=gp_file)
 
+def parse_out_silly_attr(desc, attr):
+    m = re.search(f"^(.*);{attr}=([^;]+)(.*)$", desc)
+    if m is None:
+        return desc, None
+    else:
+        return m.group(1) + m.group(3), m.group(2)
+
+def parse_painful_description(meta):
+    """deal with Ensembl encoding non-ensembl-standard attributes in descriptions"""
+    #   description=%3Bparent_gene%3D.%3Bmapping_type%3Dpotential_paralogue;gene_id=ENSG05220062570;version=1;
+    #   description=long intergenic non-protein coding RNA 1409 [Source:HGNC Symbol%3BAcc:HGNC:50701]%3Bparent_gene_display_xref%3DLINC01409;
+    # note, they are already URL decoded in the meta description
+    desc = meta.get("description")
+    if desc is not None:
+        for attr in ("parent_gene", "mapping_type", "parent_gene_display_xref"):
+            desc, val = parse_out_silly_attr(desc, attr)
+            if val is not None:
+                meta[attr] = val
+        meta.description = desc
+
 def load_attrs(attrs_tab):
     """load attributes into dictionaries keyed by gene or transcript ids"""
     # columns are (id, key value)
@@ -109,6 +125,9 @@ def load_attrs(attrs_tab):
             trans_metas[row[0]][row[1]] = row[2]
     gene_metas.default_factory = None
     trans_metas.default_factory = None
+    # HACK for Ensembl
+    for gene_meta in gene_metas.values():
+        parse_painful_description(gene_meta)
     return gene_metas, trans_metas
 
 def get_name_or_id(meta, field):
