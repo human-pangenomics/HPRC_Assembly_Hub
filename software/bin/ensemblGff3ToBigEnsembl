@@ -28,7 +28,7 @@ BGP_PARENTGENEDISPLAYXREF_COL = 23
 BGP_NUM_COLUMNS = 24
 
 def parseArgs():
-    desc = """Convert an HPRC Ensembl GFF3 to a bigBed file for the hub."""
+    desc = """Convert an HPRC Ensembl GFF3 to a bigGenePred ASCII file for conversion to bigBed."""
     epilog = """
     The following UCSC Browser utility programs are required:
        gff3ToGenePred - version AFTER the 2023-02-07 release
@@ -36,7 +36,7 @@ def parseArgs():
 
     Results will be sorted for bigBed convert. Convert with:
 
-       bedToBigBed -tab -type=bed12+ -as=etc/bigEnsembl.as -sizesIs2Bit in.gp in.2bit out.bb
+       bedToBigBed -tab -type=bed12+ -as=etc/bigEnsembl.as -sizesIs2Bit ensembl.gp in.2bit ensemb.bb
 
     This handles both the HPRC-specific gene attributes being encoded as
     normal GFF3 attributes and URL encoded into the description due to some errant
