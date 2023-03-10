@@ -87,6 +87,8 @@ aws --no-sign-request s3 cp --recursive s3://marina-misc/HPRC/AssemblyHub/ .
 ## Copy updated groups file (we have added additional groups)
 cp ${HUB_REPO}/backbone/groups.txt groups.txt
 
+## Copy updated hub.txt file
+cp ${HUB_REPO}/backbone/hub.txt hub.txt
 
 ############################################################################### 
 ##                                Setup BLAT Server                          ##
