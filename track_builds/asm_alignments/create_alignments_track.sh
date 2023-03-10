@@ -10,7 +10,7 @@ readarray -t ASSEMBLIES <${HUB_REPO}/assembly_info/assembly_list.txt
 cd /var/www/html/hub/GRCh38
 
 ## Copy in base of alignments trackDB file
-cp ${HUB_REPO}/asm_alignments/GRCh38_alignments.txt .
+cp ${HUB_REPO}/track_builds/asm_alignments/GRCh38_alignments.txt .
 
 
 ## Loop through assemblies and add asm-to-ref alignment
@@ -55,7 +55,7 @@ fi
 cd /var/www/html/hub/CHM13
 
 ## Copy in base of alignments trackDB file
-cp ${HUB_REPO}/asm_alignments/CHM13_alignments.txt .
+cp ${HUB_REPO}/track_builds/asm_alignments/CHM13_alignments.txt .
 
 
 ## Loop through assemblies and add asm-to-ref alignment

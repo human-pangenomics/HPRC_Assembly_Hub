@@ -43,13 +43,13 @@ do
         -type=bed3+6 \
         -tab \
         ${SAMPLE}.${HAPLOTYPE}.pggb_segdups.stripped.bed \
-        -as=${HUB_REPO}/pggb_segdups/pggb_segdups.as \
+        -as=${HUB_REPO}/track_builds/pggb_segdups/pggb_segdups.as \
         /var/www/html/hub/$ASSEMBLY/chrom.sizes \
         /var/www/html/hub/$ASSEMBLY/pggb_segdups.bb
 
 
     ## copy over pggb_segdups trackDb and add to main trackDb.txt file
-    cp ${HUB_REPO}/pggb_segdups/pggb_segdups_trackDb.txt /var/www/html/hub/$ASSEMBLY/pggb_segdups_trackDb.txt 
+    cp ${HUB_REPO}/track_builds/pggb_segdups/pggb_segdups_trackDb.txt /var/www/html/hub/$ASSEMBLY/pggb_segdups_trackDb.txt 
 
     ## Add import statement if it's not already there
     if grep -q 'include pggb_segdups_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then

@@ -46,13 +46,13 @@ do
         -type=bed4+6 \
         -tab \
         ${SAMPLE}/${SAMPLE}.${HAPLOTYPE}.rm.bed \
-        -as=${HUB_REPO}/repeat_masker/repeat_masker.as \
+        -as=${HUB_REPO}/track_builds/repeat_masker/repeat_masker.as \
         /var/www/html/hub/$ASSEMBLY/chrom.sizes \
         /var/www/html/hub/$ASSEMBLY/repeat_masker.bb
 
 
     ## copy over repeat masker trackDb and add to main trackDb.txt file
-    cp ${HUB_REPO}/repeat_masker/repeat_masker_trackDb.txt /var/www/html/hub/$ASSEMBLY/repeat_masker_trackDb.txt 
+    cp ${HUB_REPO}/track_builds/repeat_masker/repeat_masker_trackDb.txt /var/www/html/hub/$ASSEMBLY/repeat_masker_trackDb.txt 
 
     ## Add import statement if it's not already there
     if grep -q 'include repeat_masker_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then

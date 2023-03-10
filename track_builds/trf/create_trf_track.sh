@@ -44,13 +44,13 @@ do
         -type=bed3+13 \
         -tab \
         ${SAMPLE}/${SAMPLE}.${HAPLOTYPE}.trf.bed \
-        -as=${HUB_REPO}/trf/trf.as \
+        -as=${HUB_REPO}/track_builds/trf/trf.as \
         /var/www/html/hub/$ASSEMBLY/chrom.sizes \
         /var/www/html/hub/$ASSEMBLY/trf.bb
 
 
     ## copy over trf trackDb and add to main trackDb.txt file
-    cp ${HUB_REPO}/trf/trf_trackDb.txt /var/www/html/hub/$ASSEMBLY/trf_trackDb.txt 
+    cp ${HUB_REPO}/track_builds/trf/trf_trackDb.txt /var/www/html/hub/$ASSEMBLY/trf_trackDb.txt 
 
     ## Add import statement if it's not already there
     if grep -q 'include trf_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then

@@ -8,12 +8,12 @@
 ## Get data from S3 submission
 cd ~
 
-mkdir alpha_sat_tmp
-cd alpha_sat_tmp
+mkdir hsat2and3_tmp
+cd hsat2and3_tmp
 
 aws --no-sign-request s3 cp \
     --recursive \
-    s3://human-pangenomics/submissions/08934468-0AE3-42B6-814A-C5422311A53D--HUMAS_HMMER/ \
+    s3://human-pangenomics/submissions/1A6CA334-DAF0-4186-AB3E-12442503F2BE--HSAT_2_3/ \
     .
 
 
@@ -34,28 +34,27 @@ do
 
     ## Strip off sample name and haplotype int (to match chrom.sizes file)
     sed 's/^.*#\(J.*\)/\1/' \
-        ${SAMPLE}/AS-HOR+SF-vs-${SAMPLE}-${HAP_STR}.bed \
-        | awk -v 'FS=\t' -v 'OFS=\t' '{ $5=int($5); print }' \
-        > ${SAMPLE}.${HAPLOTYPE}.alpha_sat.stripped.bed
+        ${SAMPLE}.${HAP_STR}.f1_assembly_v2_genbank.HSat2and3_Regions.bed \
+        > ${SAMPLE}.${HAPLOTYPE}.hsat2and3.stripped.bed
 
     bedToBigBed \
         -extraIndex=name \
         -type=bed9 \
         -tab \
-        ${SAMPLE}.${HAPLOTYPE}.alpha_sat.stripped.bed \
-        -as=${HUB_REPO}/alpha_sat/alpha_sat.as \
+        ${SAMPLE}.${HAPLOTYPE}.hsat2and3.stripped.bed \
+        -as=${HUB_REPO}/track_builds/hsat2and3/hsat2and3.as \
         /var/www/html/hub/$ASSEMBLY/chrom.sizes \
-        /var/www/html/hub/$ASSEMBLY/alpha_sat.bb
+        /var/www/html/hub/$ASSEMBLY/hsat2and3.bb
 
 
-    ## copy over alpha_sat trackDb and add to main trackDb.txt file
-    cp ${HUB_REPO}/alpha_sat/alpha_sat_trackDb.txt /var/www/html/hub/$ASSEMBLY/alpha_sat_trackDb.txt 
+    ## copy over hsat2and3 trackDb and add to main trackDb.txt file
+    cp ${HUB_REPO}/track_builds/hsat2and3/hsat2and3_trackDb.txt /var/www/html/hub/$ASSEMBLY/hsat2and3_trackDb.txt 
 
     ## Add import statement if it's not already there
-    if grep -q 'include alpha_sat_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then
+    if grep -q 'include hsat2and3_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then
         echo found
     else
-        sed -i '1 i\include alpha_sat_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt
+        sed -i '1 i\include hsat2and3_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt
     fi
 
 done

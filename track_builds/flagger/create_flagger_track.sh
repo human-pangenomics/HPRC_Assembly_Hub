@@ -45,13 +45,13 @@ do
         -type=bed9 \
         -tab \
         ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.stripped.bed \
-        -as=${HUB_REPO}/flagger/flagger.as \
+        -as=${HUB_REPO}/track_builds/flagger/flagger.as \
         /var/www/html/hub/$ASSEMBLY/chrom.sizes \
         /var/www/html/hub/$ASSEMBLY/flagger.bb
 
 
     ## copy over flagger trackDb and add to main trackDb.txt file
-    cp ${HUB_REPO}/flagger/flagger_trackDb.txt /var/www/html/hub/$ASSEMBLY/flagger_trackDb.txt 
+    cp ${HUB_REPO}/track_builds/flagger/flagger_trackDb.txt /var/www/html/hub/$ASSEMBLY/flagger_trackDb.txt 
 
     ## Add import statement if it's not already there
     if grep -q 'include flagger_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then

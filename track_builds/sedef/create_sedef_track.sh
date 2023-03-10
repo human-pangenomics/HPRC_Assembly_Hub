@@ -52,13 +52,13 @@ do
         -type=bed4+6 \
         -tab \
         ${SAMPLE}/${SAMPLE}.${HAP_STR}_sedef_tmp.bed \
-        -as=${HUB_REPO}/sedef/sedef.as \
+        -as=${HUB_REPO}/track_builds/sedef/sedef.as \
         /var/www/html/hub/$ASSEMBLY/chrom.sizes \
         /var/www/html/hub/$ASSEMBLY/sedef.bb
 
 
     ## copy over sedef trackDb and add to main trackDb.txt file
-    cp ${HUB_REPO}/sedef/sedef_trackDb.txt /var/www/html/hub/$ASSEMBLY/sedef_trackDb.txt 
+    cp ${HUB_REPO}/track_builds/sedef/sedef_trackDb.txt /var/www/html/hub/$ASSEMBLY/sedef_trackDb.txt 
 
     ## Add import statement if it's not already there
     if grep -q 'include sedef_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then

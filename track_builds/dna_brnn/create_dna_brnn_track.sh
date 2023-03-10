@@ -40,13 +40,13 @@ do
         -type=bed4 \
         -tab \
         ${SAMPLE}.${HAP_STR}.f1_assembly_v2_genbank.dna_brnn.bed \
-        -as=${HUB_REPO}/dna_brnn/dna_brnn.as \
+        -as=${HUB_REPO}/track_builds/dna_brnn/dna_brnn.as \
         /var/www/html/hub/$ASSEMBLY/chrom.sizes \
         /var/www/html/hub/$ASSEMBLY/dna_brnn.bb
 
 
     ## copy over sedef trackDb and add to main trackDb.txt file
-    cp ${HUB_REPO}/dna_brnn/dna_brnn_trackDb.txt /var/www/html/hub/$ASSEMBLY/dna_brnn_trackDb.txt 
+    cp ${HUB_REPO}/track_builds/dna_brnn/dna_brnn_trackDb.txt /var/www/html/hub/$ASSEMBLY/dna_brnn_trackDb.txt 
 
     ## Add import statement if it's not already there
     if grep -q 'include dna_brnn_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then

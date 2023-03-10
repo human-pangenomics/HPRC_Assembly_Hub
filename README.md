@@ -27,12 +27,12 @@ $HUB_REPO/backbone/setup_instance.sh
 
 ### Add Tracks
 ```
-bash $HUB_REPO/dna_brnn/create_dna_brnn_track.sh
-bash $HUB_REPO/flagger/create_flagger_track.sh
-bash $HUB_REPO/sedef/create_sedef_track.sh
-bash $HUB_REPO/trf/create_trf_track.sh
-bash $HUB_REPO/repeat_masker/create_repeat_masker_track.sh
-bash $HUB_REPO/pggb_segdups/create_pggb_segdups_track.sh
-bash $HUB_REPO/alpha_sat/create_alpha_sat_track.sh
-bash $HUB_REPO/hsat2and3/create_hsat2and3_track.sh
+bash $HUB_REPO/track_builds/dna_brnn/create_dna_brnn_track.sh
+bash $HUB_REPO/track_builds/flagger/create_flagger_track.sh
+bash $HUB_REPO/track_builds/sedef/create_sedef_track.sh
+bash $HUB_REPO/track_builds/trf/create_trf_track.sh
+bash $HUB_REPO/track_builds/repeat_masker/create_repeat_masker_track.sh
+bash $HUB_REPO/track_builds/pggb_segdups/create_pggb_segdups_track.sh
+bash $HUB_REPO/track_builds/alpha_sat/create_alpha_sat_track.sh
+bash $HUB_REPO/track_builds/hsat2and3/create_hsat2and3_track.sh
 ```
