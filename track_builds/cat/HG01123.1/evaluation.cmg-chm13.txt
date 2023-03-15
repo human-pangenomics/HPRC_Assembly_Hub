@@ -1,0 +1,9 @@
+track error_HG01123.1_cmg-chm13
+type bigBed 6
+group cat_tracks
+shortLabel Consensus indels cmg-chm13
+longLabel Consensus indels cmg-chm13
+bigDataUrl evaluation.cmg-chm13.bb
+visibility hide
+priority 5
+

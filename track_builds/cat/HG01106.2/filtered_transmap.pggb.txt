@@ -1,0 +1,15 @@
+track Filtered_transMap_HG01106.2_pggb
+shortLabel Filtered transMap pggb
+longLabel Filtered transMap pggb
+description Filtered transMap pggb
+type bigGenePred
+group cat_tracks
+itemRgb on
+priority 3
+visibility hide
+searchIndex name,name2,geneId,transcriptId
+bigDataUrl filtered_transmap.pggb.bb
+labelFields name,name2,geneId,transcriptId
+defaultLabelFields name
+labelSeperator " "
+

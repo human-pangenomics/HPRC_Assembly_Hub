@@ -1,0 +1,2256 @@
+include filtered_transmap.cmg-chm13.gencode35.txt
+include transmap.cmg-chm13.gencode35.txt
+include evaluation.cmg-chm13.gencode35.txt
+include consensus.cmg-chm13.gencode35.txt
+
+include filtered_transmap.cmg-hg38.gencode35.txt
+include transmap.cmg-hg38.gencode35.txt
+include evaluation.cmg-hg38.gencode35.txt
+include consensus.cmg-hg38.gencode35.txt
+
+include consensus.cmg-chm13.gencode38.txt
+include consensus.cmg-hg38.gencode38.txt
+
+include consensus.pggb.txt
+
+include annotations.ebi.v1.txt
+include annotations.ebi.v2.txt
+
+include annotations.liftoff.txt
+
+track hubCentralCHM13
+compositeTrack on
+shortLabel Cactus - CHM13 based
+longLabel Cactus Alignment Tracks - CHM13 based 
+group alignments
+subGroup1 view Track_Type Snake=Alignments
+subGroup2 orgs Organisms GRCh38=GRCh38 CHM13=CHM13 HG00438.1=HG00438.1 HG00438.2=HG00438.2 HG00621.1=HG00621.1 HG00621.2=HG00621.2 HG00673.1=HG00673.1 HG00673.2=HG00673.2 HG00733.1=HG00733.1 HG00733.2=HG00733.2 HG00735.1=HG00735.1 HG00735.2=HG00735.2 HG00741.1=HG00741.1 HG00741.2=HG00741.2 HG01071.1=HG01071.1 HG01071.2=HG01071.2 HG01106.1=HG01106.1 HG01106.2=HG01106.2 HG01109.1=HG01109.1 HG01109.2=HG01109.2 HG01123.1=HG01123.1 HG01123.2=HG01123.2 HG01175.1=HG01175.1 HG01175.2=HG01175.2 HG01243.1=HG01243.1 HG01243.2=HG01243.2 HG01258.1=HG01258.1 HG01258.2=HG01258.2 HG01358.1=HG01358.1 HG01358.2=HG01358.2 HG01361.1=HG01361.1 HG01361.2=HG01361.2 HG01891.1=HG01891.1 HG01891.2=HG01891.2 HG01928.1=HG01928.1 HG01928.2=HG01928.2 HG01952.1=HG01952.1 HG01952.2=HG01952.2 HG01978.1=HG01978.1 HG01978.2=HG01978.2 HG02055.1=HG02055.1 HG02055.2=HG02055.2 HG02080.1=HG02080.1 HG02080.2=HG02080.2 HG02109.1=HG02109.1 HG02109.2=HG02109.2 HG02145.1=HG02145.1 HG02145.2=HG02145.2 HG02148.1=HG02148.1 HG02148.2=HG02148.2 HG02257.1=HG02257.1 HG02257.2=HG02257.2 HG02486.1=HG02486.1 HG02486.2=HG02486.2 HG02559.1=HG02559.1 HG02559.2=HG02559.2 HG02572.1=HG02572.1 HG02572.2=HG02572.2 HG02622.1=HG02622.1 HG02622.2=HG02622.2 HG02630.1=HG02630.1 HG02630.2=HG02630.2 HG02717.1=HG02717.1 HG02717.2=HG02717.2 HG02723.1=HG02723.1 HG02723.2=HG02723.2 HG02818.1=HG02818.1 HG02818.2=HG02818.2 HG02886.1=HG02886.1 HG02886.2=HG02886.2 HG03098.1=HG03098.1 HG03098.2=HG03098.2 HG03453.1=HG03453.1 HG03453.2=HG03453.2 HG03486.1=HG03486.1 HG03486.2=HG03486.2 HG03492.1=HG03492.1 HG03492.2=HG03492.2 HG03516.1=HG03516.1 HG03516.2=HG03516.2 HG03540.1=HG03540.1 HG03540.2=HG03540.2 HG03579.1=HG03579.1 HG03579.2=HG03579.2 NA18906.1=NA18906.1 NA18906.2=NA18906.2 NA20129.1=NA20129.1 NA20129.2=NA20129.2 NA21309.1=NA21309.1 NA21309.2=NA21309.2                                       
+dragAndDrop subTracks
+dimensions dimensionX=view dimensionY=orgs
+noInherit on
+priority 0
+centerLabelsDense on
+visibility full
+type bigBed 3
+
+    track hubCentralAlignmentsCHM13
+    shortLabel Alignments
+    view Alignments
+    visibility full
+    subTrack hubCentralCHM13
+
+        track snakeNA21309.2_CHM13
+        longLabel NA21309.2 Cactus_CHM13
+        shortLabel NA21309.2 Cactus_CHM13
+        otherSpecies NA21309.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=NA21309.2
+
+        track snakeNA20129.2_CHM13
+        longLabel NA20129.2 Cactus_CHM13
+        shortLabel NA20129.2 Cactus_CHM13
+        otherSpecies NA20129.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=NA20129.2
+
+        track snakeNA18906.2_CHM13
+        longLabel NA18906.2 Cactus_CHM13
+        shortLabel NA18906.2 Cactus_CHM13
+        otherSpecies NA18906.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=NA18906.2
+
+        track snakeNA18906.1_CHM13
+        longLabel NA18906.1 Cactus_CHM13
+        shortLabel NA18906.1 Cactus_CHM13
+        otherSpecies NA18906.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=NA18906.1
+
+        track snakeHG03492.2_CHM13
+        longLabel HG03492.2 Cactus_CHM13
+        shortLabel HG03492.2 Cactus_CHM13
+        otherSpecies HG03492.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03492.2
+
+        track snakeHG03492.1_CHM13
+        longLabel HG03492.1 Cactus_CHM13
+        shortLabel HG03492.1 Cactus_CHM13
+        otherSpecies HG03492.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03492.1
+
+        track snakeHG03486.2_CHM13
+        longLabel HG03486.2 Cactus_CHM13
+        shortLabel HG03486.2 Cactus_CHM13
+        otherSpecies HG03486.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03486.2
+
+        track snakeHG03486.1_CHM13
+        longLabel HG03486.1 Cactus_CHM13
+        shortLabel HG03486.1 Cactus_CHM13
+        otherSpecies HG03486.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03486.1
+
+        track snakeHG02148.2_CHM13
+        longLabel HG02148.2 Cactus_CHM13
+        shortLabel HG02148.2 Cactus_CHM13
+        otherSpecies HG02148.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02148.2
+
+        track snakeHG01361.2_CHM13
+        longLabel HG01361.2 Cactus_CHM13
+        shortLabel HG01361.2 Cactus_CHM13
+        otherSpecies HG01361.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01361.2
+
+        track snakeHG01928.2_CHM13
+        longLabel HG01928.2 Cactus_CHM13
+        shortLabel HG01928.2 Cactus_CHM13
+        otherSpecies HG01928.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01928.2
+
+        track snakeHG02257.1_CHM13
+        longLabel HG02257.1 Cactus_CHM13
+        shortLabel HG02257.1 Cactus_CHM13
+        otherSpecies HG02257.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02257.1
+
+        track snakeHG01891.1_CHM13
+        longLabel HG01891.1 Cactus_CHM13
+        shortLabel HG01891.1 Cactus_CHM13
+        otherSpecies HG01891.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01891.1
+
+        track snakeHG02486.1_CHM13
+        longLabel HG02486.1 Cactus_CHM13
+        shortLabel HG02486.1 Cactus_CHM13
+        otherSpecies HG02486.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02486.1
+
+        track snakeHG02257.2_CHM13
+        longLabel HG02257.2 Cactus_CHM13
+        shortLabel HG02257.2 Cactus_CHM13
+        otherSpecies HG02257.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02257.2
+
+        track snakeCHM13_CHM13
+        longLabel CHM13 Cactus_CHM13
+        shortLabel CHM13 Cactus_CHM13
+        otherSpecies CHM13
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=CHM13
+
+        track snakeHG02572.1_CHM13
+        longLabel HG02572.1 Cactus_CHM13
+        shortLabel HG02572.1 Cactus_CHM13
+        otherSpecies HG02572.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02572.1
+
+        track snakeHG01358.2_CHM13
+        longLabel HG01358.2 Cactus_CHM13
+        shortLabel HG01358.2 Cactus_CHM13
+        otherSpecies HG01358.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01358.2
+
+        track snakeNA21309.1_CHM13
+        longLabel NA21309.1 Cactus_CHM13
+        shortLabel NA21309.1 Cactus_CHM13
+        otherSpecies NA21309.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=NA21309.1
+
+        track snakeHG01106.1_CHM13
+        longLabel HG01106.1 Cactus_CHM13
+        shortLabel HG01106.1 Cactus_CHM13
+        otherSpecies HG01106.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01106.1
+
+        track snakeHG01358.1_CHM13
+        longLabel HG01358.1 Cactus_CHM13
+        shortLabel HG01358.1 Cactus_CHM13
+        otherSpecies HG01358.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01358.1
+
+        track snakeHG01258.2_CHM13
+        longLabel HG01258.2 Cactus_CHM13
+        shortLabel HG01258.2 Cactus_CHM13
+        otherSpecies HG01258.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01258.2
+
+        track snakeHG01258.1_CHM13
+        longLabel HG01258.1 Cactus_CHM13
+        shortLabel HG01258.1 Cactus_CHM13
+        otherSpecies HG01258.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01258.1
+
+        track snakeHG01952.2_CHM13
+        longLabel HG01952.2 Cactus_CHM13
+        shortLabel HG01952.2 Cactus_CHM13
+        otherSpecies HG01952.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01952.2
+
+        track snakeHG00673.2_CHM13
+        longLabel HG00673.2 Cactus_CHM13
+        shortLabel HG00673.2 Cactus_CHM13
+        otherSpecies HG00673.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00673.2
+
+        track snakeHG01175.1_CHM13
+        longLabel HG01175.1 Cactus_CHM13
+        shortLabel HG01175.1 Cactus_CHM13
+        otherSpecies HG01175.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01175.1
+
+        track snakeHG01071.2_CHM13
+        longLabel HG01071.2 Cactus_CHM13
+        shortLabel HG01071.2 Cactus_CHM13
+        otherSpecies HG01071.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01071.2
+
+        track snakeHG00621.1_CHM13
+        longLabel HG00621.1 Cactus_CHM13
+        shortLabel HG00621.1 Cactus_CHM13
+        otherSpecies HG00621.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00621.1
+
+        track snakeHG02148.1_CHM13
+        longLabel HG02148.1 Cactus_CHM13
+        shortLabel HG02148.1 Cactus_CHM13
+        otherSpecies HG02148.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02148.1
+
+        track snakeHG01123.2_CHM13
+        longLabel HG01123.2 Cactus_CHM13
+        shortLabel HG01123.2 Cactus_CHM13
+        otherSpecies HG01123.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01123.2
+
+        track snakeHG00621.2_CHM13
+        longLabel HG00621.2 Cactus_CHM13
+        shortLabel HG00621.2 Cactus_CHM13
+        otherSpecies HG00621.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00621.2
+
+        track snakeHG00438.1_CHM13
+        longLabel HG00438.1 Cactus_CHM13
+        shortLabel HG00438.1 Cactus_CHM13
+        otherSpecies HG00438.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00438.1
+
+        track snakeHG03453.2_CHM13
+        longLabel HG03453.2 Cactus_CHM13
+        shortLabel HG03453.2 Cactus_CHM13
+        otherSpecies HG03453.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03453.2
+
+        track snakeHG02723.2_CHM13
+        longLabel HG02723.2 Cactus_CHM13
+        shortLabel HG02723.2 Cactus_CHM13
+        otherSpecies HG02723.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02723.2
+
+        track snakeHG00438.2_CHM13
+        longLabel HG00438.2 Cactus_CHM13
+        shortLabel HG00438.2 Cactus_CHM13
+        otherSpecies HG00438.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00438.2
+
+        track snakeHG00673.1_CHM13
+        longLabel HG00673.1 Cactus_CHM13
+        shortLabel HG00673.1 Cactus_CHM13
+        otherSpecies HG00673.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00673.1
+
+        track snakeHG01175.2_CHM13
+        longLabel HG01175.2 Cactus_CHM13
+        shortLabel HG01175.2 Cactus_CHM13
+        otherSpecies HG01175.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01175.2
+
+        track snakeHG02486.2_CHM13
+        longLabel HG02486.2 Cactus_CHM13
+        shortLabel HG02486.2 Cactus_CHM13
+        otherSpecies HG02486.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02486.2
+
+        track snakeHG00735.1_CHM13
+        longLabel HG00735.1 Cactus_CHM13
+        shortLabel HG00735.1 Cactus_CHM13
+        otherSpecies HG00735.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00735.1
+
+        track snakeHG02717.1_CHM13
+        longLabel HG02717.1 Cactus_CHM13
+        shortLabel HG02717.1 Cactus_CHM13
+        otherSpecies HG02717.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02717.1
+
+        track snakeHG01071.1_CHM13
+        longLabel HG01071.1 Cactus_CHM13
+        shortLabel HG01071.1 Cactus_CHM13
+        otherSpecies HG01071.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01071.1
+
+        track snakeHG02145.1_CHM13
+        longLabel HG02145.1 Cactus_CHM13
+        shortLabel HG02145.1 Cactus_CHM13
+        otherSpecies HG02145.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02145.1
+
+        track snakeHG00741.2_CHM13
+        longLabel HG00741.2 Cactus_CHM13
+        shortLabel HG00741.2 Cactus_CHM13
+        otherSpecies HG00741.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00741.2
+
+        track snakeHG01361.1_CHM13
+        longLabel HG01361.1 Cactus_CHM13
+        shortLabel HG01361.1 Cactus_CHM13
+        otherSpecies HG01361.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01361.1
+
+        track snakeHG02622.2_CHM13
+        longLabel HG02622.2 Cactus_CHM13
+        shortLabel HG02622.2 Cactus_CHM13
+        otherSpecies HG02622.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02622.2
+
+        track snakeHG01978.2_CHM13
+        longLabel HG01978.2 Cactus_CHM13
+        shortLabel HG01978.2 Cactus_CHM13
+        otherSpecies HG01978.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01978.2
+
+        track snakeHG01106.2_CHM13
+        longLabel HG01106.2 Cactus_CHM13
+        shortLabel HG01106.2 Cactus_CHM13
+        otherSpecies HG01106.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01106.2
+
+        track snakeHG02055.2_CHM13
+        longLabel HG02055.2 Cactus_CHM13
+        shortLabel HG02055.2 Cactus_CHM13
+        otherSpecies HG02055.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02055.2
+
+        track snakeHG00741.1_CHM13
+        longLabel HG00741.1 Cactus_CHM13
+        shortLabel HG00741.1 Cactus_CHM13
+        otherSpecies HG00741.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00741.1
+
+        track snakeHG02109.1_CHM13
+        longLabel HG02109.1 Cactus_CHM13
+        shortLabel HG02109.1 Cactus_CHM13
+        otherSpecies HG02109.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02109.1
+
+        track snakeHG01928.1_CHM13
+        longLabel HG01928.1 Cactus_CHM13
+        shortLabel HG01928.1 Cactus_CHM13
+        otherSpecies HG01928.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01928.1
+
+        track snakeHG01123.1_CHM13
+        longLabel HG01123.1 Cactus_CHM13
+        shortLabel HG01123.1 Cactus_CHM13
+        otherSpecies HG01123.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01123.1
+
+        track snakeHG03579.1_CHM13
+        longLabel HG03579.1 Cactus_CHM13
+        shortLabel HG03579.1 Cactus_CHM13
+        otherSpecies HG03579.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03579.1
+
+        track snakeHG02559.1_CHM13
+        longLabel HG02559.1 Cactus_CHM13
+        shortLabel HG02559.1 Cactus_CHM13
+        otherSpecies HG02559.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02559.1
+
+        track snakeHG02559.2_CHM13
+        longLabel HG02559.2 Cactus_CHM13
+        shortLabel HG02559.2 Cactus_CHM13
+        otherSpecies HG02559.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02559.2
+
+        track snakeHG01952.1_CHM13
+        longLabel HG01952.1 Cactus_CHM13
+        shortLabel HG01952.1 Cactus_CHM13
+        otherSpecies HG01952.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01952.1
+
+        track snakeHG02572.2_CHM13
+        longLabel HG02572.2 Cactus_CHM13
+        shortLabel HG02572.2 Cactus_CHM13
+        otherSpecies HG02572.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02572.2
+
+        track snakeHG01978.1_CHM13
+        longLabel HG01978.1 Cactus_CHM13
+        shortLabel HG01978.1 Cactus_CHM13
+        otherSpecies HG01978.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01978.1
+
+        track snakeHG03579.2_CHM13
+        longLabel HG03579.2 Cactus_CHM13
+        shortLabel HG03579.2 Cactus_CHM13
+        otherSpecies HG03579.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03579.2
+
+        track snakeHG02622.1_CHM13
+        longLabel HG02622.1 Cactus_CHM13
+        shortLabel HG02622.1 Cactus_CHM13
+        otherSpecies HG02622.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02622.1
+
+        track snakeHG02630.1_CHM13
+        longLabel HG02630.1 Cactus_CHM13
+        shortLabel HG02630.1 Cactus_CHM13
+        otherSpecies HG02630.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02630.1
+
+        track snakeHG02630.2_CHM13
+        longLabel HG02630.2 Cactus_CHM13
+        shortLabel HG02630.2 Cactus_CHM13
+        otherSpecies HG02630.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02630.2
+
+        track snakeHG02080.2_CHM13
+        longLabel HG02080.2 Cactus_CHM13
+        shortLabel HG02080.2 Cactus_CHM13
+        otherSpecies HG02080.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02080.2
+
+        track snakeHG02818.2_CHM13
+        longLabel HG02818.2 Cactus_CHM13
+        shortLabel HG02818.2 Cactus_CHM13
+        otherSpecies HG02818.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02818.2
+
+        track snakeHG02717.2_CHM13
+        longLabel HG02717.2 Cactus_CHM13
+        shortLabel HG02717.2 Cactus_CHM13
+        otherSpecies HG02717.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02717.2
+
+        track snakeHG02886.1_CHM13
+        longLabel HG02886.1 Cactus_CHM13
+        shortLabel HG02886.1 Cactus_CHM13
+        otherSpecies HG02886.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02886.1
+
+        track snakeHG02886.2_CHM13
+        longLabel HG02886.2 Cactus_CHM13
+        shortLabel HG02886.2 Cactus_CHM13
+        otherSpecies HG02886.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02886.2
+
+        track snakeHG02145.2_CHM13
+        longLabel HG02145.2 Cactus_CHM13
+        shortLabel HG02145.2 Cactus_CHM13
+        otherSpecies HG02145.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02145.2
+
+        track snakeHG01891.2_CHM13
+        longLabel HG01891.2 Cactus_CHM13
+        shortLabel HG01891.2 Cactus_CHM13
+        otherSpecies HG01891.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01891.2
+
+        track snakeHG03540.1_CHM13
+        longLabel HG03540.1 Cactus_CHM13
+        shortLabel HG03540.1 Cactus_CHM13
+        otherSpecies HG03540.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03540.1
+
+        track snakeHG03516.1_CHM13
+        longLabel HG03516.1 Cactus_CHM13
+        shortLabel HG03516.1 Cactus_CHM13
+        otherSpecies HG03516.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03516.1
+
+        track snakeHG03516.2_CHM13
+        longLabel HG03516.2 Cactus_CHM13
+        shortLabel HG03516.2 Cactus_CHM13
+        otherSpecies HG03516.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03516.2
+
+        track snakeHG03540.2_CHM13
+        longLabel HG03540.2 Cactus_CHM13
+        shortLabel HG03540.2 Cactus_CHM13
+        otherSpecies HG03540.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03540.2
+
+        track snakeHG01243.1_CHM13
+        longLabel HG01243.1 Cactus_CHM13
+        shortLabel HG01243.1 Cactus_CHM13
+        otherSpecies HG01243.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01243.1
+
+        track snakeHG00733.1_CHM13
+        longLabel HG00733.1 Cactus_CHM13
+        shortLabel HG00733.1 Cactus_CHM13
+        otherSpecies HG00733.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00733.1
+
+        track snakeHG02818.1_CHM13
+        longLabel HG02818.1 Cactus_CHM13
+        shortLabel HG02818.1 Cactus_CHM13
+        otherSpecies HG02818.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02818.1
+
+        track snakeHG00735.2_CHM13
+        longLabel HG00735.2 Cactus_CHM13
+        shortLabel HG00735.2 Cactus_CHM13
+        otherSpecies HG00735.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00735.2
+
+        track snakeHG00733.2_CHM13
+        longLabel HG00733.2 Cactus_CHM13
+        shortLabel HG00733.2 Cactus_CHM13
+        otherSpecies HG00733.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00733.2
+
+        track snakeHG01109.1_CHM13
+        longLabel HG01109.1 Cactus_CHM13
+        shortLabel HG01109.1 Cactus_CHM13
+        otherSpecies HG01109.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01109.1
+
+        track snakeHG01109.2_CHM13
+        longLabel HG01109.2 Cactus_CHM13
+        shortLabel HG01109.2 Cactus_CHM13
+        otherSpecies HG01109.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01109.2
+
+        track snakeHG03453.1_CHM13
+        longLabel HG03453.1 Cactus_CHM13
+        shortLabel HG03453.1 Cactus_CHM13
+        otherSpecies HG03453.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03453.1
+
+        track snakeHG02723.1_CHM13
+        longLabel HG02723.1 Cactus_CHM13
+        shortLabel HG02723.1 Cactus_CHM13
+        otherSpecies HG02723.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02723.1
+
+        track snakeHG02055.1_CHM13
+        longLabel HG02055.1 Cactus_CHM13
+        shortLabel HG02055.1 Cactus_CHM13
+        otherSpecies HG02055.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02055.1
+
+        track snakeHG01243.2_CHM13
+        longLabel HG01243.2 Cactus_CHM13
+        shortLabel HG01243.2 Cactus_CHM13
+        otherSpecies HG01243.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01243.2
+
+        track snakeHG02080.1_CHM13
+        longLabel HG02080.1 Cactus_CHM13
+        shortLabel HG02080.1 Cactus_CHM13
+        otherSpecies HG02080.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02080.1
+
+        track snakeHG02109.2_CHM13
+        longLabel HG02109.2 Cactus_CHM13
+        shortLabel HG02109.2 Cactus_CHM13
+        otherSpecies HG02109.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02109.2
+
+        track snakeNA20129.1_CHM13
+        longLabel NA20129.1 Cactus_CHM13
+        shortLabel NA20129.1 Cactus_CHM13
+        otherSpecies NA20129.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=NA20129.1
+
+        track snakeHG03098.1_CHM13
+        longLabel HG03098.1 Cactus_CHM13
+        shortLabel HG03098.1 Cactus_CHM13
+        otherSpecies HG03098.1
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03098.1
+
+        track snakeHG03098.2_CHM13
+        longLabel HG03098.2 Cactus_CHM13
+        shortLabel HG03098.2 Cactus_CHM13
+        otherSpecies HG03098.2
+        visibility hide
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03098.2
+
+        track snakeGRCh38_CHM13
+        longLabel GRCh38 Cactus_CHM13
+        shortLabel GRCh38 Cactus_CHM13
+        otherSpecies GRCh38
+        visibility full
+        parent hubCentralAlignmentsCHM13 off
+        priority 3
+        bigDataUrl ../CHM13-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=GRCh38
+
+track hubCentralGRCh38
+compositeTrack on
+shortLabel Cactus - GRCh38 based
+longLabel Cactus Alignment Tracks - GRCh38 based
+group alignments
+subGroup1 view Track_Type Snake=Alignments
+subGroup2 orgs Organisms GRCh38=GRCh38 CHM13=CHM13 HG00438.1=HG00438.1 HG00438.2=HG00438.2 HG00621.1=HG00621.1 HG00621.2=HG00621.2 HG00673.1=HG00673.1 HG00673.2=HG00673.2 HG00733.1=HG00733.1 HG00733.2=HG00733.2 HG00735.1=HG00735.1 HG00735.2=HG00735.2 HG00741.1=HG00741.1 HG00741.2=HG00741.2 HG01071.1=HG01071.1 HG01071.2=HG01071.2 HG01106.1=HG01106.1 HG01106.2=HG01106.2 HG01109.1=HG01109.1 HG01109.2=HG01109.2 HG01123.1=HG01123.1 HG01123.2=HG01123.2 HG01175.1=HG01175.1 HG01175.2=HG01175.2 HG01243.1=HG01243.1 HG01243.2=HG01243.2 HG01258.1=HG01258.1 HG01258.2=HG01258.2 HG01358.1=HG01358.1 HG01358.2=HG01358.2 HG01361.1=HG01361.1 HG01361.2=HG01361.2 HG01891.1=HG01891.1 HG01891.2=HG01891.2 HG01928.1=HG01928.1 HG01928.2=HG01928.2 HG01952.1=HG01952.1 HG01952.2=HG01952.2 HG01978.1=HG01978.1 HG01978.2=HG01978.2 HG02055.1=HG02055.1 HG02055.2=HG02055.2 HG02080.1=HG02080.1 HG02080.2=HG02080.2 HG02109.1=HG02109.1 HG02109.2=HG02109.2 HG02145.1=HG02145.1 HG02145.2=HG02145.2 HG02148.1=HG02148.1 HG02148.2=HG02148.2 HG02257.1=HG02257.1 HG02257.2=HG02257.2 HG02486.1=HG02486.1 HG02486.2=HG02486.2 HG02559.1=HG02559.1 HG02559.2=HG02559.2 HG02572.1=HG02572.1 HG02572.2=HG02572.2 HG02622.1=HG02622.1 HG02622.2=HG02622.2 HG02630.1=HG02630.1 HG02630.2=HG02630.2 HG02717.1=HG02717.1 HG02717.2=HG02717.2 HG02723.1=HG02723.1 HG02723.2=HG02723.2 HG02818.1=HG02818.1 HG02818.2=HG02818.2 HG02886.1=HG02886.1 HG02886.2=HG02886.2 HG03098.1=HG03098.1 HG03098.2=HG03098.2 HG03453.1=HG03453.1 HG03453.2=HG03453.2 HG03486.1=HG03486.1 HG03486.2=HG03486.2 HG03492.1=HG03492.1 HG03492.2=HG03492.2 HG03516.1=HG03516.1 HG03516.2=HG03516.2 HG03540.1=HG03540.1 HG03540.2=HG03540.2 HG03579.1=HG03579.1 HG03579.2=HG03579.2 NA18906.1=NA18906.1 NA18906.2=NA18906.2 NA20129.1=NA20129.1 NA20129.2=NA20129.2 NA21309.1=NA21309.1 NA21309.2=NA21309.2                                       
+dragAndDrop subTracks
+dimensions dimensionX=view dimensionY=orgs
+noInherit on
+priority 0
+centerLabelsDense on
+visibility full
+type bigBed 3
+
+    track hubCentralAlignmentsGRCh38
+    shortLabel Alignments
+    view Alignments
+    visibility full
+    subTrack hubCentralGRCh38
+
+        track snakeNA21309.2_GRCh38
+        longLabel NA21309.2 Cactus_GRCh38
+        shortLabel NA21309.2 Cactus_GRCh38
+        otherSpecies NA21309.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=NA21309.2
+
+        track snakeNA20129.2_GRCh38
+        longLabel NA20129.2 Cactus_GRCh38
+        shortLabel NA20129.2 Cactus_GRCh38
+        otherSpecies NA20129.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=NA20129.2
+
+        track snakeNA18906.2_GRCh38
+        longLabel NA18906.2 Cactus_GRCh38
+        shortLabel NA18906.2 Cactus_GRCh38
+        otherSpecies NA18906.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=NA18906.2
+
+        track snakeNA18906.1_GRCh38
+        longLabel NA18906.1 Cactus_GRCh38
+        shortLabel NA18906.1 Cactus_GRCh38
+        otherSpecies NA18906.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=NA18906.1
+
+        track snakeHG03492.2_GRCh38
+        longLabel HG03492.2 Cactus_GRCh38
+        shortLabel HG03492.2 Cactus_GRCh38
+        otherSpecies HG03492.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03492.2
+
+        track snakeHG03492.1_GRCh38
+        longLabel HG03492.1 Cactus_GRCh38
+        shortLabel HG03492.1 Cactus_GRCh38
+        otherSpecies HG03492.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03492.1
+
+        track snakeHG03486.2_GRCh38
+        longLabel HG03486.2 Cactus_GRCh38
+        shortLabel HG03486.2 Cactus_GRCh38
+        otherSpecies HG03486.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03486.2
+
+        track snakeHG03486.1_GRCh38
+        longLabel HG03486.1 Cactus_GRCh38
+        shortLabel HG03486.1 Cactus_GRCh38
+        otherSpecies HG03486.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03486.1
+
+        track snakeHG02148.2_GRCh38
+        longLabel HG02148.2 Cactus_GRCh38
+        shortLabel HG02148.2 Cactus_GRCh38
+        otherSpecies HG02148.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02148.2
+
+        track snakeHG01361.2_GRCh38
+        longLabel HG01361.2 Cactus_GRCh38
+        shortLabel HG01361.2 Cactus_GRCh38
+        otherSpecies HG01361.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01361.2
+
+        track snakeHG01928.2_GRCh38
+        longLabel HG01928.2 Cactus_GRCh38
+        shortLabel HG01928.2 Cactus_GRCh38
+        otherSpecies HG01928.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01928.2
+
+        track snakeHG02257.1_GRCh38
+        longLabel HG02257.1 Cactus_GRCh38
+        shortLabel HG02257.1 Cactus_GRCh38
+        otherSpecies HG02257.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02257.1
+
+        track snakeHG01891.1_GRCh38
+        longLabel HG01891.1 Cactus_GRCh38
+        shortLabel HG01891.1 Cactus_GRCh38
+        otherSpecies HG01891.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01891.1
+
+        track snakeHG02486.1_GRCh38
+        longLabel HG02486.1 Cactus_GRCh38
+        shortLabel HG02486.1 Cactus_GRCh38
+        otherSpecies HG02486.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02486.1
+
+        track snakeHG02257.2_GRCh38
+        longLabel HG02257.2 Cactus_GRCh38
+        shortLabel HG02257.2 Cactus_GRCh38
+        otherSpecies HG02257.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02257.2
+
+        track snakeCHM13-GRCh38
+        longLabel CHM13 Cactus_GRCh38
+        shortLabel CHM13 Cactus_GRCh38
+        otherSpecies CHM13
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=CHM13
+
+        track snakeHG02572.1_GRCh38
+        longLabel HG02572.1 Cactus_GRCh38
+        shortLabel HG02572.1 Cactus_GRCh38
+        otherSpecies HG02572.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02572.1
+
+        track snakeHG01358.2_GRCh38
+        longLabel HG01358.2 Cactus_GRCh38
+        shortLabel HG01358.2 Cactus_GRCh38
+        otherSpecies HG01358.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01358.2
+
+        track snakeNA21309.1_GRCh38
+        longLabel NA21309.1 Cactus_GRCh38
+        shortLabel NA21309.1 Cactus_GRCh38
+        otherSpecies NA21309.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=NA21309.1
+
+        track snakeHG01106.1_GRCh38
+        longLabel HG01106.1 Cactus_GRCh38
+        shortLabel HG01106.1 Cactus_GRCh38
+        otherSpecies HG01106.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01106.1
+
+        track snakeHG01358.1_GRCh38
+        longLabel HG01358.1 Cactus_GRCh38
+        shortLabel HG01358.1 Cactus_GRCh38
+        otherSpecies HG01358.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01358.1
+
+        track snakeHG01258.2_GRCh38
+        longLabel HG01258.2 Cactus_GRCh38
+        shortLabel HG01258.2 Cactus_GRCh38
+        otherSpecies HG01258.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01258.2
+
+        track snakeHG01258.1_GRCh38
+        longLabel HG01258.1 Cactus_GRCh38
+        shortLabel HG01258.1 Cactus_GRCh38
+        otherSpecies HG01258.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01258.1
+
+        track snakeHG01952.2_GRCh38
+        longLabel HG01952.2 Cactus_GRCh38
+        shortLabel HG01952.2 Cactus_GRCh38
+        otherSpecies HG01952.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01952.2
+
+        track snakeHG00673.2_GRCh38
+        longLabel HG00673.2 Cactus_GRCh38
+        shortLabel HG00673.2 Cactus_GRCh38
+        otherSpecies HG00673.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00673.2
+
+        track snakeHG01175.1_GRCh38
+        longLabel HG01175.1 Cactus_GRCh38
+        shortLabel HG01175.1 Cactus_GRCh38
+        otherSpecies HG01175.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01175.1
+
+        track snakeHG01071.2_GRCh38
+        longLabel HG01071.2 Cactus_GRCh38
+        shortLabel HG01071.2 Cactus_GRCh38
+        otherSpecies HG01071.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01071.2
+
+        track snakeHG00621.1_GRCh38
+        longLabel HG00621.1 Cactus_GRCh38
+        shortLabel HG00621.1 Cactus_GRCh38
+        otherSpecies HG00621.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00621.1
+
+        track snakeHG02148.1_GRCh38
+        longLabel HG02148.1 Cactus_GRCh38
+        shortLabel HG02148.1 Cactus_GRCh38
+        otherSpecies HG02148.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02148.1
+
+        track snakeHG01123.2_GRCh38
+        longLabel HG01123.2 Cactus_GRCh38
+        shortLabel HG01123.2 Cactus_GRCh38
+        otherSpecies HG01123.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01123.2
+
+        track snakeHG00621.2_GRCh38
+        longLabel HG00621.2 Cactus_GRCh38
+        shortLabel HG00621.2 Cactus_GRCh38
+        otherSpecies HG00621.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00621.2
+
+        track snakeHG00438.1_GRCh38
+        longLabel HG00438.1 Cactus_GRCh38
+        shortLabel HG00438.1 Cactus_GRCh38
+        otherSpecies HG00438.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00438.1
+
+        track snakeHG03453.2_GRCh38
+        longLabel HG03453.2 Cactus_GRCh38
+        shortLabel HG03453.2 Cactus_GRCh38
+        otherSpecies HG03453.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03453.2
+
+        track snakeHG02723.2_GRCh38
+        longLabel HG02723.2 Cactus_GRCh38
+        shortLabel HG02723.2 Cactus_GRCh38
+        otherSpecies HG02723.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02723.2
+
+        track snakeHG00438.2_GRCh38
+        longLabel HG00438.2 Cactus_GRCh38
+        shortLabel HG00438.2 Cactus_GRCh38
+        otherSpecies HG00438.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00438.2
+
+        track snakeHG00673.1_GRCh38
+        longLabel HG00673.1 Cactus_GRCh38
+        shortLabel HG00673.1 Cactus_GRCh38
+        otherSpecies HG00673.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00673.1
+
+        track snakeHG01175.2_GRCh38
+        longLabel HG01175.2 Cactus_GRCh38
+        shortLabel HG01175.2 Cactus_GRCh38
+        otherSpecies HG01175.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01175.2
+
+        track snakeHG02486.2_GRCh38
+        longLabel HG02486.2 Cactus_GRCh38
+        shortLabel HG02486.2 Cactus_GRCh38
+        otherSpecies HG02486.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02486.2
+
+        track snakeHG00735.1_GRCh38
+        longLabel HG00735.1 Cactus_GRCh38
+        shortLabel HG00735.1 Cactus_GRCh38
+        otherSpecies HG00735.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00735.1
+
+        track snakeHG02717.1_GRCh38
+        longLabel HG02717.1 Cactus_GRCh38
+        shortLabel HG02717.1 Cactus_GRCh38
+        otherSpecies HG02717.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02717.1
+
+        track snakeHG01071.1_GRCh38
+        longLabel HG01071.1 Cactus_GRCh38
+        shortLabel HG01071.1 Cactus_GRCh38
+        otherSpecies HG01071.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01071.1
+
+        track snakeHG02145.1_GRCh38
+        longLabel HG02145.1 Cactus_GRCh38
+        shortLabel HG02145.1 Cactus_GRCh38
+        otherSpecies HG02145.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02145.1
+
+        track snakeHG00741.2_GRCh38
+        longLabel HG00741.2 Cactus_GRCh38
+        shortLabel HG00741.2 Cactus_GRCh38
+        otherSpecies HG00741.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00741.2
+
+        track snakeHG01361.1_GRCh38
+        longLabel HG01361.1 Cactus_GRCh38
+        shortLabel HG01361.1 Cactus_GRCh38
+        otherSpecies HG01361.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01361.1
+
+        track snakeHG02622.2_GRCh38
+        longLabel HG02622.2 Cactus_GRCh38
+        shortLabel HG02622.2 Cactus_GRCh38
+        otherSpecies HG02622.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02622.2
+
+        track snakeHG01978.2_GRCh38
+        longLabel HG01978.2 Cactus_GRCh38
+        shortLabel HG01978.2 Cactus_GRCh38
+        otherSpecies HG01978.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01978.2
+
+        track snakeHG01106.2_GRCh38
+        longLabel HG01106.2 Cactus_GRCh38
+        shortLabel HG01106.2 Cactus_GRCh38
+        otherSpecies HG01106.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01106.2
+
+        track snakeHG02055.2_GRCh38
+        longLabel HG02055.2 Cactus_GRCh38
+        shortLabel HG02055.2 Cactus_GRCh38
+        otherSpecies HG02055.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02055.2
+
+        track snakeHG00741.1_GRCh38
+        longLabel HG00741.1 Cactus_GRCh38
+        shortLabel HG00741.1 Cactus_GRCh38
+        otherSpecies HG00741.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00741.1
+
+        track snakeHG02109.1_GRCh38
+        longLabel HG02109.1 Cactus_GRCh38
+        shortLabel HG02109.1 Cactus_GRCh38
+        otherSpecies HG02109.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02109.1
+
+        track snakeHG01928.1_GRCh38
+        longLabel HG01928.1 Cactus_GRCh38
+        shortLabel HG01928.1 Cactus_GRCh38
+        otherSpecies HG01928.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01928.1
+
+        track snakeHG01123.1_GRCh38
+        longLabel HG01123.1 Cactus_GRCh38
+        shortLabel HG01123.1 Cactus_GRCh38
+        otherSpecies HG01123.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01123.1
+
+        track snakeHG03579.1_GRCh38
+        longLabel HG03579.1 Cactus_GRCh38
+        shortLabel HG03579.1 Cactus_GRCh38
+        otherSpecies HG03579.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03579.1
+
+        track snakeHG02559.1_GRCh38
+        longLabel HG02559.1 Cactus_GRCh38
+        shortLabel HG02559.1 Cactus_GRCh38
+        otherSpecies HG02559.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02559.1
+
+        track snakeHG02559.2_GRCh38
+        longLabel HG02559.2 Cactus_GRCh38
+        shortLabel HG02559.2 Cactus_GRCh38
+        otherSpecies HG02559.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02559.2
+
+        track snakeHG01952.1_GRCh38
+        longLabel HG01952.1 Cactus_GRCh38
+        shortLabel HG01952.1 Cactus_GRCh38
+        otherSpecies HG01952.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01952.1
+
+        track snakeHG02572.2_GRCh38
+        longLabel HG02572.2 Cactus_GRCh38
+        shortLabel HG02572.2 Cactus_GRCh38
+        otherSpecies HG02572.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02572.2
+
+        track snakeHG01978.1_GRCh38
+        longLabel HG01978.1 Cactus_GRCh38
+        shortLabel HG01978.1 Cactus_GRCh38
+        otherSpecies HG01978.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01978.1
+
+        track snakeHG03579.2_GRCh38
+        longLabel HG03579.2 Cactus_GRCh38
+        shortLabel HG03579.2 Cactus_GRCh38
+        otherSpecies HG03579.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03579.2
+
+        track snakeHG02622.1_GRCh38
+        longLabel HG02622.1 Cactus_GRCh38
+        shortLabel HG02622.1 Cactus_GRCh38
+        otherSpecies HG02622.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02622.1
+
+        track snakeHG02630.1_GRCh38
+        longLabel HG02630.1 Cactus_GRCh38
+        shortLabel HG02630.1 Cactus_GRCh38
+        otherSpecies HG02630.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02630.1
+
+        track snakeHG02630.2_GRCh38
+        longLabel HG02630.2 Cactus_GRCh38
+        shortLabel HG02630.2 Cactus_GRCh38
+        otherSpecies HG02630.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02630.2
+
+        track snakeHG02080.2_GRCh38
+        longLabel HG02080.2 Cactus_GRCh38
+        shortLabel HG02080.2 Cactus_GRCh38
+        otherSpecies HG02080.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02080.2
+
+        track snakeHG02818.2_GRCh38
+        longLabel HG02818.2 Cactus_GRCh38
+        shortLabel HG02818.2 Cactus_GRCh38
+        otherSpecies HG02818.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02818.2
+
+        track snakeHG02717.2_GRCh38
+        longLabel HG02717.2 Cactus_GRCh38
+        shortLabel HG02717.2 Cactus_GRCh38
+        otherSpecies HG02717.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02717.2
+
+        track snakeHG02886.1_GRCh38
+        longLabel HG02886.1 Cactus_GRCh38
+        shortLabel HG02886.1 Cactus_GRCh38
+        otherSpecies HG02886.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02886.1
+
+        track snakeHG02886.2_GRCh38
+        longLabel HG02886.2 Cactus_GRCh38
+        shortLabel HG02886.2 Cactus_GRCh38
+        otherSpecies HG02886.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02886.2
+
+        track snakeHG02145.2_GRCh38
+        longLabel HG02145.2 Cactus_GRCh38
+        shortLabel HG02145.2 Cactus_GRCh38
+        otherSpecies HG02145.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02145.2
+
+        track snakeHG01891.2_GRCh38
+        longLabel HG01891.2 Cactus_GRCh38
+        shortLabel HG01891.2 Cactus_GRCh38
+        otherSpecies HG01891.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01891.2
+
+        track snakeHG03540.1_GRCh38
+        longLabel HG03540.1 Cactus_GRCh38
+        shortLabel HG03540.1 Cactus_GRCh38
+        otherSpecies HG03540.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03540.1
+
+        track snakeHG03516.1_GRCh38
+        longLabel HG03516.1 Cactus_GRCh38
+        shortLabel HG03516.1 Cactus_GRCh38
+        otherSpecies HG03516.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03516.1
+
+        track snakeHG03516.2_GRCh38
+        longLabel HG03516.2 Cactus_GRCh38
+        shortLabel HG03516.2 Cactus_GRCh38
+        otherSpecies HG03516.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03516.2
+
+        track snakeHG03540.2_GRCh38
+        longLabel HG03540.2 Cactus_GRCh38
+        shortLabel HG03540.2 Cactus_GRCh38
+        otherSpecies HG03540.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03540.2
+
+        track snakeHG01243.1_GRCh38
+        longLabel HG01243.1 Cactus_GRCh38
+        shortLabel HG01243.1 Cactus_GRCh38
+        otherSpecies HG01243.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01243.1
+
+        track snakeHG00733.1_GRCh38
+        longLabel HG00733.1 Cactus_GRCh38
+        shortLabel HG00733.1 Cactus_GRCh38
+        otherSpecies HG00733.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00733.1
+
+        track snakeHG02818.1_GRCh38
+        longLabel HG02818.1 Cactus_GRCh38
+        shortLabel HG02818.1 Cactus_GRCh38
+        otherSpecies HG02818.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02818.1
+
+        track snakeHG00735.2_GRCh38
+        longLabel HG00735.2 Cactus_GRCh38
+        shortLabel HG00735.2 Cactus_GRCh38
+        otherSpecies HG00735.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00735.2
+
+        track snakeHG00733.2_GRCh38
+        longLabel HG00733.2 Cactus_GRCh38
+        shortLabel HG00733.2 Cactus_GRCh38
+        otherSpecies HG00733.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG00733.2
+
+        track snakeHG01109.1_GRCh38
+        longLabel HG01109.1 Cactus_GRCh38
+        shortLabel HG01109.1 Cactus_GRCh38
+        otherSpecies HG01109.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01109.1
+
+        track snakeHG01109.2_GRCh38
+        longLabel HG01109.2 Cactus_GRCh38
+        shortLabel HG01109.2 Cactus_GRCh38
+        otherSpecies HG01109.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01109.2
+
+        track snakeHG03453.1_GRCh38
+        longLabel HG03453.1 Cactus_GRCh38
+        shortLabel HG03453.1 Cactus_GRCh38
+        otherSpecies HG03453.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03453.1
+
+        track snakeHG02723.1_GRCh38
+        longLabel HG02723.1 Cactus_GRCh38
+        shortLabel HG02723.1 Cactus_GRCh38
+        otherSpecies HG02723.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02723.1
+
+        track snakeHG02055.1_GRCh38
+        longLabel HG02055.1 Cactus_GRCh38
+        shortLabel HG02055.1 Cactus_GRCh38
+        otherSpecies HG02055.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02055.1
+
+        track snakeHG01243.2_GRCh38
+        longLabel HG01243.2 Cactus_GRCh38
+        shortLabel HG01243.2 Cactus_GRCh38
+        otherSpecies HG01243.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG01243.2
+
+        track snakeHG02080.1_GRCh38
+        longLabel HG02080.1 Cactus_GRCh38
+        shortLabel HG02080.1 Cactus_GRCh38
+        otherSpecies HG02080.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02080.1
+
+        track snakeHG02109.2_GRCh38
+        longLabel HG02109.2 Cactus_GRCh38
+        shortLabel HG02109.2 Cactus_GRCh38
+        otherSpecies HG02109.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG02109.2
+
+        track snakeNA20129.1_GRCh38
+        longLabel NA20129.1 Cactus_GRCh38
+        shortLabel NA20129.1 Cactus_GRCh38
+        otherSpecies NA20129.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=NA20129.1
+
+        track snakeHG03098.1_GRCh38
+        longLabel HG03098.1 Cactus_GRCh38
+        shortLabel HG03098.1 Cactus_GRCh38
+        otherSpecies HG03098.1
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03098.1
+
+        track snakeHG03098.2_GRCh38
+        longLabel HG03098.2 Cactus_GRCh38
+        shortLabel HG03098.2 Cactus_GRCh38
+        otherSpecies HG03098.2
+        visibility hide
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=HG03098.2
+
+        track snakeGRCh38_GRCh38
+        longLabel GRCh38 Cactus_GRCh38
+        shortLabel GRCh38 Cactus_GRCh38
+        otherSpecies GRCh38
+        visibility full
+        parent hubCentralAlignmentsGRCh38 off
+        priority 3
+        bigDataUrl ../GRCh38-f1g-90-mc-aug11.hal
+        type halSnake
+        group snake
+        subGroups view=Snake orgs=GRCh38
+        
+track chainCentral
+compositeTrack on
+shortLabel Chains - PGGB
+longLabel Chains - PGGB
+description Chains - PGGB
+group alignments
+subGroup1 view Track_Type Chain=AllChains
+subGroup2 orgs Organisms GRCh38=GRCh38 HG01106.1=HG01106.1
+dragAndDrop subTracks
+dimensions dimensionX=view dimensionY=orgs
+noInherit on
+priority 0
+centerLabelsDense on
+visibility full
+type bigChain 3
+
+    track chains
+    shortLabel Chains
+    view AllChains
+    visibility full
+    subTrack chainCentral
+
+        track chain_HG01106.1-GRCh38
+        longLabel HG01106.1-GRCh38 PGGB chain
+        shortLabel HG01106.1-GRCh38 PGGB chain
+        otherSpecies GRCh38
+        visibility full
+        parent chains off
+        priority 3
+        bigDataUrl HG01106.1-GRCh38.pggb.bigChain.bb
+        linkDataUrl HG01106.1-GRCh38.pggb.bigLink.bb
+        type bigChain 3
+        group chain
+        subGroups view=Chain orgs=HG01106.1

@@ -1,0 +1,20 @@
+track transmap_NA21309.1_cmg-chm13
+shortLabel transMap cmg-chm13
+longLabel transMap cmg-chm13
+bigDataUrl transmap.cmg-chm13.bb
+type bigPsl
+group cat_tracks
+itemRgb on
+priority 2
+visibility hide
+baseColorUseSequence lfExtra
+baseColorDefault genomicCodons
+baseColorUseCds given
+indelDoubleInsert on
+indelQueryInsert on
+showDiffBasesAllScales .
+showDiffBasesMaxZoom 10000.0
+#showCdsAllScales .
+#showCdsMaxZoom 10000.0
+searchIndex name
+

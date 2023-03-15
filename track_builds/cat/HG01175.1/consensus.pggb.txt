@@ -1,0 +1,16 @@
+track consensus_HG01175.1_pggb
+shortLabel PGGB CAT Annotation
+longLabel PGGB CAT Annotation
+description PGGB CAT Annotation
+type bigGenePred
+group gene_tracks
+itemRgb on
+priority 1
+visibility pack
+searchIndex name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
+bigDataUrl HG01175.1.pggb.bb
+labelFields name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
+defaultLabelFields name
+labelSeperator " "
+
+

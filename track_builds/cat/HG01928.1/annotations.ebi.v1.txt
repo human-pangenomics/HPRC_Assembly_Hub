@@ -1,0 +1,14 @@
+track ebi_annotations_HG01928.1
+shortLabel Ensembl Annotation v1
+longLabel Ensembl Annotation v1
+description Ensembl Annotation v1
+type bigGenePred
+group gene_tracks
+itemRgb on
+priority 2
+visibility hide
+searchIndex name,name2,txId,geneName
+bigDataUrl annotations.ebi.v1.bb
+labelFields name,name2,txId,geneName
+defaultLabelFields name
+labelSeperator " "

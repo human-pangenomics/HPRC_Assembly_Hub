@@ -1,0 +1,15 @@
+track consensus_NA21309.1_pggb
+shortLabel PGGB CAT Annotation
+longLabel PGGB CAT Annotation
+description PGGB CAT Annotation
+type bigGenePred
+group gene_tracks
+itemRgb on
+priority 1
+visibility pack
+searchIndex name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
+bigDataUrl NA21309.1.pggb.v2.bb
+labelFields name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
+defaultLabelFields name
+labelSeperator " "
+

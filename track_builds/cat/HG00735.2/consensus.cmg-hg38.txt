@@ -1,0 +1,15 @@
+track consensus_HG00735.2_cmg-hg38
+shortLabel CMG-hg38 CAT Annotation
+longLabel CMG-hg38 CAT Annotation
+description CMG-hg38 CAT Annotation
+type bigGenePred
+group gene_tracks
+itemRgb on
+priority 1
+visibility pack
+searchIndex name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
+bigDataUrl consensus.cmg-hg38.bb
+labelFields name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
+defaultLabelFields name
+labelSeperator " "
+

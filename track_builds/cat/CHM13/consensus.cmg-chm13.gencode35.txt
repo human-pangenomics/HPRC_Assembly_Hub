@@ -1,0 +1,14 @@
+track consensus_CHM13_cmg-chm13_gencode35
+shortLabel CMG-chm13 CAT Annotation GENCODE v35
+longLabel CMG-chm13 CAT Annotation GENCODE v35
+description CMG-chm13 CAT Annotation GENCODE v35
+type bigGenePred
+group gene_tracks
+itemRgb on
+priority 1
+visibility hide
+searchIndex name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
+bigDataUrl consensus.cmg-chm13.gencode35.bb
+labelFields name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
+defaultLabelFields name
+labelSeperator " "

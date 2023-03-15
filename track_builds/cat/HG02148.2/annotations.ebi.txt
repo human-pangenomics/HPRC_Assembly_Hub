@@ -1,0 +1,15 @@
+track ebi_annotations_HG02148.2
+shortLabel Ensembl Annotation
+longLabel Ensembl Annotation
+description Ensembl Annotation
+type bigGenePred
+group gene_tracks
+itemRgb on
+priority 2
+visibility pack
+searchIndex name,name2,txId,geneName
+bigDataUrl annotations.ebi.bb
+labelFields name,name2,txId,geneName
+defaultLabelFields name
+labelSeperator " "
+

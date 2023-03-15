@@ -1,0 +1,25 @@
+name cat_tracks
+label Comparative Annotation Toolkit
+priority 1
+defaultIsClosed 0
+
+name gene_tracks
+label Gene Annotations
+priority 1
+defaultIsClosed 0
+
+name alignments
+label Alignments
+priority 2
+defaultIsClosed 0
+
+name snake
+label Cactus Snake Tracks
+priority 2
+defaultIsClosed 0
+
+name expression
+label Expression
+priority 3
+defaultIsClosed 0
+

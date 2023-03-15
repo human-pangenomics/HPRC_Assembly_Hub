@@ -1,0 +1,9 @@
+track error_HG03516.2_cmg-hg38
+type bigBed 6
+group cat_tracks
+shortLabel Consensus indels cmg-hg38
+longLabel Consensus indels cmg-hg38
+bigDataUrl evaluation.cmg-hg38.bb
+visibility hide
+priority 5
+
