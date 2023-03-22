@@ -1,9 +1,0 @@
-track error_HG02055.1_pggb
-type bigBed 6
-group cat_tracks
-shortLabel Consensus indels pggb
-longLabel Consensus indels pggb
-bigDataUrl evaluation.pggb.bb
-visibility hide
-priority 5
-

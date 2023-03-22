@@ -27,7 +27,7 @@ make_bb(){
         ${ASSEMBLY}.ensembl.gp \
         /var/www/html/hub/${ASSEMBLY}/chrom.sizes \
         /var/www/html/hub/${ASSEMBLY}/ensembl_genes.bb
-#    rm ${ASSEMBLY}.ensembl.gp ${ASSEMBLY}.gff3
+    rm ${ASSEMBLY}.ensembl.gp ${ASSEMBLY}.gff3
 }
 # function to add trackdb with correct annotation version
 add_trackdb(){
@@ -45,13 +45,14 @@ cd ~
 mkdir -p ensembl_tmp
 cd ensembl_tmp
 ## Get data from ensembl.org
-#wget -O index.html https://projects.ensembl.org/hprc/index.html
+wget -O index.html https://projects.ensembl.org/hprc/index.html
 grep '\.gff' index.html | sed 's/.*https/https/' | cut -f1 -d'"' > gff.files
 # mapping of genbank IDs to assemblies
-#wget https://raw.githubusercontent.com/human-pangenomics/HPP_Year1_Assemblies/main/genbank_changes/y1_genbank_assembly_accession_ids.txt
+wget https://raw.githubusercontent.com/human-pangenomics/HPP_Year1_Assemblies/main/genbank_changes/y1_genbank_assembly_accession_ids.txt
 
 tail -n +2 y1_genbank_assembly_accession_ids.txt | while read SAMPLE mat pat; do
     ASSEMBLY=${SAMPLE}.2
+    echo $ASSEMBLY
     if [ ! -f "/var/www/html/hub/${ASSEMBLY}/ensembl.bb" ]; then
         wget -O ${ASSEMBLY}.gff3.gz $(grep $mat gff.files)
         make_bb
@@ -61,9 +62,9 @@ tail -n +2 y1_genbank_assembly_accession_ids.txt | while read SAMPLE mat pat; do
         wget -O ${ASSEMBLY}.gff3.gz $(grep $pat gff.files)
         make_bb
         version=$(grep $pat gff.files | sed 's/.*geneset.//' | cut -f1 -d'/') 
+        add_trackdb
     fi
 done
-exit
 
 
 # CHM13 is different in that it uses 'chr' in the chromosome ID. It also only has one haplotype.
@@ -73,5 +74,4 @@ make_bb
 version='2022_07'
 add_trackdb
 
-exit
 
