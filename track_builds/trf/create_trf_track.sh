@@ -1,15 +1,19 @@
 ## requires AWS CLI
+set -eou pipefail
 ## must have alias HUB_REPO set
+## Get HUB_DIR
+source ${HUB_REPO}/backbone/envs.txt
 
 ############################################################################### 
 ##                             Create BigBeds                                ##
 ###############################################################################
 
-## Get data from S3 submission
-cd ~
+## work in a temporary directory
+curdir=$(pwd)
+workdir=$(mktemp -d --suffix=_trf_tracks)
+cd $workdir
 
-mkdir trf_tmp
-cd trf_tmp
+## Get data from S3 submission
 
 aws --no-sign-request s3 cp \
     --recursive \
@@ -45,23 +49,20 @@ do
         -tab \
         ${SAMPLE}/${SAMPLE}.${HAPLOTYPE}.trf.bed \
         -as=${HUB_REPO}/track_builds/trf/trf.as \
-        /var/www/html/hub/$ASSEMBLY/chrom.sizes \
-        /var/www/html/hub/$ASSEMBLY/trf.bb
+        ${HUB_DIR}/$ASSEMBLY/chrom.sizes \
+        ${HUB_DIR}/$ASSEMBLY/trf.bb
 
 
     ## copy over trf trackDb and add to main trackDb.txt file
-    cp ${HUB_REPO}/track_builds/trf/trf_trackDb.txt /var/www/html/hub/$ASSEMBLY/trf_trackDb.txt 
+    cp ${HUB_REPO}/track_builds/trf/trf_trackDb.txt ${HUB_DIR}/$ASSEMBLY/trf_trackDb.txt 
 
     ## Add import statement if it's not already there
-    if grep -q 'include trf_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then
+    if grep -q 'include trf_trackDb.txt' ${HUB_DIR}/$ASSEMBLY/trackDb.txt; then
         echo found
     else
-        sed -i '1 i\include trf_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt
+        sed -i '1 i\include trf_trackDb.txt' ${HUB_DIR}/$ASSEMBLY/trackDb.txt
     fi
 
 done
 
-
-cd ~
-rm trf_tmp
-
+cd $curdir                                                                                                                               rm -rf $workdir

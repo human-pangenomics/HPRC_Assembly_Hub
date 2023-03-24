@@ -1,16 +1,19 @@
 ## requires AWS CLI
+set -eou pipefail
 ## must have alias HUB_REPO set
+## Get HUB_DIR
+source ${HUB_REPO}/backbone/envs.txt
 
 ############################################################################### 
 ##                             Create BigBeds                                ##
 ###############################################################################
 
+## work in a temporary directory
+curdir=$(pwd)
+workdir=$(mktemp -d --suffix=_flagger_track)
+cd $workdir
+
 ## Get data from S3 submission
-cd ~
-
-mkdir flagger_tmp
-cd flagger_tmp
-
 aws --no-sign-request s3 cp \
     --recursive \
     s3://human-pangenomics/submissions/e9ad8022-1b30-11ec-ab04-0a13c5208311--COVERAGE_ANALYSIS_Y1_GENBANK/FLAGGER/APR_08_2022/FINAL_HIFI_BASED/FLAGGER_HIFI_ASM_SIMPLIFIED_BEDS/ \
@@ -44,25 +47,24 @@ do
         -extraIndex=name \
         -type=bed9 \
         -tab \
-        ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.stripped.bed \
+        -sizesIs2Bit \
         -as=${HUB_REPO}/track_builds/flagger/flagger.as \
-        /var/www/html/hub/$ASSEMBLY/chrom.sizes \
-        /var/www/html/hub/$ASSEMBLY/flagger.bb
+        ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.stripped.bed \
+        ${HUB_DIR}/$ASSEMBLY/$ASSEMBLY.2bit \
+        ${HUB_DIR}/$ASSEMBLY/flagger.bb
 
 
     ## copy over flagger trackDb and add to main trackDb.txt file
-    cp ${HUB_REPO}/track_builds/flagger/flagger_trackDb.txt /var/www/html/hub/$ASSEMBLY/flagger_trackDb.txt 
+    cp ${HUB_REPO}/track_builds/flagger/flagger_trackDb.txt ${HUB_DIR}/$ASSEMBLY/flagger_trackDb.txt 
 
     ## Add import statement if it's not already there
-    if grep -q 'include flagger_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then
+    if grep -q 'include flagger_trackDb.txt' ${HUB_DIR}/$ASSEMBLY/trackDb.txt; then
         echo found
     else
-        sed -i '1 i\include flagger_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt
+        sed -i '1 i\include flagger_trackDb.txt' ${HUB_DIR}/$ASSEMBLY/trackDb.txt
     fi
 
 done
 
-
-cd ~
-rm flagger_tmp
-
+cd $curdir
+rm -rf $workdir

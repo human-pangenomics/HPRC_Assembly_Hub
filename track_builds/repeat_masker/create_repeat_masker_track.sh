@@ -1,16 +1,19 @@
 ## requires AWS CLI
+set -eou pipefail
 ## must have alias HUB_REPO set
+## Get HUB_DIR
+source ${HUB_REPO}/backbone/envs.txt
 
 ############################################################################### 
 ##                             Create BigBeds                                ##
 ###############################################################################
 
+## work in a temporary directory
+curdir=$(pwd)
+workdir=$(mktemp -d --suffix=_repeatmasker_track)
+cd $workdir
+
 ## Get data from S3 submission
-cd ~
-
-mkdir repeat_masker_tmp
-cd repeat_masker_tmp
-
 aws --no-sign-request s3 cp \
     --recursive \
     s3://human-pangenomics/submissions/6C63D998-712A-480D-8BEC-99DD8DBE16C5--RM_BEDS/ \
@@ -45,25 +48,24 @@ do
         -extraIndex=name \
         -type=bed4+6 \
         -tab \
-        ${SAMPLE}/${SAMPLE}.${HAPLOTYPE}.rm.bed \
         -as=${HUB_REPO}/track_builds/repeat_masker/repeat_masker.as \
-        /var/www/html/hub/$ASSEMBLY/chrom.sizes \
-        /var/www/html/hub/$ASSEMBLY/repeat_masker.bb
+        -sizesIs2Bit \
+        ${SAMPLE}/${SAMPLE}.${HAPLOTYPE}.rm.bed \
+        ${HUB_DIR}/$ASSEMBLY/$ASSEMBLY.2bit \
+        ${HUB_DIR}/$ASSEMBLY/repeat_masker.bb
 
 
     ## copy over repeat masker trackDb and add to main trackDb.txt file
-    cp ${HUB_REPO}/track_builds/repeat_masker/repeat_masker_trackDb.txt /var/www/html/hub/$ASSEMBLY/repeat_masker_trackDb.txt 
+    cp ${HUB_REPO}/track_builds/repeat_masker/repeat_masker_trackDb.txt ${HUB_DIR}/$ASSEMBLY/repeat_masker_trackDb.txt 
 
     ## Add import statement if it's not already there
-    if grep -q 'include repeat_masker_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then
+    if grep -q 'include repeat_masker_trackDb.txt' ${HUB_DIR}/$ASSEMBLY/trackDb.txt; then
         echo found
     else
-        sed -i '1 i\include repeat_masker_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt
+        sed -i '1 i\include repeat_masker_trackDb.txt' ${HUB_DIR}/$ASSEMBLY/trackDb.txt
     fi
 
 done
 
-
-cd ~
-rm repeat_masker_tmp
-
+cd $curdir
+rm -rf $workdir

@@ -1,16 +1,19 @@
 ## requires AWS CLI
+set -eou pipefail
 ## must have alias HUB_REPO set
+## Get HUB_DIR
+source ${HUB_REPO}/backbone/envs.txt
 
 ############################################################################### 
 ##                             Create BigBeds                                ##
 ###############################################################################
 
+## work in a temporary directory
+curdir=$(pwd)
+workdir=$(mktemp -d --suffix=_segdup_tmp)
+cd $workdir
+
 ## Get data from S3 submission
-cd ~
-
-mkdir segdup_tmp
-cd segdup_tmp
-
 aws --no-sign-request s3 cp \
     --recursive \
     s3://human-pangenomics/submissions/403CA459-7947-4D49-A417-943DFA81A5CD--SEDEF/ \
@@ -51,25 +54,25 @@ do
     bedToBigBed \
         -type=bed4+6 \
         -tab \
-        ${SAMPLE}/${SAMPLE}.${HAP_STR}_sedef_tmp.bed \
         -as=${HUB_REPO}/track_builds/sedef/sedef.as \
-        /var/www/html/hub/$ASSEMBLY/chrom.sizes \
-        /var/www/html/hub/$ASSEMBLY/sedef.bb
+        -sizesIs2Bit \
+        ${SAMPLE}/${SAMPLE}.${HAP_STR}_sedef_tmp.bed \
+        ${HUB_DIR}/$ASSEMBLY/${ASSEMBLY}.2bit \
+        ${HUB_DIR}/$ASSEMBLY/sedef.bb
 
 
     ## copy over sedef trackDb and add to main trackDb.txt file
-    cp ${HUB_REPO}/track_builds/sedef/sedef_trackDb.txt /var/www/html/hub/$ASSEMBLY/sedef_trackDb.txt 
+    cp ${HUB_REPO}/track_builds/sedef/sedef_trackDb.txt ${HUB_DIR}/$ASSEMBLY/sedef_trackDb.txt 
 
     ## Add import statement if it's not already there
-    if grep -q 'include sedef_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then
+    if grep -q 'include sedef_trackDb.txt' ${HUB_DIR}/$ASSEMBLY/trackDb.txt; then
         echo found
     else
-        sed -i '1 i\include sedef_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt
+        sed -i '1 i\include sedef_trackDb.txt' ${HUB_DIR}/$ASSEMBLY/trackDb.txt
     fi
 
 done
 
-
-cd ~
-rm segdup_tmp
+cd $curdir
+rm -rf $workdir
 

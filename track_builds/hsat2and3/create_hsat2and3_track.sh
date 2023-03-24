@@ -1,16 +1,19 @@
 ## requires AWS CLI
+set -eou pipefail
 ## must have alias HUB_REPO set
+## Get HUB_DIR
+source ${HUB_REPO}/backbone/envs.txt
 
 ############################################################################### 
 ##                             Create BigBeds                                ##
 ###############################################################################
 
+## work in a temporary directory
+curdir=$(pwd)
+workdir=$(mktemp -d --suffix=_hsat2and3_track)
+cd $workdir
+
 ## Get data from S3 submission
-cd ~
-
-mkdir hsat2and3_tmp
-cd hsat2and3_tmp
-
 aws --no-sign-request s3 cp \
     --recursive \
     s3://human-pangenomics/submissions/1A6CA334-DAF0-4186-AB3E-12442503F2BE--HSAT_2_3/ \
@@ -41,21 +44,24 @@ do
         -extraIndex=name \
         -type=bed9 \
         -tab \
-        ${SAMPLE}.${HAPLOTYPE}.hsat2and3.stripped.bed \
         -as=${HUB_REPO}/track_builds/hsat2and3/hsat2and3.as \
-        /var/www/html/hub/$ASSEMBLY/chrom.sizes \
-        /var/www/html/hub/$ASSEMBLY/hsat2and3.bb
+        -sizesIs2Bit \
+        ${SAMPLE}.${HAPLOTYPE}.hsat2and3.stripped.bed \
+        ${HUB_DIR}/$ASSEMBLY/$ASSEMBLY.2bit \
+        ${HUB_DIR}/$ASSEMBLY/hsat2and3.bb
 
 
     ## copy over hsat2and3 trackDb and add to main trackDb.txt file
-    cp ${HUB_REPO}/track_builds/hsat2and3/hsat2and3_trackDb.txt /var/www/html/hub/$ASSEMBLY/hsat2and3_trackDb.txt 
+    cp ${HUB_REPO}/track_builds/hsat2and3/hsat2and3_trackDb.txt ${HUB_DIR}/$ASSEMBLY/hsat2and3_trackDb.txt 
 
     ## Add import statement if it's not already there
-    if grep -q 'include hsat2and3_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then
+    if grep -q 'include hsat2and3_trackDb.txt' ${HUB_DIR}/$ASSEMBLY/trackDb.txt; then
         echo found
     else
-        sed -i '1 i\include hsat2and3_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt
+        sed -i '1 i\include hsat2and3_trackDb.txt' ${HUB_DIR}/$ASSEMBLY/trackDb.txt
     fi
 
 done
 
+cd $curdir
+rm -rf $workdir
