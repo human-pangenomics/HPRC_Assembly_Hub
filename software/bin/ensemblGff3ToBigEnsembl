@@ -14,6 +14,7 @@ DEBUG = False
 # bigEnsembl.as field indexes of interest
 BGP_CHROM_COL = 0
 BGP_NAME_COL = 3
+BGP_ITEMRGB_COL = 8
 BGP_NAME2_COL = 12
 BGP_CDSSTARTSTAT_COL = 13
 BGP_CDSENDSTAT_COL = 14
@@ -26,6 +27,13 @@ BGP_PARENTGENE_COL = 21
 BGP_MAPPINGTYPE_COL = 22
 BGP_PARENTGENEDISPLAYXREF_COL = 23
 BGP_NUM_COLUMNS = 24
+
+# item colors
+CODING_COLOR = "12,12,120"
+NONCODING_COLOR = "0,153,0"
+PSEUDOGENE_COLOR = "255,51,255"
+SPECIAL_COLOR = "155,65,0"   # called 'problem' in gencode tracks, but complaints this isn't accurate
+
 
 def parseArgs():
     desc = """Convert an HPRC Ensembl GFF3 to a bigGenePred ASCII file for conversion to bigBed."""
@@ -153,6 +161,43 @@ def convert_to_ucsc_chrom(ens_chrom):
     else:
         return "chr" + ens_chrom
 
+
+_protein_coding_biotypes = frozenset([
+    "IG_C_gene",
+    "IG_D_gene",
+    "IG_J_gene",
+    "IG_V_gene",
+    "IG_LV_gene",
+    "polymorphic_pseudogene",
+    "protein_coding",
+    "nonsense_mediated_decay",
+    "TR_C_gene",
+    "TR_D_gene",
+    "TR_J_gene",
+    "TR_V_gene",
+    "non_stop_decay",
+    "protein_coding_LoF",
+    "protein_coding_CDS_not_defined"])
+
+_special_biotypes = frozenset([
+    "retained_intron,",
+    "TEC,",
+    "disrupted_domain,",
+    "ambiguous_orf,",
+    "artifact,",
+    "artifactual_duplication"])
+
+def get_transcript_color(trans_biotype):
+    # order is important here for TR_V_gene vs TR_V_pseudogene"
+    if trans_biotype in _protein_coding_biotypes:
+        return CODING_COLOR
+    elif "pseudogene" in trans_biotype:
+        return PSEUDOGENE_COLOR
+    elif trans_biotype in _special_biotypes:
+        return SPECIAL_COLOR
+    else:
+        return NONCODING_COLOR
+
 def create_transcript(gp_row, gene_metas, trans_metas, ucsc_names, ensembl_gp_fh):
     """create a transcript record, adding metadata to match bigEnsembl.as"""
 
@@ -166,6 +211,7 @@ def create_transcript(gp_row, gene_metas, trans_metas, ucsc_names, ensembl_gp_fh
         gp_row[BGP_CHROM_COL] = convert_to_ucsc_chrom(gp_row[BGP_CHROM_COL])
     gp_row[BGP_NAME_COL] = trans_meta.transcript_id + "." + trans_meta.version
     gp_row[BGP_NAME2_COL] = gene_name
+    gp_row[BGP_ITEMRGB_COL] = get_transcript_color(trans_meta.biotype)
     gp_row[BGP_CDSSTARTSTAT_COL] = "none"
     gp_row[BGP_CDSENDSTAT_COL] = "none"
     gp_row[BGP_TYPE_COL] = trans_meta.biotype
