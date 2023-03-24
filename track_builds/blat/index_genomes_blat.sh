@@ -21,10 +21,10 @@ do
         ${HUB_DIR}/${ASSEMBLY}/${ASSEMBLY}.untrans.gfidx \
         ${HUB_DIR}/${ASSEMBLY}/${ASSEMBLY}.2bit
 
-#    gfServer index \
-#        -trans \
-#        ${HUB_DIR}/${ASSEMBLY}/${ASSEMBLY}.trans.gfidx \
-#        ${HUB_DIR}/${ASSEMBLY}/${ASSEMBLY}.2bit
+    gfServer index \
+        -trans \
+        ${HUB_DIR}/${ASSEMBLY}/${ASSEMBLY}.trans.gfidx \
+        ${HUB_DIR}/${ASSEMBLY}/${ASSEMBLY}.2bit
 
 done
 
