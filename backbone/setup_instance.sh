@@ -34,8 +34,9 @@ sudo sed -i '1 a\
 52.32.252.169 hprc-browser.ucsc.edu' /etc/hosts
 
 ## Install the AWS CLI (no need to setup permissions, we are pulling files w/out egress fees)
-sudo apt install awscli -y
-
+## also install make
+sudo apt install make python3-pip awscli -y
+python3 -m pip install pipettor
 
 ############################################################################### 
 ##                              Install Apache                               ##
@@ -133,7 +134,10 @@ sudo systemctl start xinetd
 cd /opt/
 
 sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bedToBigBed
-sudo chmod a+x bedToBigBed
+sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/gff3ToGenePred
+sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/genePredToBigGenePred
+sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/faToTwoBit
+sudo chmod a+x bedToBigBed gff3ToGenePred genePredToBigGenePred faToTwoBit
 
 sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/blat/gfServer
 sudo chmod a+x gfServer
@@ -148,5 +152,5 @@ sudo chmod a+x blat
 echo 'export PATH="$PATH:/opt"' >> ~/.bashrc 
 
 ############################################################################### 
-##                        		  DONE 				                         ##
+##                        		  DONE 			             ##
 ###############################################################################

@@ -65,4 +65,5 @@ do
 
 done
 
-cd $curdir                                                                                                                               rm -rf $workdir
+cd $curdir
+rm -rf $workdir

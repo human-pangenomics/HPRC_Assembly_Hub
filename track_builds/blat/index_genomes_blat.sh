@@ -1,6 +1,6 @@
 ## requires AWS CLI, gfServer
 ## must have alias HUB_REPO set
-## Get BLAT_DIR
+## Get HUB_DIR
 source $HUB_REPO/backbone/envs.txt
 
 
@@ -18,13 +18,13 @@ do
 
     gfServer index \
         -stepSize=5 \
-        ${BLAT_DIR}/${ASSEMBLY}/${ASSEMBLY}.untrans.gfidx \
-        ${BLAT_DIR}/${ASSEMBLY}/${ASSEMBLY}.2bit
+        ${HUB_DIR}/${ASSEMBLY}/${ASSEMBLY}.untrans.gfidx \
+        ${HUB_DIR}/${ASSEMBLY}/${ASSEMBLY}.2bit
 
-    gfServer index \
-        -trans \
-        ${BLAT_DIR}$/{ASSEMBLY}/${ASSEMBLY}.trans.gfidx \
-        ${BLAT_DIR}$/{ASSEMBLY}/${ASSEMBLY}.2bit
+#    gfServer index \
+#        -trans \
+#        ${HUB_DIR}/${ASSEMBLY}/${ASSEMBLY}.trans.gfidx \
+#        ${HUB_DIR}/${ASSEMBLY}/${ASSEMBLY}.2bit
 
 done
 
