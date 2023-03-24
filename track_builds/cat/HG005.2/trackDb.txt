@@ -1,4 +1,0 @@
-include annotations.ebi.v1.txt
-include annotations.ebi.v2.txt
-include annotations.liftoff.txt
-
