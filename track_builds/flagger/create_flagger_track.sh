@@ -51,7 +51,8 @@ do
 
 
     ## copy over flagger trackDb and add to main trackDb.txt file
-    cp ${HUB_REPO}/track_builds/flagger/flagger_trackDb.txt /var/www/html/hub/$ASSEMBLY/flagger_trackDb.txt 
+    cp ${HUB_REPO}/track_builds/flagger/flagger_trackDb.txt /var/www/html/hub/$ASSEMBLY/flagger_trackDb.txt
+    cp ${HUB_REPO}/track_builds/flagger/flagger.html /var/www/html/hub/$ASSEMBLY/flagger.html
 
     ## Add import statement if it's not already there
     if grep -q 'include flagger_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then

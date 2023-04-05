@@ -11,4 +11,5 @@ maxItems 1000000
 maxWindowToDraw 100000000
 type bigBed 9
 bigDataUrl alpha_sat.bb
+html alpha_sat.html
 priority 1

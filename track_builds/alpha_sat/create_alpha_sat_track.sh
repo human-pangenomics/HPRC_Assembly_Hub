@@ -50,6 +50,7 @@ do
 
     ## copy over alpha_sat trackDb and add to main trackDb.txt file
     cp ${HUB_REPO}/track_builds/alpha_sat/alpha_sat_trackDb.txt /var/www/html/hub/$ASSEMBLY/alpha_sat_trackDb.txt 
+    cp ${HUB_REPO}/track_builds/alpha_sat/alpha_sat.html /var/www/html/hub/$ASSEMBLY/alpha_sat.html
 
     ## Add import statement if it's not already there
     if grep -q 'include alpha_sat_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then

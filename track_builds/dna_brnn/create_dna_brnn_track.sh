@@ -47,6 +47,7 @@ do
 
     ## copy over sedef trackDb and add to main trackDb.txt file
     cp ${HUB_REPO}/track_builds/dna_brnn/dna_brnn_trackDb.txt /var/www/html/hub/$ASSEMBLY/dna_brnn_trackDb.txt 
+    cp ${HUB_REPO}/track_builds/dna_brnn/dna_brnn.html /var/www/html/hub/$ASSEMBLY/dna_brnn.html 
 
     ## Add import statement if it's not already there
     if grep -q 'include dna_brnn_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then

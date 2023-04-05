@@ -49,6 +49,7 @@ do
 
     ## copy over hsat2and3 trackDb and add to main trackDb.txt file
     cp ${HUB_REPO}/track_builds/hsat2and3/hsat2and3_trackDb.txt /var/www/html/hub/$ASSEMBLY/hsat2and3_trackDb.txt 
+    cp ${HUB_REPO}/track_builds/hsat2and3/hsat2and3.html /var/www/html/hub/$ASSEMBLY/hsat2and3.html
 
     ## Add import statement if it's not already there
     if grep -q 'include hsat2and3_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then
