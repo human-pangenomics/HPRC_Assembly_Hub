@@ -1,65 +1,18 @@
 <h2>Description</h2>
-<p>RepeatMasker track updated as of March 31, 2021</p>
-<p>RepeatMasker version 4.1.1</p>
-<p>Search Engine: rmblast</p>
-<p>RepeatMasker Database: Dfam</p>
+<p>RepeatMasker version 4.1.2-p1</p>
 
 <h2>Methods</h2>
-<p>RepeatMasker with Dfam</p>
-<p>Polished with modified overlap resolution pipeline</p>
+<p>Repeat masking on each assembly was performed iteratively by RepeatMasker. The first step masked using the default human repeat library, and the second step using a repeat library augmented by CHM13 satellite DNA sequences on the original assemblies after hardmasking the initial repeat masked DNA. The augmented repeat library is available at (https://zenodo.org/record/5537107#.YqNs13XMJrk), final_consensi_gap_nohsat_teucer.embl.txt, and a parallelized repeat masking pipeline is at (https://github.com/chaissonlab/segdupannotation), RepeatMaskGenome.snakefile. The union of the two steps yields the complete repeat masking</p>
 
-<h2>Display Conventions and Configuration</h2>
-<p>Color is based on repeat name or family:</p>
-<table>
-  <tr><th>Repeat<th>Color<th>Repeat<th>Color</tr>
-  <tr><td>(CATTC)n  <td bgcolor="#E87C71">
-      <td>(GAATC)n  <td bgcolor="#E28455"></tr>
-  <tr><td>ALR/Alpha <td bgcolor="#D78C32">
-      <td>BSR/Beta  <td bgcolor="#E370AB"></tr>
-  <tr><td>CER   <td bgcolor="#CE9334">
-      <td>DNA   <td bgcolor="#C19935"></tr>
-  <tr><td>GSAT  <td bgcolor="#B3A033">
-      <td>HSAT  <td bgcolor="#A2A638"></tr>
-  <tr><td>LINE  <td bgcolor="#8CAC3E">
-      <td>Low_complexity    <td bgcolor="#75B042"></tr>
-  <tr><td>LSAU  <td bgcolor="#54B346">
-      <td>LTR   <td bgcolor="#51B756"></tr>
-  <tr><td>RC/Helitron   <td bgcolor="#53BB73">
-      <td>Retroposon    <td bgcolor="#55BE8D"></tr>
-  <tr><td>RNA   <td bgcolor="#54C0A5">
-      <td>rRNA  <td bgcolor="#52BEBB"></tr>
-  <tr><td>SAR   <td bgcolor="#51BDCE">
-      <td>Satellite/acro    <td bgcolor="#4EB8DF"></tr>
-  <tr><td>Satellite/telo    <td bgcolor="#53B0E3">
-      <td>SATR1 <td bgcolor="#5AA5DA"></tr>
-  <tr><td>scRNA <td bgcolor="#6B9AD2">
-      <td>Simple repeat <td bgcolor="#8992C8"></tr>
-  <tr><td>SINE  <td bgcolor="#9A8AC1">
-      <td>snRNA <td bgcolor="#A885BC"></tr>
-  <tr><td>srpRNA    <td bgcolor="#B67EB6">
-      <td>SSTI  <td bgcolor="#C378B2"></tr>
-  <tr><td>SUBTEL_sa <td bgcolor="#D173AF">
-      <td>tRNA  <td bgcolor="#ED72A5"></tr>
-  <tr><td>Novel   <td bgcolor="#191970">
-      <td>Unknown   <td bgcolor="#EF768C">
-  </tr>
-</table>
 
-<h2>Data access</h2>
-<!-- Optional, links for downloading the data if there is a separate source beside the
-  browser  -->
-<p></p>
-
-<h2>Release history</h2>
-<ol>
-  <li>2020-09-22: CHM13 v1.0 release (chm13.draft_v1.0.fasta)
-</ol>
+<h2>References</h2>
+<p>
+  Liao, Wen-Wei, Mobin Asri, Jana Ebler, Daniel Doerr, Marina Haukness, Glenn Hickey, Shuangjia Lu et al. "A draft human pangenome reference." <i>bioRxiv</i> (2022): 2022-07.  
+</p>
 
 <h2>Contacts</h2>
 <ul>
-  <li><a href="mailto:savannah.klein@uconn.edu">Savannah Hoyt &lt;savannah.klein@uconn.edu&gt;</a>
+  <li><a href="mailto:mchaisso@usc.edu">Mark Chaisson &lt;mchaisso@usc.edu&gt;</a>
 </ul>
 <h2>Credits</h2>
-<p>Savannah Hoyt</p>
-<p>Jessica Storer</p>
-<p>Thanks to Arian Smit, Robert Hubley, and the Dfam project for providing the tools and models used to generate this track.</p>
+<p>Mark Chaisson</p>

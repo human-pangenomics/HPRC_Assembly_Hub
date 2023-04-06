@@ -51,6 +51,7 @@ do
 
     ## copy over trf trackDb and add to main trackDb.txt file
     cp ${HUB_REPO}/track_builds/trf/trf_trackDb.txt /var/www/html/hub/$ASSEMBLY/trf_trackDb.txt 
+    cp ${HUB_REPO}/track_builds/trf/trf.html /var/www/html/hub/$ASSEMBLY/trf.html 
 
     ## Add import statement if it's not already there
     if grep -q 'include trf_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then

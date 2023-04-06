@@ -59,6 +59,7 @@ do
 
     ## copy over sedef trackDb and add to main trackDb.txt file
     cp ${HUB_REPO}/track_builds/sedef/sedef_trackDb.txt /var/www/html/hub/$ASSEMBLY/sedef_trackDb.txt 
+    cp ${HUB_REPO}/track_builds/sedef/sedef.html /var/www/html/hub/$ASSEMBLY/sedef.html
 
     ## Add import statement if it's not already there
     if grep -q 'include sedef_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then

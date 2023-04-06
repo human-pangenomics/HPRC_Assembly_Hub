@@ -11,4 +11,5 @@ maxItems 1000000
 maxWindowToDraw 100000000
 type bigBed 4 + 6
 bigDataUrl sedef.bb
+html sedef.html
 priority 1
