@@ -6,5 +6,5 @@ group compGeno
 otherSpecies GRCh38
 visibility pack
 priority 3
-bigDataUrl https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=submissions/A512ED34-9A91-4FC1-91A5-7AA162D7AFB2--Y1-BIGCHAINS/GRCh38-f1g-90-mc-aug11/aggr_bigchains/GRCh38/fillinsample-to-GRCh38.bigChain.bb
-linkDataUrl https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=submissions/A512ED34-9A91-4FC1-91A5-7AA162D7AFB2--Y1-BIGCHAINS/GRCh38-f1g-90-mc-aug11/aggr_bigchains/GRCh38/fillinsample-to-GRCh38.bigLink.bb
+bigDataUrl https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/A512ED34-9A91-4FC1-91A5-7AA162D7AFB2--Y1-BIGCHAINS/GRCh38-f1g-90-mc-aug11/aggr_bigchains/fillinsample/GRCh38-to-fillinsample.bigChain.bb
+linkDataUrl https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/A512ED34-9A91-4FC1-91A5-7AA162D7AFB2--Y1-BIGCHAINS/GRCh38-f1g-90-mc-aug11/aggr_bigchains/fillinsample/GRCh38-to-fillinsample.bigLink.bb

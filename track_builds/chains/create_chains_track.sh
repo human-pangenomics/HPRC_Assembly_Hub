@@ -27,8 +27,8 @@ readarray -t ASSEMBLIES <${HUB_REPO}/assembly_info/assembly_list.txt
 ## Loop through assemblies and add asm-to-ref alignment
 for ASSEMBLY in "${ASSEMBLIES[@]}" CHM13
 do 
-    sed "s/fillinsample/${ASSEMBLY}/" ${HUB_REPO}/track_builds/chains/chains_trackDb.txt |\
-    sed "s/fillinsample/${ASSEMBLY}/" > ${HUB_DIR}/${ASSEMBLY}/chains_trackDb.txt
+    sed "s/fillinsample/${ASSEMBLY}/g" ${HUB_REPO}/track_builds/chains/chains_trackDb.txt |\
+    sed "s/fillinsample/${ASSEMBLY}/g" > ${HUB_DIR}/${ASSEMBLY}/chains_trackDb.txt
 
 
 ## Add import statement if it's not already there
