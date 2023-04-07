@@ -1,0 +1,73 @@
+<h2>Description</h2>
+<p> Flagger is a read-based pipeline that detects different types of misassemblies within a phased diploid assembly. The pipeline works by mapping the HiFi reads to the combined maternal and paternal assembly in a haplotype-aware manner and then identifying coverage inconsistencies within these read mappings that are likely due to assembly errors.
+</p>	
+
+<table>
+<thead>	
+  <tr>
+    <th>Component</th>
+    <th>Status</th>
+    <th>Color</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Err</td>
+    <td>Erroneous</td>
+    <td>Red</td>
+    <td>This block has low read coverage. If it is located in the middle of a contig it could be either a misjoin or a region that needs polishing.</td>
+  </tr>
+  <tr>
+    <td>Dup</td>
+    <td>Duplicated</td>
+    <td>Orange</td>
+    <td>This block is potentially a false duplication of another block. It should mainly include low-MAPQ alignments with half of the expected coverage. Probably one of the copies has to be polished to fix this issue.</td>
+  </tr>
+  <tr>
+    <td>Hap</td>
+    <td>Haploid</td>
+    <td>Green</td>
+    <td>This block is correctly assembled and has the expected read coverage.</td>
+  </tr>
+  <tr>
+    <td>Col</td>
+    <td>Collapsed</td>
+    <td>Purple</td>
+    <td>Two or more highly similar haplotypes are collapsed into this block.</td>
+  </tr> 
+  <tr>
+    <td>Unk</td>
+    <td>Unknown</td>
+    <td>Gray</td>
+    <td>These blocks could not be assigned confidently (usually on the edges of other components).</td>
+  </tr> 
+</tbody>  
+</table>
+
+
+<h2>Methods</h2>
+<p> Flagger is documented in its <a href="https://github.com/mobinasri/flagger" target="_blank">GitHub repository</a>.
+
+
+  Briefly, it has three steps:
+<ul>
+  <li>Calculate the read coverage of each assembly base</li>
+  <li>Fit a mixture model to the coverage distributions</li>
+  <li>Extract the blocks assigned to the model's 4 main components: erroneous, duplicated, haploid, and collapsed.</li>
+</ul>
+</p>
+
+<h2>References</h2>
+<p>
+	Liao, Wen-Wei, Mobin Asri, Jana Ebler, Daniel Doerr, Marina Haukness, Glenn Hickey, Shuangjia Lu et al. "A draft human pangenome reference." <i>bioRxiv</i> (2022): 2022-07.
+</p>
+
+
+<h2>Contact</h2>
+For inquiries, please contact:
+<p><a href="mailto:masri@ucsc.edu">Mobin Asri &lt;masri@ucsc.edu&gt;</a></p>
+
+
+<h2>Credits</h2>
+<p>Mobin Asri (UC Santa Cruz Genomics Institute, University of California, Santa Cruz, 1156 High St, Santa Cruz, CA, USA)</p>

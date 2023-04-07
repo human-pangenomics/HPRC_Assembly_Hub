@@ -1,0 +1,32 @@
+<h2>Description</h2>
+<p>Human Pangenome Reference Consortium's year 1 assembly alignments to GRCh38 genearated by minimap2.</p>
+
+<h2>Methods</h2>
+<p>Assemblies were aligned against GRCh38 (GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz) with minimap2 as follows
+<pre>
+  <code>
+# paternal
+$ minimap2 -x asm5 -a --eqx --cs -t ${THREADS} ${REFFASTA} ${SAMPLE}.paternal.f1_assembly_v2_genbank.fa \
+	| samtools sort --write-index -m4G -@ ${THREADS} -o ${SAMPLE}.paternal.${REF}.bam##idx##${SAMPLE}.paternal.${REF}.bam.bai
+   
+# maternal
+$ minimap2 -x asm5 -a --eqx --cs -t ${THREADS} ${REFFASTA} ${SAMPLE}.maternal.f1_assembly_v2_genbank.fa \
+	| samtools sort --write-index -m4G -@ ${THREADS} -o ${SAMPLE}.maternal.${REF}.bam##idx##${SAMPLE}.maternal.${REF}.bam.bai
+	</code>
+</pre>
+  
+
+<h2>References</h2>
+<p>
+	Liao, Wen-Wei, Mobin Asri, Jana Ebler, Daniel Doerr, Marina Haukness, Glenn Hickey, Shuangjia Lu et al. "A draft human pangenome reference." <i>bioRxiv</i> (2022): 2022-07.	
+</p>
+
+<h2>Contact</h2>
+For inquiries, please contact:
+<p><a href="mailto:wen-wei.liao@wustl.edu">Wen-Wei Liao &lt;wen-wei.liao@wustl.edu&gt;</a></p>
+<p><a href="mailto:ira.hall@yale.edu">Ira Hall &lt;ira.hall@yale.edu&gt;</a></p>
+
+
+<h2>Credits</h2>
+<p>Wen-Wei Liao (Department of Genetics, Yale University School of Medicine, New Haven, CT 06510, USA)</p>
+<p>Ira Hall (Department of Genetics, Yale University School of Medicine, New Haven, CT 06510, USA)</p>

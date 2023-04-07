@@ -16,10 +16,10 @@ ASSEMBLIES+=("CHM13")
 for ASSEMBLY in "${ASSEMBLIES[@]}"
 do 
 
-    gfServer index \
-        -stepSize=5 \
-        ${HUB_DIR}/${ASSEMBLY}/${ASSEMBLY}.untrans.gfidx \
-        ${HUB_DIR}/${ASSEMBLY}/${ASSEMBLY}.2bit
+#    gfServer index \
+#        -stepSize=5 \
+#        ${HUB_DIR}/${ASSEMBLY}/${ASSEMBLY}.untrans.gfidx \
+#        ${HUB_DIR}/${ASSEMBLY}/${ASSEMBLY}.2bit
 
     gfServer index \
         -trans \

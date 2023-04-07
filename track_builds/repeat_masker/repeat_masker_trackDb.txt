@@ -12,3 +12,4 @@ maxWindowToDraw 100000000
 type bigBed 4 + 6
 bigDataUrl repeat_masker.bb
 priority 1
+html ../shared/repeat_masker.html

@@ -11,4 +11,5 @@ maxItems 1000000
 maxWindowToDraw 100000000
 type bigBed 9
 bigDataUrl flagger.bb
+html ../shared/flagger.html
 priority 1

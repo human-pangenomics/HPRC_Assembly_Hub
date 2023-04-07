@@ -12,3 +12,4 @@ maxWindowToDraw 100000000
 type bigBed 4 + 6
 bigDataUrl sedef.bb
 priority 1
+html ../shared/sedef.html

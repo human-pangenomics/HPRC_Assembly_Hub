@@ -4,6 +4,7 @@ longLabel Ensembl Genes version
 description Ensembl Genes version
 type bigGenePred
 group genes
+html ../shared/ensembl_genes.html
 itemRgb on
 priority 2
 visibility hide
