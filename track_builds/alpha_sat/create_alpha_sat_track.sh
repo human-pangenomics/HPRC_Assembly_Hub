@@ -38,21 +38,23 @@ do
         HAP_STR=maternal
     fi
 
-    ## Strip off sample name and haplotype int (to match 2bit file)
-    sed 's/^.*#\(J.*\)/\1/' \
-        ${SAMPLE}/AS-HOR+SF-vs-${SAMPLE}-${HAP_STR}.bed \
-        | awk -v 'FS=\t' -v 'OFS=\t' '{ $5=int($5); print }' \
-        > ${SAMPLE}.${HAPLOTYPE}.alpha_sat.stripped.bed
-
-    bedToBigBed \
-        -extraIndex=name \
-        -type=bed9 \
-        -tab \
-        -as=${HUB_REPO}/track_builds/alpha_sat/alpha_sat.as \
-        -sizesIs2Bit \
-        ${SAMPLE}.${HAPLOTYPE}.alpha_sat.stripped.bed \
-        ${HUB_DIR}/${ASSEMBLY}/${ASSEMBLY}.2bit \
-        ${HUB_DIR}/$ASSEMBLY/alpha_sat.bb
+    if [ ! -f "${HUB_DIR}/${ASSEMBLY}/alpha_sat.bb" ]; then
+        ## Strip off sample name and haplotype int (to match 2bit file)
+        sed 's/^.*#\(J.*\)/\1/' \
+            ${SAMPLE}/AS-HOR+SF-vs-${SAMPLE}-${HAP_STR}.bed \
+            | awk -v 'FS=\t' -v 'OFS=\t' '{ $5=int($5); print }' \
+            > ${SAMPLE}.${HAPLOTYPE}.alpha_sat.stripped.bed
+    
+        bedToBigBed \
+            -extraIndex=name \
+            -type=bed9 \
+            -tab \
+            -as=${HUB_REPO}/track_builds/alpha_sat/alpha_sat.as \
+            -sizesIs2Bit \
+            ${SAMPLE}.${HAPLOTYPE}.alpha_sat.stripped.bed \
+            ${HUB_DIR}/${ASSEMBLY}/${ASSEMBLY}.2bit \
+            ${HUB_DIR}/$ASSEMBLY/alpha_sat.bb
+    fi
 
     ## copy over alpha_sat trackDb and add to main trackDb.txt file
     cp ${HUB_REPO}/track_builds/alpha_sat/alpha_sat_trackDb.txt ${HUB_DIR}/$ASSEMBLY/alpha_sat_trackDb.txt 

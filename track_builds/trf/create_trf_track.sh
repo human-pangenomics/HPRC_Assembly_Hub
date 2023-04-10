@@ -13,12 +13,6 @@ curdir=$(pwd)
 workdir=$(mktemp -d --suffix=_trf_tracks)
 cd $workdir
 
-## Get data from S3 submission
-
-aws --no-sign-request s3 cp \
-    --recursive \
-    s3://human-pangenomics/submissions/1FE2CB96-1B4D-4204-BE4E-08DB00746F68--YEAR_1_TRF \
-    .
 
 
 readarray -t ASSEMBLIES <${HUB_REPO}/assembly_info/assembly_list.txt
@@ -38,19 +32,28 @@ do
         HAP_STR=mat
     fi
 
-    zcat ${SAMPLE}/${SAMPLE}.${HAP_STR}.trf.bed.gz \
-        | sed 's/^.*#\(J.*\)/\1/' \
-        > ${SAMPLE}/${SAMPLE}.${HAPLOTYPE}.trf.bed
-
-
-    ## Convber to bigbed
-    bedToBigBed \
-        -type=bed3+13 \
-        -tab \
-        ${SAMPLE}/${SAMPLE}.${HAPLOTYPE}.trf.bed \
-        -as=${HUB_REPO}/track_builds/trf/trf.as \
-        ${HUB_DIR}/$ASSEMBLY/chrom.sizes \
-        ${HUB_DIR}/$ASSEMBLY/trf.bb
+    if [ ! -f "${HUB_DIR}/${ASSEMBLY}/trf.bb" ]; then
+        if [ ! -f "${SAMPLE}/${SAMPLE}.${HAP_STR}.trf.bed.gz" ]; then
+            ## Get all data from S3 submission (this creates bed files for all assemblies in the workdir)
+            aws --no-sign-request s3 cp \
+                --recursive \
+                s3://human-pangenomics/submissions/1FE2CB96-1B4D-4204-BE4E-08DB00746F68--YEAR_1_TRF \
+                .
+        fi
+        zcat ${SAMPLE}/${SAMPLE}.${HAP_STR}.trf.bed.gz \
+            | sed 's/^.*#\(J.*\)/\1/' \
+            > ${SAMPLE}/${SAMPLE}.${HAPLOTYPE}.trf.bed
+    
+    
+        ## Convber to bigbed
+        bedToBigBed \
+            -type=bed3+13 \
+            -tab \
+            ${SAMPLE}/${SAMPLE}.${HAPLOTYPE}.trf.bed \
+            -as=${HUB_REPO}/track_builds/trf/trf.as \
+            ${HUB_DIR}/$ASSEMBLY/chrom.sizes \
+            ${HUB_DIR}/$ASSEMBLY/trf.bb
+    fi
 
 
     ## copy over trf trackDb and add to main trackDb.txt file

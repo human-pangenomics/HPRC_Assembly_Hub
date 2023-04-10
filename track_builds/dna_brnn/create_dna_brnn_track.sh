@@ -14,11 +14,6 @@ curdir=$(pwd)
 workdir=$(mktemp -d --suffix=_dna_brnn_track)
 cd $workdir
 
-## Get data from S3 submission
-aws --no-sign-request s3 cp \
-    --recursive \
-    s3://human-pangenomics/submissions/2CB43373-C91E-41B1-AD2B-57E8D870A5E0--DNA_BRNN/ \
-    .
 
 
 readarray -t ASSEMBLIES <${HUB_REPO}/assembly_info/assembly_list.txt
@@ -39,16 +34,25 @@ do
         HAP_STR=maternal
     fi
 
-    ## Convber to bigbed
-    bedToBigBed \
-        -type=bed4 \
-        -tab \
-        -as=${HUB_REPO}/track_builds/dna_brnn/dna_brnn.as \
-        -sizesIs2Bit \
-        ${SAMPLE}.${HAP_STR}.f1_assembly_v2_genbank.dna_brnn.bed \
-        ${HUB_DIR}/$ASSEMBLY/$ASSEMBLY.2bit \
-        ${HUB_DIR}/$ASSEMBLY/dna_brnn.bb
-
+    if [ ! -f "${HUB_DIR}/${ASSEMBLY}/dna_brnn.bb" ]; then
+        if [ ! -f "${SAMPLE}.${HAP_STR}.f1_assembly_v2_genbank.dna_brnn.bed" ]; then
+            ## Get all data from S3 submission (this creates bed files for all assemblies in the workdir)
+            aws --no-sign-request s3 cp \
+                --recursive \
+                s3://human-pangenomics/submissions/2CB43373-C91E-41B1-AD2B-57E8D870A5E0--DNA_BRNN/ \
+                .
+           fi
+        fi
+        ## Convert to bigbed
+        bedToBigBed \
+            -type=bed4 \
+            -tab \
+            -as=${HUB_REPO}/track_builds/dna_brnn/dna_brnn.as \
+            -sizesIs2Bit \
+            ${SAMPLE}.${HAP_STR}.f1_assembly_v2_genbank.dna_brnn.bed \
+            ${HUB_DIR}/$ASSEMBLY/$ASSEMBLY.2bit \
+            ${HUB_DIR}/$ASSEMBLY/dna_brnn.bb
+    fi
 
     ## copy over sedef trackDb and add to main trackDb.txt file
     cp ${HUB_REPO}/track_builds/dna_brnn/dna_brnn_trackDb.txt ${HUB_DIR}/$ASSEMBLY/dna_brnn_trackDb.txt 

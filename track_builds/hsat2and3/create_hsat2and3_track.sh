@@ -13,12 +13,6 @@ curdir=$(pwd)
 workdir=$(mktemp -d --suffix=_hsat2and3_track)
 cd $workdir
 
-## Get data from S3 submission
-aws --no-sign-request s3 cp \
-    --recursive \
-    s3://human-pangenomics/submissions/1A6CA334-DAF0-4186-AB3E-12442503F2BE--HSAT_2_3/ \
-    .
-
 
 readarray -t ASSEMBLIES <${HUB_REPO}/assembly_info/assembly_list.txt
 
@@ -35,21 +29,29 @@ do
         HAP_STR=maternal
     fi
 
-    ## Strip off sample name and haplotype int (to match chrom.sizes file)
-    sed 's/^.*#\(J.*\)/\1/' \
-        ${SAMPLE}.${HAP_STR}.f1_assembly_v2_genbank.HSat2and3_Regions.bed \
-        > ${SAMPLE}.${HAPLOTYPE}.hsat2and3.stripped.bed
-
-    bedToBigBed \
-        -extraIndex=name \
-        -type=bed9 \
-        -tab \
-        -as=${HUB_REPO}/track_builds/hsat2and3/hsat2and3.as \
-        -sizesIs2Bit \
-        ${SAMPLE}.${HAPLOTYPE}.hsat2and3.stripped.bed \
-        ${HUB_DIR}/$ASSEMBLY/$ASSEMBLY.2bit \
-        ${HUB_DIR}/$ASSEMBLY/hsat2and3.bb
-
+    if [ ! -f "${HUB_DIR}/${ASSEMBLY}/hsat2and3.bb" ]; then
+        if [ ! -f "${SAMPLE}.${HAP_STR}.f1_assembly_v2_genbank.HSat2and3_Regions.bed" ]; then
+            ## Get all data from S3 submission (this creates bed files for all assemblies in the workdir)
+            aws --no-sign-request s3 cp \
+                --recursive \
+                s3://human-pangenomics/submissions/1A6CA334-DAF0-4186-AB3E-12442503F2BE--HSAT_2_3/ \
+                .
+        fi
+        ## Strip off sample name and haplotype int (to match chrom.sizes file)
+        sed 's/^.*#\(J.*\)/\1/' \
+            ${SAMPLE}.${HAP_STR}.f1_assembly_v2_genbank.HSat2and3_Regions.bed \
+            > ${SAMPLE}.${HAPLOTYPE}.hsat2and3.stripped.bed
+    
+        bedToBigBed \
+            -extraIndex=name \
+            -type=bed9 \
+            -tab \
+            -as=${HUB_REPO}/track_builds/hsat2and3/hsat2and3.as \
+            -sizesIs2Bit \
+            ${SAMPLE}.${HAPLOTYPE}.hsat2and3.stripped.bed \
+            ${HUB_DIR}/$ASSEMBLY/$ASSEMBLY.2bit \
+            ${HUB_DIR}/$ASSEMBLY/hsat2and3.bb
+    
 
     ## copy over hsat2and3 trackDb and add to main trackDb.txt file
     cp ${HUB_REPO}/track_builds/hsat2and3/hsat2and3_trackDb.txt ${HUB_DIR}/$ASSEMBLY/hsat2and3_trackDb.txt 

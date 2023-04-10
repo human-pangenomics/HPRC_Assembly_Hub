@@ -13,12 +13,6 @@ curdir=$(pwd)
 workdir=$(mktemp -d --suffix=_flagger_track)
 cd $workdir
 
-## Get data from S3 submission
-aws --no-sign-request s3 cp \
-    --recursive \
-    s3://human-pangenomics/submissions/e9ad8022-1b30-11ec-ab04-0a13c5208311--COVERAGE_ANALYSIS_Y1_GENBANK/FLAGGER/APR_08_2022/FINAL_HIFI_BASED/FLAGGER_HIFI_ASM_SIMPLIFIED_BEDS/ \
-    .
-
 
 readarray -t ASSEMBLIES <${HUB_REPO}/assembly_info/assembly_list.txt
 
@@ -35,23 +29,33 @@ do
         HAP_STR=maternal
     fi
 
-    ## Bed has both haplotypes. We must split the haplotypes for the browser
-    grep "^${SAMPLE}#${HAPLOTYPE}#" ${SAMPLE}/${SAMPLE}.hifi.flagger_final.simplified.unreliable_only.no_MT.bed > ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.bed
+    if [ ! -f "${HUB_DIR}/${ASSEMBLY}/flagger.bb" ]; then
+        if [ ! -f " ${SAMPLE}/${SAMPLE}.hifi.flagger_final.simplified.unreliable_only.no_MT.bed" ]; then
+            ## Get all data from S3 submission  (this creates bed files for all assemblies in the workdir)
+            aws --no-sign-request s3 cp \
+                --recursive \
+                s3://human-pangenomics/submissions/e9ad8022-1b30-11ec-ab04-0a13c5208311--COVERAGE_ANALYSIS_Y1_GENBANK/FLAGGER/APR_08_2022/FINAL_HIFI_BASED/FLAGGER_HIFI_ASM_SIMPLIFIED_BEDS/ \
+                .
+        fi
 
-    ## Strip off sample name and haplotype int (to match chrom.sizes file)
-    sed 's/^.*#\(J.*\)/\1/' \
-        ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.bed \
-        > ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.stripped.bed
-
-    bedToBigBed \
-        -extraIndex=name \
-        -type=bed9 \
-        -tab \
-        -sizesIs2Bit \
-        -as=${HUB_REPO}/track_builds/flagger/flagger.as \
-        ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.stripped.bed \
-        ${HUB_DIR}/$ASSEMBLY/$ASSEMBLY.2bit \
-        ${HUB_DIR}/$ASSEMBLY/flagger.bb
+        ## Bed has both haplotypes. We must split the haplotypes for the browser
+        grep "^${SAMPLE}#${HAPLOTYPE}#" ${SAMPLE}/${SAMPLE}.hifi.flagger_final.simplified.unreliable_only.no_MT.bed > ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.bed
+    
+        ## Strip off sample name and haplotype int (to match chrom.sizes file)
+        sed 's/^.*#\(J.*\)/\1/' \
+            ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.bed \
+            > ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.stripped.bed
+    
+        bedToBigBed \
+            -extraIndex=name \
+            -type=bed9 \
+            -tab \
+            -sizesIs2Bit \
+            -as=${HUB_REPO}/track_builds/flagger/flagger.as \
+            ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.stripped.bed \
+            ${HUB_DIR}/$ASSEMBLY/$ASSEMBLY.2bit \
+            ${HUB_DIR}/$ASSEMBLY/flagger.bb
+    fi
 
 
     ## copy over flagger trackDb and add to main trackDb.txt file
