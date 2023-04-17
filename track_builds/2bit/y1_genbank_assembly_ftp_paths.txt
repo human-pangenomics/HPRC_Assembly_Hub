@@ -12,14 +12,13 @@ HG01071.2	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/472/685/GCA_018472685.1_HG010
 HG01071.1	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/472/725/GCA_018472725.1_HG01071.alt.pat.f1_v2/GCA_018472725.1_HG01071.alt.pat.f1_v2_genomic.fna.gz
 HG01106.2	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/471/345/GCA_018471345.1_HG01106.pri.mat.f1_v2/GCA_018471345.1_HG01106.pri.mat.f1_v2_genomic.fna.gz
 HG01106.1	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/471/075/GCA_018471075.1_HG01106.alt.pat.f1_v2/GCA_018471075.1_HG01106.alt.pat.f1_v2_genomic.fna.gz
-HG01123.2	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/469/665/GCA_018469665.1_HG01123.pri.mat.f1_v2/GCA_018469665.1_HG01123.pri.mat.f1_v2_genomic.fna.gz
-HG01123.1	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/469/695/GCA_018469695.1_HG01123.alt.pat.f1_v2/GCA_018469695.1_HG01123.alt.pat.f1_v2_genomic.fna.gz
+HG01123.2	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/469/665/GCA_018469665.1_HG01123.pri.mat.f1_v2.1/GCA_018469665.1_HG01123.pri.mat.f1_v2.1_genomic.fna.gz
+HG01123.1	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/469/695/GCA_018469695.1_HG01123.alt.pat.f1_v2.1/GCA_018469695.1_HG01123.alt.pat.f1_v2.1_genomic.fna.gz
 HG01175.2	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/471/085/GCA_018471085.1_HG01175.pri.mat.f1_v2/GCA_018471085.1_HG01175.pri.mat.f1_v2_genomic.fna.gz
 HG01175.1	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/471/065/GCA_018471065.1_HG01175.alt.pat.f1_v2/GCA_018471065.1_HG01175.alt.pat.f1_v2_genomic.fna.gz
 HG01258.2	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/469/405/GCA_018469405.1_HG01258.pri.mat.f1_v2/GCA_018469405.1_HG01258.pri.mat.f1_v2_genomic.fna.gz
 HG01258.1	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/469/675/GCA_018469675.1_HG01258.alt.pat.f1_v2/GCA_018469675.1_HG01258.alt.pat.f1_v2_genomic.fna.gz
-HG01358.2	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/469/865/GCA_018469865.1_HG01358.pri.mat.f1_v2/GCA_018469865.1_HG01358.pri.mat.f1_v2_genomic.fna.gz
-HG01358.1	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/469/965/GCA_018469965.1_HG01358.alt.pat.f1_v2/GCA_018469965.1_HG01358.alt.pat.f1_v2_genomic.fna.gz
+HG01358.2	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/469/865/GCA_018469865.1_HG01358.pri.mat.f1_v2.1/GCA_018469865.1_HG01358.pri.mat.f1_v2.1_genomic.fna.gz
 HG01361.2	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/469/685/GCA_018469685.1_HG01361.pri.mat.f1_v2/GCA_018469685.1_HG01361.pri.mat.f1_v2_genomic.fna.gz
 HG01361.1	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/469/705/GCA_018469705.1_HG01361.alt.pat.f1_v2/GCA_018469705.1_HG01361.alt.pat.f1_v2_genomic.fna.gz
 HG01891.2	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/467/155/GCA_018467155.1_HG01891.pri.mat.f1_v2/GCA_018467155.1_HG01891.pri.mat.f1_v2_genomic.fna.gz
@@ -92,3 +91,4 @@ NA20129.2	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/504/635/GCA_018504635.1_NA201
 NA20129.1	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/504/625/GCA_018504625.1_NA20129.alt.pat.f1_v2/GCA_018504625.1_NA20129.alt.pat.f1_v2_genomic.fna.gz
 NA21309.2	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/504/655/GCA_018504655.1_NA21309.pri.mat.f1_v2/GCA_018504655.1_NA21309.pri.mat.f1_v2_genomic.fna.gz
 NA21309.1	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/504/665/GCA_018504665.1_NA21309.alt.pat.f1_v2/GCA_018504665.1_NA21309.alt.pat.f1_v2_genomic.fna.gz
+HG01358.1	ftp.ncbi.nlm.nih.gov/genomes/all/GCA/018/469/965/GCA_018469965.1_HG01358.alt.pat.f1_v2.1/GCA_018469965.1_HG01358.alt.pat.f1_v2.1_genomic.fna.gz
