@@ -1,0 +1,10 @@
+track chain_GRCh38_PGGB
+shortLabel GRCh38 PGGB chain
+longLabel GRCh38 PGGB chain
+type bigChain 3
+group compGeno
+otherSpecies GRCh38
+visibility hide
+priority 3
+bigDataUrl fillinsample-GRCh38.pggb.bigChain.bb
+linkDataUrl fillinsample-GRCh38.pggb.bigLink.bb
