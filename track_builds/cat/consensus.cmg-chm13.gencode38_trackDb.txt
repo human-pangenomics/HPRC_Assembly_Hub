@@ -6,7 +6,7 @@ type bigGenePred
 group genes
 itemRgb on
 priority 1
-visibility pack
+visibility hide
 searchIndex name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
 bigDataUrl consensus.cmg-chm13.gencode38.bb
 labelFields name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId

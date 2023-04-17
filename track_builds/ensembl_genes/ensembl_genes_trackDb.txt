@@ -7,8 +7,8 @@ group genes
 html ../shared/ensembl_genes.html
 itemRgb on
 priority 2
-visibility hide
+visibility pack
 searchIndex name,name2,geneName
 bigDataUrl ensembl_genes.bb
 labelFields name,name2,geneName
-defaultLabelFields name
+defaultLabelFields geneName

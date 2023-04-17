@@ -71,16 +71,16 @@ tail -n +2 y1_genbank_assembly_accession_ids.txt | while read SAMPLE mat pat; do
     if [ ! -f "${HUB_DIR}/${ASSEMBLY}/ensembl_genes.bb" ]; then
         wget -O ${ASSEMBLY}.gff3.gz $(grep $mat gff.files)
         make_bb
-        version=$(grep $mat gff.files | sed 's/.*geneset.//' | cut -f1 -d'/') # 2022-07 or 2022-08
-        add_trackdb
     fi
+    version=$(grep $mat gff.files | sed 's/.*geneset.//' | cut -f1 -d'/') # 2022-07 or 2022-08
+    add_trackdb
     ASSEMBLY=${SAMPLE}.1
     if [ ! -f "${HUB_DIR}/${ASSEMBLY}/ensembl_genes.bb" ]; then
         wget -O ${ASSEMBLY}.gff3.gz $(grep $pat gff.files)
         make_bb
-        version=$(grep $pat gff.files | sed 's/.*geneset.//' | cut -f1 -d'/') 
-        add_trackdb
     fi
+    version=$(grep $pat gff.files | sed 's/.*geneset.//' | cut -f1 -d'/') 
+    add_trackdb
 done
 
 # CHM13 is different in that it uses 'chr' in the chromosome ID. It also only has one haplotype.
@@ -89,9 +89,9 @@ echo $ASSEMBLY
 if [ ! -f "${HUB_DIR}/${ASSEMBLY}/ensembl_genes.bb" ]; then
     wget -O $ASSEMBLY.gff3.gz https://ftp.ensembl.org/pub/rapid-release/species/Homo_sapiens/GCA_009914755.4/ensembl/geneset/2022_07/Homo_sapiens-GCA_009914755.4-2022_07-genes.gff3.gz
     make_bb
-    version='2022_07'
-    add_trackdb
 fi
+version='2022_07'
+add_trackdb
 
 cd $curdir
 rm -rf $workdir
