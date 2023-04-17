@@ -41,7 +41,6 @@ do
                 --recursive \
                 s3://human-pangenomics/submissions/2CB43373-C91E-41B1-AD2B-57E8D870A5E0--DNA_BRNN/ \
                 .
-           fi
         fi
         ## Convert to bigbed
         bedToBigBed \

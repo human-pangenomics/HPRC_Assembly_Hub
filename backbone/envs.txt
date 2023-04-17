@@ -1,4 +1,3 @@
 HUB_REPO='/home/ubuntu/HPRC_Assembly_Hub/'
-HUB_DIR='/var/www/html/hub/'
-BLAT_DIR='/var/www/html/'
-#BLAT_DIR='/mnt/disks/data/www/html/'
+HUB_DIR='/mnt/disks/data/www/html/'
+BLAT_DIR='/mnt/disks/data/www/html/'

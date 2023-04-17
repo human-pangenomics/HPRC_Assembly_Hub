@@ -51,7 +51,7 @@ do
             ${SAMPLE}.${HAPLOTYPE}.hsat2and3.stripped.bed \
             ${HUB_DIR}/$ASSEMBLY/$ASSEMBLY.2bit \
             ${HUB_DIR}/$ASSEMBLY/hsat2and3.bb
-    
+    fi    
 
     ## copy over hsat2and3 trackDb and add to main trackDb.txt file
     cp ${HUB_REPO}/track_builds/hsat2and3/hsat2and3_trackDb.txt ${HUB_DIR}/$ASSEMBLY/hsat2and3_trackDb.txt 

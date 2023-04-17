@@ -30,7 +30,7 @@ do
     fi
 
     if [ ! -f "${HUB_DIR}/${ASSEMBLY}/flagger.bb" ]; then
-        if [ ! -f " ${SAMPLE}/${SAMPLE}.hifi.flagger_final.simplified.unreliable_only.no_MT.bed" ]; then
+        if [ ! -f "${SAMPLE}/${SAMPLE}.hifi.flagger_final.simplified.unreliable_only.no_MT.bed" ]; then
             ## Get all data from S3 submission  (this creates bed files for all assemblies in the workdir)
             aws --no-sign-request s3 cp \
                 --recursive \

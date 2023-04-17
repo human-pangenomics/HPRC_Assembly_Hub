@@ -45,13 +45,14 @@ do
             > ${SAMPLE}/${SAMPLE}.${HAPLOTYPE}.trf.bed
     
     
-        ## Convber to bigbed
+        ## Convert to bigbed
         bedToBigBed \
             -type=bed3+13 \
             -tab \
-            ${SAMPLE}/${SAMPLE}.${HAPLOTYPE}.trf.bed \
             -as=${HUB_REPO}/track_builds/trf/trf.as \
-            ${HUB_DIR}/$ASSEMBLY/chrom.sizes \
+	    -sizesIs2Bit \
+            ${SAMPLE}/${SAMPLE}.${HAPLOTYPE}.trf.bed \
+            ${HUB_DIR}/$ASSEMBLY/$ASSEMBLY.2bit \ 
             ${HUB_DIR}/$ASSEMBLY/trf.bb
     fi
 

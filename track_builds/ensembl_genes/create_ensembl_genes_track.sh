@@ -31,7 +31,6 @@ make_bb(){
         ${ASSEMBLY}.ensembl.gp \
         ${HUB_DIR}/${ASSEMBLY}/${ASSEMBLY}.2bit \
         ${HUB_DIR}/${ASSEMBLY}/ensembl_genes.bb
-    rm ${ASSEMBLY}.ensembl.gp ${ASSEMBLY}.gff3.gz
 }
 # function to add trackdb with correct annotation version
 add_trackdb(){

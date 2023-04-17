@@ -13,10 +13,27 @@ curdir=$(pwd)
 workdir=$(mktemp -d --suffix=_2bit)
 cd $workdir
 
-cat ${HUB_REPO}/track_builds/2bit/y1_genbank_assembly_ftp_paths.txt | while read ASSEMBLY FPATH; do
+## Genbank sometimes adds a version number, changing this:
+##(...)/all/GCA/018/469/665/GCA_018469665.1_HG01123.pri.mat.f1_v2/GCA_018469665.1_HG01123.pri.mat.f1_v2_genomic.fna.gz
+## into this (please notice both version numbers change):
+##(...)/all/GCA/018/469/665/GCA_018469665.1_HG01123.pri.mat.f1_v2.1/GCA_018469665.1_HG01123.pri.mat.f1_v2.1_genomic.fna.gz
+## we try to fix it while running, updating the input file. To do that we need to work from a copy.
+cp ${HUB_REPO}/track_builds/2bit/y1_genbank_assembly_ftp_paths.txt .
+cat y1_genbank_assembly_ftp_paths.txt | while read ASSEMBLY FPATH; do
     echo $ASSEMBLY
     if [ ! -f "${HUB_DIR}/${ASSEMBLY}/${ASSEMBLY}.2bit" ]; then
-        wget -O ${ASSEMBLY}.fa.gz $FPATH
+	# try/except
+	if ! wget -O ${ASSEMBLY}.fa.gz $FPATH; then
+            newpath=$(echo $FPATH | sed "s/f1_v2/f1_v2.1/g")
+	    wget -O ${ASSEMBLY}.fa.gz $newpath
+	    echo "Fixing: in y1_genbank_assembly_ftp_paths.txt $ASSEMBLY path is now $newpath"
+	    # can't sed because path contains slashes
+	    grep -vP "$ASSEMBLY\t" ${HUB_REPO}/track_builds/2bit/y1_genbank_assembly_ftp_paths.txt > keepme
+	    echo -e "$ASSEMBLY\t$newpath" >> keepme
+	    mv keepme ${HUB_REPO}/track_builds/2bit/y1_genbank_assembly_ftp_paths.txt
+
+	    #sed -i "s/$ASSEMBLY	.*/$ASSEMBLY	$newpath/" ${HUB_REPO}/track_builds/2bit/y1_genbank_assembly_ftp_paths.txt 
+	fi
         faToTwoBit -noMask ${ASSEMBLY}.fa.gz ${HUB_DIR}/${ASSEMBLY}/${ASSEMBLY}.2bit
         rm ${ASSEMBLY}.fa.gz 
     fi

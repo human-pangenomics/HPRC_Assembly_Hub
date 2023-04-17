@@ -14,13 +14,6 @@ curdir=$(pwd)
 workdir=$(mktemp -d --suffix=_alpha_sat_track)
 cd $workdir
 
-## Get data from S3 submission
-
-aws --no-sign-request s3 cp \
-    --recursive \
-    s3://human-pangenomics/submissions/08934468-0AE3-42B6-814A-C5422311A53D--HUMAS_HMMER/ \
-    .
-
 
 readarray -t ASSEMBLIES <${HUB_REPO}/assembly_info/assembly_list.txt
 
@@ -39,7 +32,14 @@ do
     fi
 
     if [ ! -f "${HUB_DIR}/${ASSEMBLY}/alpha_sat.bb" ]; then
-        ## Strip off sample name and haplotype int (to match 2bit file)
+        if [ ! -f "${SAMPLE}/AS-HOR+SF-vs-${SAMPLE}-${HAP_STR}.bed" ]; then
+	   ## Get all data from S3 submission (this creates bed files for all assemblies in the workdir)	
+            aws --no-sign-request s3 cp \
+                --recursive \
+                s3://human-pangenomics/submissions/08934468-0AE3-42B6-814A-C5422311A53D--HUMAS_HMMER/ \
+                .
+	fi
+	## Strip off sample name and haplotype int (to match 2bit file)
         sed 's/^.*#\(J.*\)/\1/' \
             ${SAMPLE}/AS-HOR+SF-vs-${SAMPLE}-${HAP_STR}.bed \
             | awk -v 'FS=\t' -v 'OFS=\t' '{ $5=int($5); print }' \

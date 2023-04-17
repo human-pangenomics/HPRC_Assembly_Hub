@@ -3,7 +3,7 @@ shortLabel CAT Genes (CHM13)
 longLabel CMG-chm13 CAT Annotation GENCODE v38
 description CMG-chm13 CAT Annotation GENCODE v38
 type bigGenePred
-group alignments
+group genes
 itemRgb on
 priority 1
 visibility pack
