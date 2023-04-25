@@ -133,20 +133,21 @@ sudo systemctl start xinetd
 
 cd /opt/
 
-sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bedToBigBed
-sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/gff3ToGenePred
-sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/genePredToBigGenePred
-sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/faToTwoBit
-sudo chmod a+x bedToBigBed gff3ToGenePred genePredToBigGenePred faToTwoBit
+for prog in bedToBigBed \
+    gff3ToGenePred \
+    genePredToBigGenePred \
+    faToTwoBit \
+    ixIxx \
+    hubCheck; do
 
-sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/blat/gfServer
-sudo chmod a+x gfServer
+    sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/$prog
+    sudo chmod a+x $prog
 
-sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/blat/isPcr
-sudo chmod a+x isPcr
-
-sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/blat/blat
-sudo chmod a+x blat
+for prog in gfServer \
+    isPCR \
+    blat; do 
+    sudo wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/blat/$prog
+    sudo chmod a+x $prog
 
 
 echo 'export PATH="$PATH:/opt"' >> ~/.bashrc 

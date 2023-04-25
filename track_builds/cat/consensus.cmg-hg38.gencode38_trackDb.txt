@@ -6,6 +6,7 @@ type bigGenePred
 group genes
 itemRgb on
 priority 1
+searchTrix consensus_cmg-hg38_gencode38.ix
 visibility hide
 searchIndex name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
 bigDataUrl consensus.cmg-hg38.gencode38.bb

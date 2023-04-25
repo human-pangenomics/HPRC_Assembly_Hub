@@ -23,9 +23,13 @@ make_bb(){
     	    ${ASSEMBLY}.gff3.gz \
     	    ${ASSEMBLY}.ensembl.gp
     fi
+    # index for creatng lowercase gene names
+    cut -f4,13,18,19 ${ASSEMBLY}.ensembl.gp > ${ASSEMBLY}.id.tsv
+    ixIxx ${ASSEMBLY}.id.tsv ${HUB_DIR}/${ASSEMBLY}/ensembl_genes.ix ${HUB_DIR}/${ASSEMBLY}/ensembl_genes.ixx
     bedToBigBed \
         -type=bed12+12 \
         -tab \
+        -extraIndex=name,name2,geneName,geneName2 \
         -as=${HUB_REPO}/track_builds/ensembl_genes/ensembl_genes.as \
         -sizesIs2Bit \
         ${ASSEMBLY}.ensembl.gp \
@@ -37,7 +41,7 @@ add_trackdb(){
     sed "s/version/version $version/" ${HUB_REPO}/track_builds/ensembl_genes/ensembl_genes_trackDb.txt > ${HUB_DIR}/$ASSEMBLY/ensembl_genes_trackDb.txt 
     ## Add import statement if it's not already there
     if grep -q 'include ensembl_genes_trackDb.txt' ${HUB_DIR}/$ASSEMBLY/trackDb.txt; then
-        echo found
+        echo $ASSEMBLY found
     else
         sed -i '1 i\include ensembl_genes_trackDb.txt' ${HUB_DIR}/$ASSEMBLY/trackDb.txt
     fi

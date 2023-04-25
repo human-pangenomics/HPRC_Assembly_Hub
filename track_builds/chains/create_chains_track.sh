@@ -19,7 +19,6 @@ source ${HUB_REPO}/backbone/envs.txt
 # the bigbed files are already created; simply point to them (must use http link; see trackDb.txt file)
 
 ASSEMBLIES=$(grep -v NA19240 ${HUB_REPO}/assembly_info/assembly_list.txt | grep -v HG00[25]\.)
-#readarray -t ASSEMBLIES <${HUB_REPO}/assembly_info/assembly_list.txt
 
 ############################################################################### 
 ##                             Create chains track                           ##

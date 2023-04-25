@@ -4,6 +4,11 @@ set -eou pipefail
 ## Get HUB_DIR
 source ${HUB_REPO}/backbone/envs.txt
 
+## work in a temporary directory
+curdir=$(pwd)
+workdir=$(mktemp -d --suffix=_cat_track)
+cd $workdir
+
 ############################################################################### 
 ##                             Create BigBeds                                ##
 ###############################################################################
@@ -22,20 +27,28 @@ source ${HUB_REPO}/backbone/envs.txt
 readarray -t ASSEMBLIES <${HUB_REPO}/assembly_info/assembly_list.txt
 
 for ASSEMBLY in "${ASSEMBLIES[@]}" 'CHM13'; do 
-    #  HG002, HG005, and NA19240 have no consensus files, so skip these
-    if [ -f "${HUB_DIR}/$ASSEMBLY/consensus.cmg-chm13.gencode38.bb" ]; then
-        ## copy over cat trackDbs and add to main trackDb.txt file
-        for tfile in consensus.cmg-chm13.gencode38_trackDb.txt \
-            consensus.cmg-hg38.gencode38_trackDb.txt; do
-                cp ${HUB_REPO}/track_builds/cat/$tfile ${HUB_DIR}/$ASSEMBLY/$tfile
+    for GVERSION in 'chm13' 'hg38'; do
+        ##  HG002, HG005, and NA19240 have no consensus files; only create tracks when files exist
+        if [ -f "${HUB_DIR}/$ASSEMBLY/consensus.cmg-$GVERSION.gencode38.bb" ]; then
+    
+            if [ ! -f ${HUB_DIR}/${ASSEMBLY}/consensus.cmg-$GVERSION.gencode38.ix ]; then
+                ## index
+                bigBedToBed ${HUB_DIR}/$ASSEMBLY/consensus.cmg-$GVERSION.gencode38.bb stdout | cut -f4,13,21,22 > $ASSEMBLY.$GVERSION.tsv
+                ixIxx $ASSEMBLY.$GVERSION.tsv ${HUB_DIR}/${ASSEMBLY}/consensus.cmg-$GVERSION.gencode38.ix ${HUB_DIR}/${ASSEMBLY}/consensus.cmg-$GVERSION.gencode38.ixx
+            fi
 
-                ## Add import statement if it's not already there
-                if grep -q "include $tfile" ${HUB_DIR}/$ASSEMBLY/trackDb.txt; then
-                    echo found
-                else
-                    awk -i inplace -v x="include $tfile" 'BEGINFILE{print x}{print}' ${HUB_DIR}/$ASSEMBLY/trackDb.txt
-                fi
-        done
-    fi
+            ## copy over cat trackDb and add to main trackDb.txt file
+            cp ${HUB_REPO}/track_builds/cat/consensus.cmg-$GVERSION.gencode38_trackDb.txt ${HUB_DIR}/$ASSEMBLY/consensus.cmg-$GVERSION.gencode38_trackDb.txt
+    
+            ## Add import statement if it's not already there
+            if grep -q "include consensus.cmg-$GVERSION.gencode38_trackDb.txt" ${HUB_DIR}/$ASSEMBLY/trackDb.txt; then
+                echo $ASSEMBLY found
+            else
+                awk -i inplace -v x="include consensus.cmg-$GVERSION.gencode38_trackDb.txt" 'BEGINFILE{print x}{print}' ${HUB_DIR}/$ASSEMBLY/trackDb.txt
+            fi
+        fi
+    done
 done
 
+cd $curdir
+rm -rf $workdir

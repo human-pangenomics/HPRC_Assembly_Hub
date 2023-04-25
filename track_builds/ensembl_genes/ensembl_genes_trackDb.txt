@@ -8,6 +8,7 @@ html ../shared/ensembl_genes.html
 itemRgb on
 priority 2
 visibility pack
+searchTrix ensembl_genes.ix
 searchIndex name,name2
 bigDataUrl ensembl_genes.bb
 labelFields name,name2

@@ -12,14 +12,15 @@ source ${HUB_REPO}/backbone/envs.txt
 ##                             Info                                          ##
 ###############################################################################
 
-readarray -t ASSEMBLIES <${HUB_REPO}/assembly_info/assembly_list.txt
+# not all assemblies have chains files
+ASSEMBLIES=$(grep -v NA19240 ${HUB_REPO}/assembly_info/assembly_list.txt | grep -v HG00[25]\.)
 
 ############################################################################### 
 ##                             Create chains track                           ##
 ###############################################################################
 
 ## Loop through assemblies and add asm-to-ref alignment
-for ASSEMBLY in "${ASSEMBLIES[@]}" CHM13
+for ASSEMBLY in $ASSEMBLIES CHM13
 do 
     sed "s/fillinsample/${ASSEMBLY}/g" ${HUB_REPO}/track_builds/pggb_chains/pggb_chains_trackDb.txt |\
     sed "s/fillinsample/${ASSEMBLY}/g" > ${HUB_DIR}/${ASSEMBLY}/pggb_chains_trackDb.txt
