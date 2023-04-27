@@ -34,19 +34,20 @@ shortLabel GRCh38 Cactus chain
 longLabel GRCh38 Cactus chain
 
 TOEND
+    ## Add every chain
     for MATCH in $ASSEMBLIES CHM13; do
         if [[ "$ASSEMBLY" != "$MATCH" ]]; then
             sed "s/baseSample/${ASSEMBLY}/g" ${HUB_REPO}/track_builds/chains/chains_trackDb.txt |\
             sed "s/matchSample/${MATCH}/g" >> ${HUB_DIR}/${ASSEMBLY}/chains_trackDb.txt
         fi
-    done
 
-## Add import statement if it's not already there
-if grep -q 'include chains_trackDb.txt' ${HUB_DIR}/${ASSEMBLY}/trackDb.txt; then
-    echo $ASSEMBLY found
-else
-    sed -i '1 i\include chains_trackDb.txt' ${HUB_DIR}/${ASSEMBLY}/trackDb.txt
-fi
+    done
+    ## Add import statement if it's not already there
+    if grep -q 'include chains_trackDb.txt' ${HUB_DIR}/${ASSEMBLY}/trackDb.txt; then
+        echo $ASSEMBLY found
+    else
+        sed -i '1 i\include chains_trackDb.txt' ${HUB_DIR}/${ASSEMBLY}/trackDb.txt
+    fi
 
 done
 
