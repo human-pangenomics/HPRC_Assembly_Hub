@@ -69,7 +69,7 @@ sudo nano /etc/apache2/apache2.conf
 
 ## Put in redirect
 sudo echo \
-	"Redirect /index.html http://genome.ucsc.edu/cgi-bin/hgGateway?genome=HG00621.1&db=HG00621.1&hubUrl=http://35.80.111.76/hub/hub.txt" \
+	"Redirect /index.html https://genome.ucsc.edu/cgi-bin/hgGateway?genome=HG00621.1&db=HG00621.1&hubUrl=https://hprc-browser.ucsc.edu/hub/hub.txt" \
 	> /mnt/disks/data/www/html/.htaccess
 
 ## reload for changes to take effect
