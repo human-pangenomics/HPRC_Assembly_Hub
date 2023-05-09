@@ -1,6 +1,0 @@
-hub HPRC Mega AssemblyHub
-shortLabel HPRC Mega AssemblyHub
-longLabel HPRC Mega AssemblyHub
-genomesFile genomes.txt
-email mhauknes@ucsc.edu
-

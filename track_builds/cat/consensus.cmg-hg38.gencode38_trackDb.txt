@@ -1,0 +1,14 @@
+track consensus_cmg-hg38_gencode38
+shortLabel CAT Genes (hg38)
+longLabel CMG-hg38 CAT Annotation GENCODE v38
+description CMG-hg38 CAT Annotation GENCODE v38
+type bigGenePred
+group genes
+itemRgb on
+priority 1
+searchTrix consensus_cmg-hg38_gencode38.ix
+visibility hide
+searchIndex name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
+bigDataUrl consensus.cmg-hg38.gencode38.bb
+labelFields name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
+defaultLabelFields name

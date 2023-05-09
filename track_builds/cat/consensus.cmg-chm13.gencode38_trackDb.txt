@@ -1,0 +1,14 @@
+track consensus_cmg-chm13_gencode38
+shortLabel CAT Genes (CHM13)
+longLabel CMG-chm13 CAT Annotation GENCODE v38
+description CMG-chm13 CAT Annotation GENCODE v38
+type bigGenePred
+group genes
+itemRgb on
+priority 1
+searchTrix consensus_cmg-chm13_gencode38`.ix
+visibility hide
+searchIndex name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
+bigDataUrl consensus.cmg-chm13.gencode38.bb
+labelFields name,name2,txId,geneName,sourceGene,sourceTranscript,alignmentId
+defaultLabelFields name

@@ -1,0 +1,11 @@
+    track chain_matchSample_Cactus
+    superTrack super_chain_GRCh38_Cactus
+    shortLabel matchSample Cactus chain
+    longLabel matchSample Cactus chain
+    group compGeno
+    type bigChain 3
+    otherSpecies matchSample
+    visibility hide
+    bigDataUrl https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/A512ED34-9A91-4FC1-91A5-7AA162D7AFB2--Y1-BIGCHAINS/GRCh38-f1g-90-mc-aug11/aggr_bigchains/baseSample/matchSample-to-baseSample.bigChain.bb
+    linkDataUrl https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/A512ED34-9A91-4FC1-91A5-7AA162D7AFB2--Y1-BIGCHAINS/GRCh38-f1g-90-mc-aug11/aggr_bigchains/baseSample/matchSample-to-baseSample.bigLink.bb
+

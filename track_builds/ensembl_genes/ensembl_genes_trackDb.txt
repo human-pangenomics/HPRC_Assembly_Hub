@@ -1,0 +1,15 @@
+track ensembl_genes
+shortLabel Ensembl Genes
+longLabel Ensembl Genes version
+description Ensembl Genes version
+type bigGenePred
+group genes
+html ../shared/ensembl_genes.html
+itemRgb on
+priority 2
+visibility pack
+searchTrix ensembl_genes.ix
+searchIndex name,name2
+bigDataUrl ensembl_genes.bb
+labelFields name,name2
+defaultLabelFields name2

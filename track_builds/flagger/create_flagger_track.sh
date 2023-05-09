@@ -1,20 +1,17 @@
 ## requires AWS CLI
+set -eou pipefail
 ## must have alias HUB_REPO set
+## Get HUB_DIR
+source ${HUB_REPO}/backbone/envs.txt
 
 ############################################################################### 
 ##                             Create BigBeds                                ##
 ###############################################################################
 
-## Get data from S3 submission
-cd ~
-
-mkdir flagger_tmp
-cd flagger_tmp
-
-aws --no-sign-request s3 cp \
-    --recursive \
-    s3://human-pangenomics/submissions/e9ad8022-1b30-11ec-ab04-0a13c5208311--COVERAGE_ANALYSIS_Y1_GENBANK/FLAGGER/APR_08_2022/FINAL_HIFI_BASED/FLAGGER_HIFI_ASM_SIMPLIFIED_BEDS/ \
-    .
+## work in a temporary directory
+curdir=$(pwd)
+workdir=$(mktemp -d --suffix=_flagger_track)
+cd $workdir
 
 
 readarray -t ASSEMBLIES <${HUB_REPO}/assembly_info/assembly_list.txt
@@ -32,38 +29,46 @@ do
         HAP_STR=maternal
     fi
 
-    ## Bed has both haplotypes. We must split the haplotypes for the browser
-    grep "^${SAMPLE}#${HAPLOTYPE}#" ${SAMPLE}/${SAMPLE}.hifi.flagger_final.simplified.unreliable_only.no_MT.bed > ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.bed
+    if [ ! -f "${HUB_DIR}/${ASSEMBLY}/flagger.bb" ]; then
+        if [ ! -f "${SAMPLE}/${SAMPLE}.hifi.flagger_final.simplified.unreliable_only.no_MT.bed" ]; then
+            ## Get all data from S3 submission  (this creates bed files for all assemblies in the workdir)
+            aws --no-sign-request s3 cp \
+                --recursive \
+                s3://human-pangenomics/submissions/e9ad8022-1b30-11ec-ab04-0a13c5208311--COVERAGE_ANALYSIS_Y1_GENBANK/FLAGGER/APR_08_2022/FINAL_HIFI_BASED/FLAGGER_HIFI_ASM_SIMPLIFIED_BEDS/ \
+                .
+        fi
 
-    ## Strip off sample name and haplotype int (to match chrom.sizes file)
-    sed 's/^.*#\(J.*\)/\1/' \
-        ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.bed \
-        > ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.stripped.bed
-
-    bedToBigBed \
-        -extraIndex=name \
-        -type=bed9 \
-        -tab \
-        ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.stripped.bed \
-        -as=${HUB_REPO}/track_builds/flagger/flagger.as \
-        /var/www/html/hub/$ASSEMBLY/chrom.sizes \
-        /var/www/html/hub/$ASSEMBLY/flagger.bb
+        ## Bed has both haplotypes. We must split the haplotypes for the browser
+        grep "^${SAMPLE}#${HAPLOTYPE}#" ${SAMPLE}/${SAMPLE}.hifi.flagger_final.simplified.unreliable_only.no_MT.bed > ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.bed
+    
+        ## Strip off sample name and haplotype int (to match chrom.sizes file)
+        sed 's/^.*#\(J.*\)/\1/' \
+            ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.bed \
+            > ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.stripped.bed
+    
+        bedToBigBed \
+            -extraIndex=name \
+            -type=bed9 \
+            -tab \
+            -sizesIs2Bit \
+            -as=${HUB_REPO}/track_builds/flagger/flagger.as \
+            ${SAMPLE}.${HAPLOTYPE}.hifi.flagger_final.stripped.bed \
+            ${HUB_DIR}/$ASSEMBLY/$ASSEMBLY.2bit \
+            ${HUB_DIR}/$ASSEMBLY/flagger.bb
+    fi
 
 
     ## copy over flagger trackDb and add to main trackDb.txt file
-    cp ${HUB_REPO}/track_builds/flagger/flagger_trackDb.txt /var/www/html/hub/$ASSEMBLY/flagger_trackDb.txt
-    cp ${HUB_REPO}/track_builds/flagger/flagger.html /var/www/html/hub/$ASSEMBLY/flagger.html
+    cp ${HUB_REPO}/track_builds/flagger/flagger_trackDb.txt ${HUB_DIR}/$ASSEMBLY/flagger_trackDb.txt 
 
     ## Add import statement if it's not already there
-    if grep -q 'include flagger_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then
+    if grep -q 'include flagger_trackDb.txt' ${HUB_DIR}/$ASSEMBLY/trackDb.txt; then
         echo found
     else
-        sed -i '1 i\include flagger_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt
+        sed -i '1 i\include flagger_trackDb.txt' ${HUB_DIR}/$ASSEMBLY/trackDb.txt
     fi
 
 done
 
-
-cd ~
-rm flagger_tmp
-
+cd $curdir
+rm -rf $workdir

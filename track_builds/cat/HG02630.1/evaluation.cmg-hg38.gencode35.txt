@@ -1,8 +1,0 @@
-track error_HG02630.1_cmg-hg38_gencode35
-type bigBed 6
-group cat_tracks
-shortLabel Consensus indels cmg-hg38 GENCODE v35
-longLabel Consensus indels cmg-hg38 GENCODE v35
-bigDataUrl evaluation.cmg-hg38.gencode35.bb
-visibility hide
-priority 5

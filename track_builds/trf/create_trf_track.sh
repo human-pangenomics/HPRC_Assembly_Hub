@@ -1,20 +1,18 @@
 ## requires AWS CLI
+set -eou pipefail
 ## must have alias HUB_REPO set
+## Get HUB_DIR
+source ${HUB_REPO}/backbone/envs.txt
 
 ############################################################################### 
 ##                             Create BigBeds                                ##
 ###############################################################################
 
-## Get data from S3 submission
-cd ~
+## work in a temporary directory
+curdir=$(pwd)
+workdir=$(mktemp -d --suffix=_trf_tracks)
+cd $workdir
 
-mkdir trf_tmp
-cd trf_tmp
-
-aws --no-sign-request s3 cp \
-    --recursive \
-    s3://human-pangenomics/submissions/1FE2CB96-1B4D-4204-BE4E-08DB00746F68--YEAR_1_TRF \
-    .
 
 
 readarray -t ASSEMBLIES <${HUB_REPO}/assembly_info/assembly_list.txt
@@ -34,35 +32,42 @@ do
         HAP_STR=mat
     fi
 
-    zcat ${SAMPLE}/${SAMPLE}.${HAP_STR}.trf.bed.gz \
-        | sed 's/^.*#\(J.*\)/\1/' \
-        > ${SAMPLE}/${SAMPLE}.${HAPLOTYPE}.trf.bed
-
-
-    ## Convber to bigbed
-    bedToBigBed \
-        -type=bed3+13 \
-        -tab \
-        ${SAMPLE}/${SAMPLE}.${HAPLOTYPE}.trf.bed \
-        -as=${HUB_REPO}/track_builds/trf/trf.as \
-        /var/www/html/hub/$ASSEMBLY/chrom.sizes \
-        /var/www/html/hub/$ASSEMBLY/trf.bb
+    if [ ! -f "${HUB_DIR}/${ASSEMBLY}/trf.bb" ]; then
+        if [ ! -f "${SAMPLE}/${SAMPLE}.${HAP_STR}.trf.bed.gz" ]; then
+            ## Get all data from S3 submission (this creates bed files for all assemblies in the workdir)
+            aws --no-sign-request s3 cp \
+                --recursive \
+                s3://human-pangenomics/submissions/1FE2CB96-1B4D-4204-BE4E-08DB00746F68--YEAR_1_TRF \
+                .
+        fi
+        zcat ${SAMPLE}/${SAMPLE}.${HAP_STR}.trf.bed.gz \
+            | sed 's/^.*#\(J.*\)/\1/' \
+            > ${SAMPLE}/${SAMPLE}.${HAPLOTYPE}.trf.bed
+    
+    
+        ## Convert to bigbed
+        bedToBigBed \
+            -type=bed3+13 \
+            -tab \
+            -as=${HUB_REPO}/track_builds/trf/trf.as \
+	    -sizesIs2Bit \
+            ${SAMPLE}/${SAMPLE}.${HAPLOTYPE}.trf.bed \
+            ${HUB_DIR}/$ASSEMBLY/$ASSEMBLY.2bit \ 
+            ${HUB_DIR}/$ASSEMBLY/trf.bb
+    fi
 
 
     ## copy over trf trackDb and add to main trackDb.txt file
-    cp ${HUB_REPO}/track_builds/trf/trf_trackDb.txt /var/www/html/hub/$ASSEMBLY/trf_trackDb.txt 
-    cp ${HUB_REPO}/track_builds/trf/trf.html /var/www/html/hub/$ASSEMBLY/trf.html 
+    cp ${HUB_REPO}/track_builds/trf/trf_trackDb.txt ${HUB_DIR}/$ASSEMBLY/trf_trackDb.txt 
 
     ## Add import statement if it's not already there
-    if grep -q 'include trf_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt; then
+    if grep -q 'include trf_trackDb.txt' ${HUB_DIR}/$ASSEMBLY/trackDb.txt; then
         echo found
     else
-        sed -i '1 i\include trf_trackDb.txt' /var/www/html/hub/$ASSEMBLY/trackDb.txt
+        sed -i '1 i\include trf_trackDb.txt' ${HUB_DIR}/$ASSEMBLY/trackDb.txt
     fi
 
 done
 
-
-cd ~
-rm trf_tmp
-
+cd $curdir
+rm -rf $workdir

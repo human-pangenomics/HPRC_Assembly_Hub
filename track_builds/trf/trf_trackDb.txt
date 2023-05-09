@@ -11,5 +11,5 @@ maxItems 1000000
 maxWindowToDraw 100000000
 type bigBed 3 + 13
 bigDataUrl trf.bb
-html trf.html
 priority 1
+html ../shared/trf.html
