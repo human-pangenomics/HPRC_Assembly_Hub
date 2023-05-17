@@ -212,8 +212,6 @@ def create_transcript(gp_row, gene_metas, trans_metas, ucsc_names, ensembl_gp_fh
     gp_row[BGP_NAME_COL] = trans_meta.transcript_id + "." + trans_meta.version
     gp_row[BGP_NAME2_COL] = gene_name
     gp_row[BGP_ITEMRGB_COL] = get_transcript_color(trans_meta.biotype)
-    gp_row[BGP_CDSSTARTSTAT_COL] = "none"
-    gp_row[BGP_CDSENDSTAT_COL] = "none"
     gp_row[BGP_TYPE_COL] = trans_meta.biotype
     gp_row[BGP_GENENAME_COL] = gene_meta.gene_id + "." + gene_meta.version
     gp_row[BGP_GENENAME2_COL] = gene_name
