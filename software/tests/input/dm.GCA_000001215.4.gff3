@@ -1,0 +1,46 @@
+##gff-version 3
+
+# this is what Ensembl file Drosophila_melanogaster-GCA_000001215.4-2020_08-genes.gff3.gz
+# which is an import of FlyBase
+
+#!genome-build FlyBase BDGP6.32
+#!genome-version BDGP6.32
+#!genome-build-accession GCA_000001215.4
+
+
+##sequence-region   211000022278031 1 1021
+
+###
+211000022278279	BDGP6.32	region	1	12714	.	.	.	ID=region:211000022278279;Alias=CP007102,NW_007931104,CP007102.1,NW_007931104.1,chrUn_CP007102v1
+###
+211000022278279	FlyBase	pseudogene	11634	12709	.	-	.	ID=gene:FBgn0267594;Name=CR45932;biotype=pseudogene;gene_id=FBgn0267594
+211000022278279	FlyBase	pseudogenic_transcript	11634	12709	.	-	.	ID=transcript:FBtr0347033;Parent=gene:FBgn0267594;Name=CR45932-RA;biotype=pseudogene;transcript_id=FBtr0347033
+211000022278279	FlyBase	exon	11634	12709	.	-	.	Parent=transcript:FBtr0347033;constitutive=1;exon_id=FBtr0347033-E1;rank=1
+###
+211000022278436	FlyBase	ncRNA_gene	1551	2815	.	-	.	ID=gene:FBgn0259849;Name=Su(Ste):CR42418;biotype=ncRNA;description=Su(Ste):CR42418;gene_id=FBgn0259849
+211000022278436	FlyBase	ncRNA	1551	2815	.	-	.	ID=transcript:FBtr0300146;Parent=gene:FBgn0259849;Name=Su(Ste):CR42418-RA;biotype=ncRNA;transcript_id=FBtr0300146
+211000022278436	FlyBase	exon	1551	2815	.	-	.	Parent=transcript:FBtr0300146;constitutive=1;exon_id=FBtr0300146-E1;rank=1
+###
+211000022278760	FlyBase	gene	562	879	.	-	.	ID=gene:FBgn0085506;Name=CG40635;biotype=protein_coding;gene_id=FBgn0085506
+211000022278760	FlyBase	mRNA	562	879	.	-	.	ID=transcript:FBtr0302344;Parent=gene:FBgn0085506;Name=CG40635-RB;biotype=protein_coding;transcript_id=FBtr0302344
+211000022278760	FlyBase	exon	562	814	.	-	.	Parent=transcript:FBtr0302344;constitutive=1;exon_id=FBtr0302344-E2;rank=2
+211000022278760	FlyBase	CDS	562	814	.	-	1	ID=CDS:FBpp0291548;Parent=transcript:FBtr0302344;protein_id=FBpp0291548
+211000022278760	FlyBase	exon	869	879	.	-	.	Parent=transcript:FBtr0302344;constitutive=1;exon_id=FBtr0302344-E1;rank=1
+211000022278760	FlyBase	CDS	869	879	.	-	0	ID=CDS:FBpp0291548;Parent=transcript:FBtr0302344;protein_id=FBpp0291548
+###
+211000022278978	FlyBase	transposable_element_gene	515	2242	.	+	.	ID=gene:RR41606_transposable_element;biotype=transposable_element;gene_id=RR41606_transposable_element
+211000022278978	FlyBase	transposable_element	515	2242	.	+	.	ID=transcript:RR41606_transposable_element-RA;Parent=gene:RR41606_transposable_element;biotype=transposable_element;transcript_id=RR41606_transposable_element-RA
+###
+211000022278978	FlyBase	exon	515	2242	.	+	.	Parent=transcript:RR41606_transposable_element-RA;constitutive=1;exon_id=RR41606_transposable_element-RA-E1;rank=1
+211000022279188	FlyBase	gene	1449	2180	.	+	.	ID=gene:FBgn0259817;Name=SteXh:CG42398;biotype=protein_coding;description=SteXh:CG42398;gene_id=FBgn0259817
+211000022279188	FlyBase	mRNA	1449	2180	.	+	.	ID=transcript:FBtr0300105;Parent=gene:FBgn0259817;Name=SteXh:CG42398-RA;biotype=protein_coding;transcript_id=FBtr0300105
+211000022279188	FlyBase	five_prime_UTR	1449	1478	.	+	.	Parent=transcript:FBtr0300105
+211000022279188	FlyBase	exon	1449	1489	.	+	.	Parent=transcript:FBtr0300105;constitutive=1;exon_id=FBtr0300105-E1;rank=1
+211000022279188	FlyBase	CDS	1479	1489	.	+	0	ID=CDS:FBpp0289382;Parent=transcript:FBtr0300105;protein_id=FBpp0289382
+211000022279188	FlyBase	exon	1547	2047	.	+	.	Parent=transcript:FBtr0300105;constitutive=1;exon_id=FBtr0300105-E2;rank=2
+211000022279188	FlyBase	CDS	1547	2047	.	+	1	ID=CDS:FBpp0289382;Parent=transcript:FBtr0300105;protein_id=FBpp0289382
+211000022279188	FlyBase	CDS	2108	2114	.	+	1	ID=CDS:FBpp0289382;Parent=transcript:FBtr0300105;protein_id=FBpp0289382
+211000022279188	FlyBase	exon	2108	2180	.	+	.	Parent=transcript:FBtr0300105;constitutive=1;exon_id=FBtr0300105-E3;rank=3
+211000022279188	FlyBase	three_prime_UTR	2115	2180	.	+	.	Parent=transcript:FBtr0300105
+###
+

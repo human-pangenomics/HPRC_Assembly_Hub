@@ -198,6 +198,12 @@ def get_transcript_color(trans_biotype):
     else:
         return NONCODING_COLOR
 
+def get_version_suffix(meta):
+    if "version" in meta:
+        return "." + meta.version
+    else:
+        return ""
+
 def create_transcript(gp_row, gene_metas, trans_metas, ucsc_names, ensembl_gp_fh):
     """create a transcript record, adding metadata to match bigEnsembl.as"""
 
@@ -209,11 +215,11 @@ def create_transcript(gp_row, gene_metas, trans_metas, ucsc_names, ensembl_gp_fh
     gene_name = get_gene_name(gene_meta)
     if ucsc_names:
         gp_row[BGP_CHROM_COL] = convert_to_ucsc_chrom(gp_row[BGP_CHROM_COL])
-    gp_row[BGP_NAME_COL] = trans_meta.transcript_id + "." + trans_meta.version
+    gp_row[BGP_NAME_COL] = trans_meta.transcript_id + get_version_suffix(trans_meta)
     gp_row[BGP_NAME2_COL] = gene_name
     gp_row[BGP_ITEMRGB_COL] = get_transcript_color(trans_meta.biotype)
     gp_row[BGP_TYPE_COL] = trans_meta.biotype
-    gp_row[BGP_GENENAME_COL] = gene_meta.gene_id + "." + gene_meta.version
+    gp_row[BGP_GENENAME_COL] = gene_meta.gene_id + get_version_suffix(gene_meta)
     gp_row[BGP_GENENAME2_COL] = gene_name
     gp_row[BGP_GENETYPE_COL] = gene_meta.biotype
     gp_row[BGP_GENEDESCRIPTION_COL] = gene_meta.get("description", "")
