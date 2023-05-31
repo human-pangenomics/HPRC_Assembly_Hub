@@ -10,3 +10,5 @@
 
 4. Update TRF
 	--try to emulate hg38 behavior (where the display shows motif, not period size)
+
+5. Change s3 locations (for pulling in files) to working (from submissions)

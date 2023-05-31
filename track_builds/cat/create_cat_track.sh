@@ -13,16 +13,13 @@ cd $workdir
 ##                             Create BigBeds                                ##
 ###############################################################################
 
-## TODO: move these files to our pangenome s3 location
 ## Get data from S3 submission
 
 # the bigbed files are already created, however not all assemblies have the files
-#aws --no-sign-request s3 cp \
-#    --recursive \
-#    s3://marina-misc/HPRC/AssemblyHub/ \
-#    ${HUB_DIR}/ \
-#    --exclude "*" \
-#    --include "*consensus.cmg*gencode38.bb"
+aws --no-sign-request s3 cp \
+    --recursive \
+    s3://human-pangenomics/submissions/6F88082C-E520-4E4D-9134-0001B08DC83E--Y1_CAT_chain_bigbed \
+    .
 
 readarray -t ASSEMBLIES <${HUB_REPO}/assembly_info/assembly_list.txt
 
